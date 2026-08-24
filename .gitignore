@@ -1,0 +1,35 @@
+# Dependency directories
+node_modules/
+vendor/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# WordPress
+wp-config.local.php
+*.sql.gz
+*.sql
+uploads-backup/
+
+# Logs
+*.log
+
+# Env
+.env
+*.env
