@@ -35,13 +35,6 @@ function audiomania_child_setup() {
         'gallery', 'caption', 'style', 'script',
     ) );
 
-    add_theme_support( 'custom-logo', array(
-        'height'      => 80,
-        'width'       => 300,
-        'flex-height' => true,
-        'flex-width'  => true,
-    ) );
-
     add_theme_support( 'custom-header', array(
         'default-image'      => '',
         'width'              => 1920,
@@ -140,18 +133,19 @@ add_action( 'wp_body_open', 'audiomania_child_disco_canvas', 5 );
  * 4. CUSTOM HEADER WITH NAVIGATION
  * ------------------------------------------------------------------
  */
+/**
+ * ------------------------------------------------------------------
+ * 4. CUSTOM HEADER WITH NAVIGATION
+ * ------------------------------------------------------------------
+ */
 function audiomania_child_header() {
     ?>
     <header class="site-header am-header" role="banner">
         <div class="header-inner">
             <div class="header-left">
-                <?php if ( has_custom_logo() ) : ?>
-                    <?php the_custom_logo(); ?>
-                <?php else : ?>
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-branding">
-                        <span class="site-title">Audiomania Eventos</span>
-                    </a>
-                <?php endif; ?>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-branding">
+                    <span class="brand-main">AUDIO</span><span class="brand-dot">.</span><span class="brand-sub">eventos</span>
+                </a>
             </div>
             <nav class="header-nav" role="navigation" aria-label="<?php esc_attr_e( 'Menú principal', 'audiomania-events-child' ); ?>">
                 <?php

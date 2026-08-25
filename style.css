@@ -661,3 +661,297 @@ section.dark-bg h3 {
         grid-template-columns: 1fr;
     }
 }
+/* ======================================================
+   18. STICKY HEADER — SCROLL SHRINK EFFECT
+   ====================================================== */
+.site-header.am-header .header-inner {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.site-header.am-header.scrolled .header-inner {
+    padding: 8px 24px;
+    max-width: 1280px;
+}
+
+n/* Minimalist text branding — AUDIO.eventos */
+.site-branding {
+    display: inline-flex;
+    align-items: baseline;
+    text-decoration: none;
+    gap: 0;
+    line-height: 1;
+}
+.brand-main {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 1.35rem;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.brand-dot {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 1.35rem;
+    color: #00e5ff;
+    margin: 0 1px;
+}
+.brand-sub {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: lowercase;
+}
+/* Shrink on scroll */
+.site-header.am-header.scrolled .brand-main,
+.site-header.am-header.scrolled .brand-dot {
+    font-size: 1.1rem;
+}
+.site-header.am-header.scrolled .brand-sub {
+    font-size: 0.7rem;
+}
+
+/* Tighten nav spacing on scroll */
+.site-header.am-header.scrolled .header-nav .nav-menu {
+    gap: 4px;
+}
+
+.site-header.am-header.scrolled .header-nav .nav-menu li a {
+    padding: 6px 12px;
+    font-size: 0.88rem;
+}
+
+/* Nav menu styling */
+.site-header .header-nav .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-header .header-nav .nav-menu li a {
+    color: var(--am-text) !important;
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.site-header .header-nav .nav-menu li a:hover,
+.site-header .header-nav .nav-menu li a.current-menu-item a {
+    color: var(--am-neon-blue) !important;
+    background: rgba(77, 124, 255, 0.12);
+}
+
+/* Mobile toggle visibility */
+.site-header .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--am-border);
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 6px;
+    transition: all 0.25s ease;
+}
+
+.site-header .mobile-menu-toggle:hover {
+    border-color: var(--am-neon-blue);
+}
+
+.site-header .mobile-menu-toggle .hamburger-icon .bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--am-text);
+    margin: 4px auto;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.site-header .mobile-menu-toggle.active .hamburger-icon .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.site-header .mobile-menu-toggle.active .hamburger-icon .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.site-header .mobile-menu-toggle.active .hamburger-icon .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+    .site-header .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .site-header .header-nav {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(15, 15, 26, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 0 20px 24px;
+        border-bottom: 1px solid var(--am-border);
+        transform: translateY(-120%);
+        opacity: 0;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 99;
+    }
+
+    .site-header .header-nav.nav-open {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .site-header .header-nav .nav-menu {
+        flex-direction: column;
+        gap: 4px;
+        align-items: stretch;
+    }
+
+    .site-header .header-nav .nav-menu li a {
+        display: block;
+        padding: 12px 16px;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .site-header .header-nav .nav-menu li a:hover {
+        background: rgba(77, 124, 255, 0.15);
+    }
+}
+
+/* ======================================================
+   19. SCROLL REVEAL ANIMATIONS
+   ====================================================== */
+.am-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.am-reveal.am-reveal-left {
+    transform: translateX(-40px);
+}
+
+.am-reveal.am-reveal-right {
+    transform: translateX(40px);
+}
+
+.am-reveal.am-reveal-scale {
+    transform: scale(0.92);
+}
+
+.am-reveal.am-visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Stagger children */
+.am-reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.am-reveal-stagger.am-visible > *:nth-child(1) { transition-delay: 0ms; }
+.am-reveal-stagger.am-visible > *:nth-child(2) { transition-delay: 80ms; }
+.am-reveal-stagger.am-visible > *:nth-child(3) { transition-delay: 160ms; }
+.am-reveal-stagger.am-visible > *:nth-child(4) { transition-delay: 240ms; }
+.am-reveal-stagger.am-visible > *:nth-child(5) { transition-delay: 320ms; }
+.am-reveal-stagger.am-visible > *:nth-child(6) { transition-delay: 400ms; }
+.am-reveal-stagger.am-visible > *:nth-child(7) { transition-delay: 480ms; }
+.am-reveal-stagger.am-visible > *:nth-child(8) { transition-delay: 560ms; }
+
+.am-reveal-stagger.am-visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth scroll offset for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+:target {
+    scroll-margin-top: 80px;
+}
+
+/* Scroll progress bar (subtle) */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--am-neon-blue), var(--am-neon-purple), var(--am-neon-pink));
+    z-index: 101;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(77, 124, 255, 0.5);
+}
+
+/* Back to top button */
+.am-back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 96px;
+    width: 44px;
+    height: 44px;
+    background: var(--am-surface-raised);
+    border: 1px solid var(--am-border);
+    border-radius: 50%;
+    color: var(--am-text-heading);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.am-back-to-top.am-visible {
+    opacity: 0.7;
+    transform: translateY(0);
+}
+
+.am-back-to-top:hover {
+    opacity: 1;
+    background: var(--am-neon-blue);
+    color: var(--am-bg);
+    border-color: var(--am-neon-blue);
+}
+
+@media (max-width: 768px) {
+    .am-back-to-top {
+        bottom: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+    }
+}
