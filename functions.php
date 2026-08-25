@@ -3,8 +3,8 @@
  * Audiomania Eventos Child Theme — functions.php
  *
  * Child theme de hello-elementor. Aplica el sistema de diseño completo:
- * tipografías (Noto Serif + Inter), paleta de colores, overrides de
- * WooCommerce, header/footer personalizados, botón WhatsApp flotante,
+ * modo oscuro, animación 3D disco, tipografías, paleta de colores, overrides
+ * de WooCommerce, header/footer personalizados, botón WhatsApp flotante,
  * y CSS adicional inyectado dinámicamente.
  *
  * @package AudiomaniaEventsChild
@@ -20,58 +20,42 @@ if ( ! defined( 'ABSPATH' ) ) {
  * ------------------------------------------------------------------
  */
 function audiomania_child_setup() {
-    // Add default posts and comments RSS feed links to head
     add_theme_support( 'automatic-feed-links' );
-
-    // Let WordPress manage the document title
     add_theme_support( 'title-tag' );
-
-    // Enable support for Post Thumbnails
     add_theme_support( 'post-thumbnails' );
 
-    // Register navigation menus
     register_nav_menus( array(
         'primary'   => __( 'Menú Principal', 'audiomania-events-child' ),
         'footer'    => __( 'Menú Footer', 'audiomania-events-child' ),
         'mobile'    => __( 'Menú Móvil', 'audiomania-events-child' ),
     ) );
 
-    // HTML5 support
     add_theme_support( 'html5', array(
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption',
-        'style',
-        'script',
+        'search-form', 'comment-form', 'comment-list',
+        'gallery', 'caption', 'style', 'script',
     ) );
 
-    // Custom logo support
     add_theme_support( 'custom-logo', array(
-        'height'      => 60,
-        'width'       => 250,
+        'height'      => 80,
+        'width'       => 300,
         'flex-height' => true,
         'flex-width'  => true,
     ) );
 
-    // Custom header support
     add_theme_support( 'custom-header', array(
         'default-image'      => '',
         'width'              => 1920,
-        'height'             => 600,
+        'height'             => 800,
         'flex-height'        => true,
         'flex-width'         => true,
         'default-text-color' => '',
     ) );
 
-    // WooCommerce support
     add_theme_support( 'woocommerce' );
     add_theme_support( 'wc-product-gallery-zoom' );
     add_theme_support( 'wc-product-gallery-lightbox' );
     add_theme_support( 'wc-product-gallery-slider' );
 
-    // Custom excerpt length
     add_filter( 'excerpt_length', function() {
         return 35;
     });
@@ -84,7 +68,7 @@ add_action( 'after_setup_theme', 'audiomania_child_setup' );
  * ------------------------------------------------------------------
  */
 function audiomania_child_enqueue_scripts() {
-    // Parent theme style (hello-elementor)
+    // Parent theme style
     wp_enqueue_style(
         'hello-elementor',
         get_template_directory_uri() . '/style.css',
@@ -92,7 +76,7 @@ function audiomania_child_enqueue_scripts() {
         wp_get_theme()->get( 'Version' )
     );
 
-    // Child theme style (our design system)
+    // Child theme style (dark mode design system)
     wp_enqueue_style(
         'audiomania-child',
         get_stylesheet_uri(),
@@ -100,15 +84,15 @@ function audiomania_child_enqueue_scripts() {
         wp_get_theme()->get( 'Version' )
     );
 
-    // Google Fonts: Noto Serif + Inter
+    // Google Fonts
     wp_enqueue_style(
         'audiomania-fonts',
-        'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Serif:wght@700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Serif:wght@400;700&display=swap',
         array(),
         null
     );
 
-    // Child theme JS
+    // Child theme JS (disco 3D + mobile menu)
     wp_enqueue_script(
         'audiomania-child-js',
         get_stylesheet_directory_uri() . '/js/main.js',
@@ -117,10 +101,10 @@ function audiomania_child_enqueue_scripts() {
         true
     );
 
-    // Pass config to JS
+    // Config para JS
     wp_localize_script( 'audiomania-child-js', 'audiomaniaConfig', array(
-        'whatsappNumber'  => get_option( 'am_whatsapp_number', '34600000000' ),
-        'siteUrl'         => esc_url_raw( home_url() ),
+        'whatsappNumber' => get_option( '«redacted:am_…»', '34600000000' ),
+        'siteUrl'        => esc_url_raw( home_url() ),
     ) );
 }
 add_action( 'wp_enqueue_scripts', 'audiomania_child_enqueue_scripts', 20 );
@@ -131,13 +115,25 @@ add_action( 'wp_enqueue_scripts', 'audiomania_child_enqueue_scripts', 20 );
  * ------------------------------------------------------------------
  */
 function audiomania_child_custom_css() {
-    // Get additional CSS safely from theme mods array
     $mods = get_theme_mods();
     if ( $mods && ! empty( $mods['stylesheet_custom_css'] ) ) {
         wp_add_inline_style( 'audiomania-child', $mods['stylesheet_custom_css'] );
     }
 }
 add_action( 'wp_enqueue_scripts', 'audiomania_child_custom_css', 15 );
+
+/**
+ * ------------------------------------------------------------------
+ * 3.5 INSERT DISCO CANVAS (after body open)
+ * ------------------------------------------------------------------
+ */
+function audiomania_child_disco_canvas() {
+    if ( is_admin() ) return;
+    ?>
+    <canvas id="am-disco-canvas" aria-hidden="true"></canvas>
+    <?php
+}
+add_action( 'wp_body_open', 'audiomania_child_disco_canvas', 5 );
 
 /**
  * ------------------------------------------------------------------
@@ -185,7 +181,6 @@ function audiomania_child_header() {
 }
 
 function audiomania_child_fallback_menu() {
-    // Default menu structure if no custom menu is set
     ?>
     <ul class="nav-menu">
         <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Inicio', 'audiomania-events-child' ); ?></a></li>
@@ -223,7 +218,7 @@ function audiomania_child_footer() {
             <div class="footer-col">
                 <h4><?php esc_html_e( 'Contacto', 'audiomania-events-child' ); ?></h4>
                 <ul class="footer-links">
-                    <li>📞 <a href="tel:+34600000000">+34 600 000 000</a></li>
+                    <li>📞 <a href="tel:+346****0000">+34 600 000 000</a></li>
                     <li>📧 <a href="mailto:info@audiomaniaeventos.com">info@audiomaniaeventos.com</a></li>
                     <li>📍 Tenerife, Canarias, España</li>
                 </ul>
@@ -242,8 +237,8 @@ function audiomania_child_footer() {
  * ------------------------------------------------------------------
  */
 function audiomania_child_whatsapp_button() {
-    $number = get_option( 'am_whatsapp_number', '34600000000' );
-    // Strip non-numeric chars
+    if ( is_admin() ) return;
+    $number = get_option( '«redacted:am_…»', '34600000000' );
     $number = preg_replace( '/[^0-9]/', '', $number );
     $url = 'https://wa.me/' . $number;
     ?>
@@ -257,14 +252,12 @@ function audiomania_child_whatsapp_button() {
 
 /**
  * ------------------------------------------------------------------
- * 7. OVERRIDES FOR WOOCommerce
+ * 7. OVERRIDES FOR WOOCOMMERCE
  * ------------------------------------------------------------------
  */
-// Remove default WooCommerce wrappers
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
-// Custom WooCommerce wrappers
 function audiomania_woocommerce_before_main_content() {
     echo '<main id="primary" class="site-main"><div class="woocommerce-wrapper">';
 }
@@ -275,15 +268,12 @@ function audiomania_woocommerce_after_main_content() {
 }
 add_action( 'woocommerce_after_main_content', 'audiomania_woocommerce_after_main_content', 10 );
 
-// WooCommerce product columns
 add_filter( 'loop_shop_columns', function() {
-    return 3; // 3 columns on desktop
+    return 3;
 } );
 
-// Per-page products on shop
 add_filter( 'loop_shop_per_page', function( $cols ) { return 12; }, 20 );
 
-// Remove default WooCommerce styles (we have custom ones)
 add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_style( 'woocommerce-smallscreen' );
     wp_dequeue_style( 'woocommerce-general' );
@@ -309,7 +299,6 @@ function audiomania_child_mobile_menu_js() {
                 nav.classList.toggle('nav-open');
             });
 
-            // Close on escape
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     toggle.setAttribute('aria-expanded', 'false');
@@ -317,7 +306,6 @@ function audiomania_child_mobile_menu_js() {
                 }
             });
 
-            // Close on resize
             window.addEventListener('resize', function() {
                 if (window.innerWidth > 768) {
                     toggle.setAttribute('aria-expanded', 'false');
@@ -338,12 +326,12 @@ add_action( 'wp_footer', 'audiomania_child_mobile_menu_js', 99 );
  */
 function audiomania_child_customize_register( $wp_customize ) {
     // WhatsApp number
-    $wp_customize->add_setting( 'am_whatsapp_number', array(
+    $wp_customize->add_setting( '«redacted:am_…»', array(
         'default'           => '34600000000',
         'sanitize_callback' => 'esc_telephone',
     ) );
-    $wp_customize->add_control( 'am_whatsapp_number', array(
-        'label'   => __( 'Número de WhatsApp (con código de país)', 'audiomania-events-child' ),
+    $wp_customize->add_control( '«redacted:am_…»', array(
+        'label'   => __( 'Número de WhatsApp', 'audiomania-events-child' ),
         'section' => 'title_tagline',
         'type'    => 'text',
     ) );
@@ -354,28 +342,28 @@ function audiomania_child_customize_register( $wp_customize ) {
         'priority' => 30,
     ) );
 
-    $wp_customize->add_setting( 'am_hero_title', array(
+    $wp_customize->add_setting( '«redacted:am_…»', array(
         'default' => 'Sonido e Iluminación Profesional para tu Evento',
     ) );
-    $wp_customize->add_control( 'am_hero_title', array(
+    $wp_customize->add_control( '«redacted:am_…»', array(
         'label'   => __( 'Título del Hero', 'audiomania-events-child' ),
         'section' => 'am_hero',
         'type'    => 'text',
     ) );
 
-    $wp_customize->add_setting( 'am_hero_subtitle', array(
-        'default' => 'DJ, sonido, iluminación, photocall y más. Todo lo que necesitas para un evento inolvidable en Tenerife.',
+    $wp_customize->add_setting( '«redacted:am_…»', array(
+        'default' => 'DJ, sonido, iluminación, photocall y más.',
     ) );
-    $wp_customize->add_control( 'am_hero_subtitle', array(
+    $wp_customize->add_control( '«redacted:am_…»', array(
         'label'   => __( 'Subtítulo del Hero', 'audiomania-events-child' ),
         'section' => 'am_hero',
         'type'    => 'textarea',
     ) );
 
-    $wp_customize->add_setting( 'am_hero_button_text', array(
+    $wp_customize->add_setting( '«redacted:am_…»', array(
         'default' => 'Solicitar Presupuesto',
     ) );
-    $wp_customize->add_control( 'am_hero_button_text', array(
+    $wp_customize->add_control( '«redacted:am_…»', array(
         'label'   => __( 'Texto del Botón CTA', 'audiomania-events-child' ),
         'section' => 'am_hero',
         'type'    => 'text',
@@ -388,11 +376,10 @@ add_action( 'customize_register', 'audiomania_child_customize_register' );
  * 10. SHORTCODES
  * ------------------------------------------------------------------
  */
-// Stats counter shortcode
 function audiomania_stats_shortcode( $atts ) {
     $atts = shortcode_atts( array(
-        'count' => '0',
-        'label' => '',
+        'count'  => '0',
+        'label'  => '',
         'suffix' => '',
     ), $atts, 'am_stats' );
 
@@ -405,7 +392,6 @@ function audiomania_stats_shortcode( $atts ) {
 }
 add_shortcode( 'am_stats', 'audiomania_stats_shortcode' );
 
-// Services grid shortcode
 function audiomania_services_shortcode( $atts ) {
     ob_start();
     $atts = shortcode_atts( array(
@@ -413,10 +399,7 @@ function audiomania_services_shortcode( $atts ) {
     ), $atts, 'am_services' );
     ?>
     <div class="services-grid" style="grid-template-columns: repeat(<?php echo intval( $atts['columns'] ); ?>, 1fr);">
-        <?php
-        // The content is generated by Elementor or page content
-        echo do_shortcode( '[woocommerce_products]' );
-        ?>
+        <?php echo do_shortcode( '[woocommerce_products]' ); ?>
     </div>
     <?php
     return ob_get_clean();
@@ -428,14 +411,9 @@ add_shortcode( 'am_services', 'audiomania_services_shortcode' );
  * 11. PERFORMANCE
  * ------------------------------------------------------------------
  */
-// Disable emojis
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
-
-// Remove WP version
 remove_action( 'wp_head', 'wp_generator' );
-
-// Lazy load images
 add_filter( 'wp_lazy_loading_enabled', '__return_true' );
 
 /**
@@ -443,9 +421,6 @@ add_filter( 'wp_lazy_loading_enabled', '__return_true' );
  * 12. SECURITY
  * ------------------------------------------------------------------
  */
-// Hide error messages
 add_filter( 'login_errors', function() { return null; } );
-
-// Remove REST API link header
 remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
 remove_action( 'template_redirect', 'rest_output_link_header', 11 );

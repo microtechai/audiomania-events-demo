@@ -3,17 +3,18 @@
  Theme URI: https://audiomaniaeventos.com
  Author: Nous Research
  Author URI: https://nousresearch.com
- Description: Child theme de hello-elementor para Audiomania Eventos — alquiler de servicios para eventos en Tenerife.
+ Description: Child theme de hello-elementor para Audiomania Eventos — modo oscuro + fondo 3D fiesta.
  Template: hello-elementor
- Version: 1.0.0
+ Version: 2.0.0
  Text Domain: audiomania-events-child
- Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, translation-ready
+ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, translation-ready, dark-mode
 */
 
 /* ======================================================
-   1. CUSTOM PROPERTIES (Design System)
+   1. DARK PROPERTIES (Design System)
    ====================================================== */
 :root {
+    /* Brand — conservados para coherencia */
     --am-primary: #123A92;
     --am-primary-dark: #0B2A6E;
     --am-secondary: #F7F2E8;
@@ -22,32 +23,62 @@
     --am-accent-1: #6F7653;
     --am-accent-2: #A75D42;
     --am-white: #FFFFFF;
+
+    /* Dark mode */
+    --am-bg: #07070e;
+    --am-bg-deep: #030308;
+    --am-surface: #0f0f1a;
+    --am-surface-raised: #18182a;
+    --am-surface-hover: #20203a;
+    --am-border: rgba(100, 100, 160, 0.15);
+    --am-text: #d4d4e0;
+    --am-text-muted: #8888a4;
+    --am-text-heading: #f0f0ff;
+    --am-heading: var(--am-text-heading);
+
+    /* Neon glow (discoteca) */
+    --am-neon-blue: #4d7cff;
+    --am-neon-purple: #a855f7;
+    --am-neon-pink: #ec4899;
+    --am-neon-cyan: #22d3ee;
+    --am-neon-green: #4ade80;
+
+    /* Typography */
     --am-font-heading: 'Noto Serif', Georgia, serif;
     --am-font-body: 'Inter', system-ui, -apple-system, sans-serif;
-    --am-radius: 8px;
-    --am-shadow: 0 4px 24px rgba(18, 58, 146, 0.10);
-    --am-shadow-hover: 0 8px 32px rgba(18, 58, 146, 0.18);
+    --am-radius: 10px;
+    --am-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    --am-shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.6);
+    --am-glow-primary: 0 0 20px rgba(77, 124, 255, 0.3);
+    --am-glow-accent: 0 0 20px rgba(167, 93, 66, 0.3);
 }
 
 /* ======================================================
    2. FONTS IMPORT
    ====================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Serif:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Serif:wght@400;700&display=swap');
 
 /* ======================================================
-   3. BASE RESETS & TYPOGRAPHY
+   3. BASE & DARK RESETS
    ====================================================== */
 body {
     font-family: var(--am-font-body);
     color: var(--am-text);
+    background-color: var(--am-bg);
     font-weight: 400;
     line-height: 1.6;
+}
+
+/* Dark mode body background */
+body {
+    background-color: var(--am-bg);
+    color: var(--am-text);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--am-font-heading);
     font-weight: 700;
-    color: var(--am-primary);
+    color: var(--am-heading);
     line-height: 1.25;
     margin-top: 0;
 }
@@ -58,17 +89,45 @@ h3 { font-size: clamp(1.4rem, 3vw, 2rem); }
 h4 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
 
 a {
-    color: var(--am-primary);
+    color: var(--am-neon-blue);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 a:hover {
-    color: var(--am-accent-2);
+    color: var(--am-neon-pink);
+}
+
+/* Links en secciones oscuras */
+section.dark-bg a {
+    color: var(--am-neon-cyan);
 }
 
 /* ======================================================
-   4. BUTTONS
+   4. 3D DISCO BACKGROUND OVERLAY
+   ====================================================== */
+#am-disco-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Contenido por encima del canvas */
+.site-header,
+.site-main,
+.site-footer,
+.am-whatsapp-float {
+    position: relative;
+    z-index: 1;
+}
+
+/* ======================================================
+   5. BUTTONS
    ====================================================== */
 button, .button, .wp-element-button,
 a.button, input[type="button"], input[type="submit"] {
@@ -88,9 +147,9 @@ a.button, input[type="button"], input[type="submit"] {
 
 button:hover, .button:hover,
 input[type="button"]:hover, input[type="submit"]:hover {
-    background-color: var(--am-primary-dark);
+    background-color: var(--am-neon-blue);
     transform: translateY(-2px);
-    box-shadow: var(--am-shadow);
+    box-shadow: var(--am-glow-primary);
 }
 
 /* Secondary / outline button */
@@ -98,38 +157,45 @@ input[type="button"]:hover, input[type="submit"]:hover {
 button.button-secondary,
 a.button-secondary {
     background: transparent;
-    color: var(--am-primary);
-    border: 2px solid var(--am-primary);
+    color: var(--am-neon-blue);
+    border: 2px solid var(--am-neon-blue);
 }
 
 .button-outline:hover {
-    background: var(--am-primary);
-    color: var(--am-white);
+    background: var(--am-neon-blue);
+    color: var(--am-bg);
+    box-shadow: var(--am-glow-primary);
 }
 
-/* CTA accent (orange/brown) */
+/* CTA accent (orange/brown → magenta neon) */
 .button-accent {
     background-color: var(--am-accent-2);
 }
 
 .button-accent:hover {
-    background-color: #8B4A33;
+    background-color: var(--am-neon-pink);
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
 }
 
 /* ======================================================
-   5. HEADER & NAVIGATION
+   6. HEADER & NAVIGATION
    ====================================================== */
 .site-header, header.site-header {
-    background-color: var(--am-white);
-    border-bottom: 1px solid rgba(18, 58, 146, 0.08);
-    box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+    background-color: rgba(15, 15, 26, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--am-border);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-/* Site title */
+/* Site title / logo */
 .site-title, .wp-block-site-title a {
     font-family: var(--am-font-heading);
     font-weight: 700;
-    color: var(--am-primary) !important;
+    color: var(--am-text-heading) !important;
     font-size: 1.5rem;
 }
 
@@ -148,19 +214,39 @@ a.button-secondary {
 .main-navigation a:hover,
 .wp-block-navigation-item__content:hover,
 .header-nav a:hover {
-    color: var(--am-primary) !important;
-    background: rgba(18, 58, 146, 0.06);
+    color: var(--am-neon-blue) !important;
+    background: rgba(77, 124, 255, 0.1);
+    box-shadow: var(--am-glow-primary);
+}
+
+/* Mobile menu toggle */
+.mobile-menu-toggle {
+    background: transparent;
+    border: 1px solid var(--am-border);
+    color: var(--am-text);
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.mobile-menu-toggle .bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--am-text);
+    margin: 5px 0;
+    transition: all 0.3s ease;
 }
 
 /* ======================================================
-   6. HERO SECTION
+   7. HERO SECTION
    ====================================================== */
 .hero-section,
 section.hero,
 .am-hero {
-    background: linear-gradient(135deg, var(--am-primary) 0%, var(--am-primary-dark) 100%);
+    background: linear-gradient(180deg, var(--am-bg-deep) 0%, var(--am-bg) 100%);
     color: var(--am-white);
-    padding: 80px 20px;
+    padding: 100px 20px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -170,36 +256,39 @@ section.hero,
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>') repeat;
-    background-size: 80px 80px;
-    opacity: 0.5;
+    background: radial-gradient(ellipse at center, rgba(77, 124, 255, 0.08) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 .hero-section h1 {
-    color: var(--am-white);
+    color: var(--am-text-heading);
     font-size: clamp(2rem, 6vw, 4rem);
     margin-bottom: 16px;
+    text-shadow: 0 0 40px rgba(77, 124, 255, 0.3);
 }
 
 .hero-section p {
     font-size: clamp(1rem, 2.5vw, 1.3rem);
-    opacity: 0.9;
+    opacity: 0.85;
     max-width: 600px;
     margin: 0 auto 32px;
+    color: var(--am-text);
 }
 
 .hero-section .button {
-    background-color: var(--am-accent-2);
+    background-color: var(--am-neon-blue);
     font-size: 1.1rem;
     padding: 16px 40px;
+    box-shadow: var(--am-glow-primary);
 }
 
 .hero-section .button:hover {
-    background-color: #8B4A33;
+    background-color: var(--am-neon-pink);
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.5);
 }
 
 /* ======================================================
-   7. SERVICE CARDS
+   8. SERVICE CARDS
    ====================================================== */
 .services-grid {
     display: grid;
@@ -209,18 +298,21 @@ section.hero,
 }
 
 .service-card {
-    background: var(--am-white);
+    background: var(--am-surface);
     border-radius: var(--am-radius);
     box-shadow: var(--am-shadow);
     padding: 32px 24px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid rgba(18, 58, 146, 0.06);
+    border: 1px solid var(--am-border);
+    backdrop-filter: blur(4px);
 }
 
 .service-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--am-shadow-hover);
+    border-color: var(--am-neon-blue);
+    box-shadow: var(--am-shadow-hover), var(--am-glow-primary);
 }
 
 .service-card .icon {
@@ -230,7 +322,7 @@ section.hero,
 }
 
 .service-card h3 {
-    color: var(--am-primary);
+    color: var(--am-text-heading);
     margin-bottom: 12px;
 }
 
@@ -241,28 +333,28 @@ section.hero,
 }
 
 /* ======================================================
-   8. SECTIONS / SECTIONS ALTERNATES
+   9. SECTIONS
    ====================================================== */
 section {
-    padding: 60px 20px;
+    padding: 80px 20px;
 }
 
 section.alternate-bg {
-    background-color: var(--am-secondary);
+    background-color: var(--am-surface-raised);
 }
 
 section.dark-bg {
-    background-color: var(--am-primary);
-    color: var(--am-white);
+    background-color: var(--am-bg-deep);
+    color: var(--am-text);
 }
 
 section.dark-bg h2,
 section.dark-bg h3 {
-    color: var(--am-white);
+    color: var(--am-text-heading);
 }
 
 /* ======================================================
-   9. STATS / COUNTERS
+   10. STATS / COUNTERS
    ====================================================== */
 .stats-row {
     display: flex;
@@ -280,8 +372,9 @@ section.dark-bg h3 {
     font-family: var(--am-font-body);
     font-weight: 700;
     font-size: 3rem;
-    color: var(--am-primary);
+    color: var(--am-neon-blue);
     display: block;
+    text-shadow: 0 0 20px rgba(77, 124, 255, 0.4);
 }
 
 .stat-label {
@@ -289,10 +382,11 @@ section.dark-bg h3 {
     opacity: 0.7;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    color: var(--am-text-muted);
 }
 
 /* ======================================================
-   10. TESTIMONIALS
+   11. TESTIMONIALS
    ====================================================== */
 .testimonials-grid {
     display: grid;
@@ -301,25 +395,27 @@ section.dark-bg h3 {
 }
 
 .testimonial-card {
-    background: var(--am-white);
+    background: var(--am-surface);
     padding: 32px;
     border-radius: var(--am-radius);
     box-shadow: var(--am-shadow);
-    border-left: 4px solid var(--am-accent-2);
+    border: 1px solid var(--am-border);
+    border-left: 4px solid var(--am-neon-pink);
 }
 
 .testimonial-card p {
     font-style: italic;
     margin-bottom: 16px;
+    color: var(--am-text);
 }
 
 .testimonial-card .author {
     font-weight: 600;
-    color: var(--am-primary);
+    color: var(--am-neon-blue);
 }
 
 /* ======================================================
-   11. GALLERY
+   12. GALLERY
    ====================================================== */
 .gallery-grid {
     display: grid;
@@ -331,12 +427,14 @@ section.dark-bg h3 {
     border-radius: var(--am-radius);
     overflow: hidden;
     aspect-ratio: 4/3;
-    background: var(--am-tertiary);
+    background: var(--am-surface);
     transition: transform 0.3s ease;
+    border: 1px solid var(--am-border);
 }
 
 .gallery-item:hover {
     transform: scale(1.02);
+    box-shadow: var(--am-glow-primary);
 }
 
 .gallery-item img {
@@ -346,41 +444,45 @@ section.dark-bg h3 {
 }
 
 /* ======================================================
-   12. CTA SECTION
+   13. CTA SECTION
    ====================================================== */
 .cta-section {
-    background: linear-gradient(135deg, var(--am-accent-2) 0%, #8B4A33 100%);
+    background: linear-gradient(135deg, var(--am-neon-blue) 0%, var(--am-neon-pink) 100%);
     color: var(--am-white);
     text-align: center;
     padding: 60px 20px;
     border-radius: var(--am-radius);
+    box-shadow: 0 0 40px rgba(77, 124, 255, 0.3);
 }
 
 .cta-section h2 {
     color: var(--am-white);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .cta-section .button {
     background-color: var(--am-white);
-    color: var(--am-accent-2);
+    color: var(--am-primary-dark);
     margin-top: 20px;
 }
 
 .cta-section .button:hover {
     background-color: var(--am-secondary);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
 /* ======================================================
-   13. FOOTER
+   14. FOOTER
    ====================================================== */
 .site-footer, footer.site-footer {
-    background-color: var(--am-primary-dark);
+    background-color: var(--am-bg-deep);
     color: var(--am-secondary);
-    padding: 40px 20px;
+    padding: 60px 20px 30px;
+    border-top: 1px solid var(--am-border);
 }
 
 .site-footer h3, .site-footer h4 {
-    color: var(--am-white);
+    color: var(--am-text-heading);
 }
 
 .site-footer a {
@@ -388,7 +490,7 @@ section.dark-bg h3 {
 }
 
 .site-footer a:hover {
-    color: var(--am-white);
+    color: var(--am-neon-blue);
 }
 
 .footer-grid {
@@ -403,13 +505,14 @@ section.dark-bg h3 {
     text-align: center;
     margin-top: 32px;
     padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid var(--am-border);
     font-size: 0.85rem;
-    opacity: 0.7;
+    opacity: 0.6;
+    color: var(--am-text-muted);
 }
 
 /* ======================================================
-   14. WOOCOMMERCE OVERRIDES
+   15. WOOCOMMERCE OVERRIDES
    ====================================================== */
 .woocommerce ul.products {
     display: grid;
@@ -420,17 +523,19 @@ section.dark-bg h3 {
 }
 
 .woocommerce ul.products li.product {
-    background: var(--am-white);
+    background: var(--am-surface);
     border-radius: var(--am-radius);
     box-shadow: var(--am-shadow);
     padding: 20px;
     transition: all 0.3s ease;
-    border: 1px solid rgba(18, 58, 146, 0.06);
+    border: 1px solid var(--am-border);
 }
 
 .woocommerce ul.products li.product:hover {
     transform: translateY(-4px);
     box-shadow: var(--am-shadow-hover);
+    border-color: var(--am-neon-blue);
+    box-shadow: var(--am-shadow-hover), var(--am-glow-primary);
 }
 
 .woocommerce ul.products li.product .button {
@@ -446,10 +551,34 @@ section.dark-bg h3 {
 .woocommerce-checkout table.shipping {
     border-radius: var(--am-radius);
     overflow: hidden;
+    background: var(--am-surface);
+    border: 1px solid var(--am-border);
+}
+
+.woocommerce-cart table.cart td,
+.woocommerce-cart table.cart th {
+    border-color: var(--am-border);
+    color: var(--am-text);
+}
+
+/* WooCommerce form fields dark */
+.woocommerce form .form-row input,
+.woocommerce form .form-row textarea,
+.woocommerce-page form .form-row input,
+.woocommerce-page form .form-row textarea {
+    background-color: var(--am-surface-raised);
+    border: 1px solid var(--am-border);
+    color: var(--am-text);
+}
+
+.woocommerce form .form-row input:focus,
+.woocommerce form .form-row textarea:focus {
+    border-color: var(--am-neon-blue);
+    box-shadow: 0 0 0 2px rgba(77, 124, 255, 0.2);
 }
 
 /* ======================================================
-   15. WHATSAPP FLOATING BUTTON
+   16. WHATSAPP FLOATING BUTTON
    ====================================================== */
 .am-whatsapp-float {
     position: fixed;
@@ -479,7 +608,6 @@ section.dark-bg h3 {
     fill: white;
 }
 
-/* Pulse animation */
 @keyframes whatsappPulse {
     0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
     70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
@@ -491,7 +619,7 @@ section.dark-bg h3 {
 }
 
 /* ======================================================
-   16. RESPONSIVE
+   17. RESPONSIVE
    ====================================================== */
 @media (max-width: 768px) {
     .hero-section {
