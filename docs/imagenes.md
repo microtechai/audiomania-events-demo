@@ -58,3 +58,4 @@ Se usarán URLs remotas del sitio actual (audiomaniaeventos.com) en lugar de imp
 - Verificar CORS antes de usar URLs remotas
 - Las URLs pueden cambiar si el sitio original se actualiza
 - Considerar caché de imágenes en el futuro
+- **2026-08-26:** Imágenes WebP subidas a `/uploads/2026/08/` en servidor. Archivos disponibles: Alquiler-altavoz.webp, Alquiler-Dj-boot.webp, Alquiler-nexus-tenerife.webp, Dj-Boda.webp, Dj-tenerife.webp, Mobiliario-eventos-alquiler.webp, Organizacion-Eventos-Tenerife.webp, paquete-completo.webp, etc. Pendiente reemplazo en Elementor.

@@ -691,7 +691,7 @@ n/* Minimalist text branding — AUDIO.eventos */
 .brand-main {
     font-family: 'Inter', sans-serif;
     font-weight: 900;
-    font-size: 1.35rem;
+    font-size: 1.05rem;
     letter-spacing: 0.08em;
     color: #ffffff;
     text-transform: uppercase;
@@ -699,14 +699,14 @@ n/* Minimalist text branding — AUDIO.eventos */
 .brand-dot {
     font-family: 'Inter', sans-serif;
     font-weight: 900;
-    font-size: 1.35rem;
+    font-size: 1.05rem;
     color: #00e5ff;
     margin: 0 1px;
 }
 .brand-sub {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
-    font-size: 0.85rem;
+    font-size: 0.65rem;
     letter-spacing: 0.25em;
     color: rgba(255, 255, 255, 0.6);
     text-transform: lowercase;
@@ -714,10 +714,10 @@ n/* Minimalist text branding — AUDIO.eventos */
 /* Shrink on scroll */
 .site-header.am-header.scrolled .brand-main,
 .site-header.am-header.scrolled .brand-dot {
-    font-size: 1.1rem;
+    font-size: 0.85rem;
 }
 .site-header.am-header.scrolled .brand-sub {
-    font-size: 0.7rem;
+    font-size: 0.55rem;
 }
 
 /* Tighten nav spacing on scroll */

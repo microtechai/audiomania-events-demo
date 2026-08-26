@@ -96,7 +96,7 @@ function audiomania_child_enqueue_scripts() {
 
     // Config para JS
     wp_localize_script( 'audiomania-child-js', 'audiomaniaConfig', array(
-        'whatsappNumber' => get_option( '«redacted:am_…»', '34600000000' ),
+        'whatsappNumber' => get_option( '«redacted:am_…»', '34669621139' ),
         'siteUrl'        => esc_url_raw( home_url() ),
     ) );
 }
@@ -212,7 +212,7 @@ function audiomania_child_footer() {
             <div class="footer-col">
                 <h4><?php esc_html_e( 'Contacto', 'audiomania-events-child' ); ?></h4>
                 <ul class="footer-links">
-                    <li>📞 <a href="tel:+346****0000">+34 600 000 000</a></li>
+                    <li>📞 <a href="tel:+34669621139">+34 669 621 139</a></li>
                     <li>📧 <a href="mailto:info@audiomaniaeventos.com">info@audiomaniaeventos.com</a></li>
                     <li>📍 Tenerife, Canarias, España</li>
                 </ul>
@@ -321,7 +321,7 @@ add_action( 'wp_footer', 'audiomania_child_mobile_menu_js', 99 );
 function audiomania_child_customize_register( $wp_customize ) {
     // WhatsApp number
     $wp_customize->add_setting( '«redacted:am_…»', array(
-        'default'           => '34600000000',
+        'default'           => '34669621139',
         'sanitize_callback' => 'esc_telephone',
     ) );
     $wp_customize->add_control( '«redacted:am_…»', array(
