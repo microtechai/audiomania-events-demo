@@ -2712,3 +2712,46 @@ html {
         color: #000;
     }
 }
+
+/* ======================================================
+   25. HERO ROUNDED CORNERS + HOVER ANIMATIONS
+   ====================================================== */
+
+/* Base: sin bordes, sin sombra */
+.am-hero-section,
+.am-hero-single {
+    border-radius: 0;
+    overflow: hidden;
+    transition: border-radius 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+                box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Hover: bordes redondeados + sombra suave */
+.am-hero-section:hover,
+.am-hero-single:hover {
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Hero sections (Home 3 secciones): zoom de fondo en hover */
+.am-hero-bg {
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.am-hero-section:hover .am-hero-bg {
+    animation: none;
+    transform: scale(1.05);
+}
+
+/* Hero single (Servicios, Reservar, Contacto, etc.): zoom sutil */
+.am-hero-single:hover {
+    transform: scale(1.015);
+}
+
+/* Contenido se eleva sutilmente en hover */
+.am-hero-content {
+    transition: transform 0.4s ease;
+}
+.am-hero-section:hover .am-hero-content,
+.am-hero-single:hover .am-hero-content {
+    transform: translateY(-4px);
+}
