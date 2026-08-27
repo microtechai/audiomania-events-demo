@@ -5,7 +5,7 @@
  Author URI: https://nousresearch.com
  Description: Child theme de hello-elementor para Audiomania Eventos — modo oscuro premium + glassmorphism + animaciones modernas.
  Template: hello-elementor
- Version: 4.0.0
+ Version: 5.0.0
  Text Domain: audiomania-events-child
  Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, translation-ready, dark-mode, glassmorphism
 */
@@ -1776,7 +1776,345 @@ html {
 }
 
 /* ======================================================
-   24. UTILITY CLASSES
+   24. SERVICES PAGE — HERO + GRID + PRICING
+   ====================================================== */
+
+/* Services section wrapper */
+.am-services-section {
+    padding: 60px 0 80px;
+}
+
+.am-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* SEO Intro */
+.am-services-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+}
+
+.am-services-intro h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 900;
+    color: var(--am-text-heading);
+    margin: 0 0 16px;
+    line-height: 1.2;
+}
+
+.am-services-intro-text {
+    font-size: 1.05rem;
+    color: var(--am-text-muted);
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Services Grid */
+.am-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 70px;
+}
+
+/* Service Card */
+.am-service-card {
+    background: var(--am-surface);
+    border: 1px solid var(--am-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.am-service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(77, 124, 255, 0.15), 0 0 0 1px rgba(77, 124, 255, 0.2);
+    border-color: rgba(77, 124, 255, 0.3);
+}
+
+/* Highlighted card (Boda) */
+.am-service-card-highlight {
+    border: 2px solid rgba(77, 124, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(77, 124, 255, 0.12);
+}
+
+.am-service-card-highlight:hover {
+    border-color: #4d7cff;
+    box-shadow: 0 16px 48px rgba(77, 124, 255, 0.2), 0 0 0 2px #4d7cff;
+}
+
+.am-service-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: linear-gradient(135deg, #4d7cff, #a855f7);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 50px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.am-service-card-inner {
+    padding: 32px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Icon Wrap */
+.am-service-icon-wrap {
+    font-size: 2.4rem;
+    margin-bottom: 18px;
+}
+
+.am-service-card h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--am-text-heading);
+    margin: 0 0 16px;
+    line-height: 1.3;
+}
+
+/* Price Display */
+.am-service-price {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--am-border);
+}
+
+.am-price-from {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--am-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.am-price-value {
+    font-family: 'Noto Serif', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: var(--grad-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+/* Features List */
+.am-service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    flex-grow: 1;
+}
+
+.am-service-features li {
+    padding: 8px 0;
+    font-size: 0.92rem;
+    color: var(--am-text);
+    line-height: 1.5;
+    padding-left: 22px;
+    position: relative;
+}
+
+.am-service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #4d7cff;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* CTA Button */
+.am-service-cta {
+    display: block;
+    text-align: center;
+    padding: 14px 24px;
+    background: rgba(77, 124, 255, 0.08);
+    border: 2px solid rgba(77, 124, 255, 0.25);
+    border-radius: var(--radius-md);
+    color: #4d7cff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.am-service-cta:hover {
+    background: #4d7cff;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(77, 124, 255, 0.35);
+}
+
+.am-service-cta-highlight {
+    background: linear-gradient(135deg, #4d7cff, #a855f7);
+    border: none;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(77, 124, 255, 0.3);
+}
+
+.am-service-cta-highlight:hover {
+    box-shadow: 0 8px 32px rgba(77, 124, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Services Extra (Complementary) */
+.am-services-extra {
+    margin-bottom: 70px;
+}
+
+.am-services-extra h3 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--am-text-heading);
+    text-align: center;
+    margin: 0 0 32px;
+}
+
+.am-services-extra-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.am-extra-card {
+    background: var(--am-surface);
+    border: 1px solid var(--am-border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    text-align: center;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.am-extra-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(77, 124, 255, 0.3);
+    box-shadow: 0 8px 24px rgba(77, 124, 255, 0.1);
+}
+
+.am-extra-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.am-extra-card h4 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--am-text-heading);
+    margin: 0 0 10px;
+    line-height: 1.3;
+}
+
+.am-extra-card p {
+    font-size: 0.88rem;
+    color: var(--am-text-muted);
+    margin: 0 0 14px;
+    line-height: 1.6;
+}
+
+.am-extra-price {
+    display: inline-block;
+    font-family: 'Noto Serif', serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    background: var(--grad-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Final CTA Section */
+.am-services-cta-section {
+    text-align: center;
+    padding: 50px 32px;
+    background: linear-gradient(135deg, rgba(77, 124, 255, 0.06), rgba(168, 85, 247, 0.06));
+    border: 1px solid rgba(77, 124, 255, 0.15);
+    border-radius: var(--radius-xl);
+}
+
+.am-services-cta-section h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 900;
+    color: var(--am-text-heading);
+    margin: 0 0 12px;
+}
+
+.am-services-cta-section > p {
+    font-size: 1.05rem;
+    color: var(--am-text-muted);
+    margin: 0 0 28px;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.am-services-cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Services responsive */
+@media (max-width: 1024px) {
+    .am-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    .am-services-extra-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .am-services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .am-services-extra-grid {
+        grid-template-columns: 1fr;
+    }
+    .am-service-card-inner {
+        padding: 28px 22px 24px;
+    }
+    .am-price-value {
+        font-size: 1.8rem;
+    }
+    .am-services-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .am-services-cta-section {
+        padding: 40px 20px;
+    }
+}
+
+/* ======================================================
+   25. UTILITY CLASSES
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 
