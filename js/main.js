@@ -342,6 +342,48 @@
         }, { passive: true });
     }
 
+    // === GALLERY FILTERS ===
+    function initGalleryFilters() {
+        const grid = $('#am-gallery-grid');
+        if (!grid) return;
+
+        const items = $$('.am-gallery-item', grid);
+        const buttons = $$('.am-filter-btn');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+
+                // Update active button
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter items
+                items.forEach(item => {
+                    const cat = item.getAttribute('data-category');
+                    if (filter === 'all' || cat === filter) {
+                        item.style.display = '';
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.95)';
+                        requestAnimationFrame(() => {
+                            requestAnimationFrame(() => {
+                                item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            });
+                        });
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 400);
+                    }
+                });
+            });
+        });
+    }
+
     // === INIT ===
     function init() {
         if (document.readyState === 'loading') {
@@ -358,6 +400,7 @@
             initBackToTop();
             initDiscoCanvas();
             initParallax();
+            initGalleryFilters();
         }
     }
 

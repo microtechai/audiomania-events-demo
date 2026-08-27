@@ -472,16 +472,193 @@ function audiomania_hero_content( $content ) {
 
     // GALERÍA
     elseif ( is_page( 'galeria' ) || is_page( 14 ) ) {
-        $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'hero-fiesta-bg.webp\');">' . "\n";
-        $hero_html .= '<div class="am-hero-content">' . "\n";
-        $hero_html .= '  <div class="am-hero-badge">Galería de Eventos</div>' . "\n";
-        $hero_html .= '  <h1>Galería de <span>Eventos</span></h1>' . "\n";
-        $hero_html .= '  <p class="hero-subtitle">Mira cómo transformamos espacios con nuestros equipos de sonido, iluminación y animación profesional.</p>' . "\n";
-        $hero_html .= '  <div class="am-hero-cta-group">' . "\n";
-        $hero_html .= '    <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-primary">Contactar Ahora</a>' . "\n";
-        $hero_html .= '  </div>' . "\n";
-        $hero_html .= '</div>' . "\n";
-        $hero_html .= '</section>' . "\n";
+        $gallery_images = array(
+            array(
+                'file'   => 'hero-hero-bg-1.webp',
+                'title'  => 'Iluminación profesional para bodas en Tenerife',
+                'desc'   => 'Montaje completo de iluminación LED y escenografía para eventos nupciales en Tenerife.',
+                'cat'    => 'bodas',
+                'label'  => 'Bodas',
+            ),
+            array(
+                'file'   => 'hero-party-bg.webp',
+                'title'  => 'Fiestas y eventos corporativos en Tenerife',
+                'desc'   => 'Servicio integral de sonido, iluminación y animación para fiestas y eventos corporativos en Tenerife y Canarias.',
+                'cat'    => 'corporativo',
+                'label'  => 'Corporativo',
+            ),
+            array(
+                'file'   => 'hero-fiesta-bg.webp',
+                'title'  => 'Celebraciones y fiestas privadas en Tenerife',
+                'desc'   => 'Transformamos cualquier espacio en una fiesta inolvidable con equipamiento profesional de sonido y luz.',
+                'cat'    => 'fiestas',
+                'label'  => 'Fiestas',
+            ),
+            array(
+                'file'   => 'hero-sonido-bg.webp',
+                'title'  => 'Alquiler de sonido profesional en Tenerife',
+                'desc'   => 'Equipos de sonorización de última generación para eventos de cualquier tamaño en toda la isla de Tenerife.',
+                'cat'    => 'sonido',
+                'label'  => 'Sonido',
+            ),
+            array(
+                'file'   => 'hero-fondo-oscuro-bg-1.webp',
+                'title'  => 'DJ profesional para eventos en Tenerife',
+                'desc'   => 'Servicio de DJ profesional con equipamiento premium para bodas, fiestas y eventos corporativos en Tenerife.',
+                'cat'    => 'dj',
+                'label'  => 'DJ',
+            ),
+            array(
+                'file'   => 'Dj-Boda.webp',
+                'title'  => 'DJ para bodas en Tenerife — Audiomania Eventos',
+                'desc'   => 'Somos especialistas en DJ para bodas en Tenerife. Música personalizada, ambientación sonora y control total de tu evento nupcial.',
+                'cat'    => 'bodas',
+                'label'  => 'Bodas',
+            ),
+            array(
+                'file'   => 'Dj-tenerife.webp',
+                'title'  => 'DJ y animación de eventos en Tenerife y Canary Islands',
+                'desc'   => 'DJ profesional y animación para eventos en Tenerife. Sonido de alta fidelidad, playlists a medida y experiencia en más de 500 eventos.',
+                'cat'    => 'dj',
+                'label'  => 'DJ',
+            ),
+            array(
+                'file'   => 'Alquiler-altavoz.webp',
+                'title'  => 'Alquiler de altavoces y sonido para eventos en Tenerife',
+                'desc'   => 'Alquiler de altavoces, mezcladoras y sistemas de sonido profesional para eventos en Tenerife. Desde pequeños reuniones hasta grandes conciertos.',
+                'cat'    => 'sonido',
+                'label'  => 'Sonido',
+            ),
+            array(
+                'file'   => 'Alquiler-Dj-boot.webp',
+                'title'  => 'Alquiler de DJ y equipment para fiestas en Tenerife',
+                'desc'   => 'Servicio de alquiler de DJ con boot completo: altavoces, mezcladora, controladores y software profesional para tu evento en Tenerife.',
+                'cat'    => 'dj',
+                'label'  => 'DJ',
+            ),
+            array(
+                'file'   => 'Alquiler-nexus-tenerife.webp',
+                'title'  => 'Alquiler de iluminación LED y Nexus para eventos en Tenerife',
+                'desc'   => 'Iluminación LED, pantallas Nexus y efectos visuales para eventos en Tenerife. Transformamos tu espacio con tecnología de última generación.',
+                'cat'    => 'iluminacion',
+                'label'  => 'Iluminación',
+            ),
+            array(
+                'file'   => 'Mobiliario-eventos-alquiler.webp',
+                'title'  => 'Mobiliario y organización de eventos en Tenerife — Audiomania',
+                'desc'   => 'Mobiliario elegante y organización completa para eventos en Tenerife. Sillas, mesas, mantelería, photocall y todo lo que necesitas para tu celebración.',
+                'cat'    => 'corporativo',
+                'label'  => 'Corporativo',
+            ),
+            array(
+                'file'   => 'Organizacion-Eventos-Tenerife.webp',
+                'title'  => 'Organización profesional de eventos en Tenerife — Audiomania Eventos',
+                'desc'   => 'Organización integral de eventos en Tenerife: sonido, iluminación, DJ, mobiliario, photocall y coordinación completa. Más de 15 años de experiencia.',
+                'cat'    => 'fiestas',
+                'label'  => 'Fiestas',
+            ),
+        );
+
+        $gallery_html = '';
+
+        // Hero section
+        $gallery_html .= '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'hero-fiesta-bg.webp\');">' . "\n";
+        $gallery_html .= '<div class="am-hero-content">' . "\n";
+        $gallery_html .= '  <div class="am-hero-badge">📸 Nuestro Portfolio</div>' . "\n";
+        $gallery_html .= '  <h1>Galería de <span>Eventos</span></h1>' . "\n";
+        $gallery_html .= '  <p class="hero-subtitle">Más de 15 años creando momentos inolvidables en Tenerife y Canarias. Descubre cómo transformamos cada evento con sonido, iluminación y animación profesional.</p>' . "\n";
+        $gallery_html .= '  <div class="am-hero-cta-group">' . "\n";
+        $gallery_html .= '    <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-primary">Solicitar Presupuesto</a>' . "\n";
+        $gallery_html .= '  </div>' . "\n";
+        $gallery_html .= '</div>' . "\n";
+        $gallery_html .= '</section>' . "\n";
+
+        // SEO Intro Text
+        $gallery_html .= '<section class="am-gallery-seo-intro">' . "\n";
+        $gallery_html .= '<div class="am-container">' . "\n";
+        $gallery_html .= '  <h2>Galería de Eventos en Tenerife — Audiomania Eventos</h2>' . "\n";
+        $gallery_html .= '  <p>En <strong>Audiomania Eventos</strong> llevamos más de 15 años siendo el servicio de referencia para <strong>sonido, iluminación y animación profesional en Tenerife</strong>. Nuestra galería muestra una selección de los eventos que hemos producido: desde <strong>bodas en Tenerife</strong> hasta <strong>eventos corporativos en Canarias</strong>, fiestas privadas, celebraciones y conciertos.</p>' . "\n";
+        $gallery_html .= '  <p>Cada montaje que ves aquí representa nuestro compromiso con la excelencia: equipos de última generación, montaje profesional y atención personalizada a cada cliente en toda la isla de Tenerife — Santa Cruz de Tenerife, La Laguna, Los Realejos, Garachico, Puerto de la Cruz, Costa Adeje, Playa de las Américas, Los Cristianos, La Orotava, Icod de los Vinos y toda la isla.</p>' . "\n";
+        $gallery_html .= '  <p>Nuestros servicios de <strong>alquiler de sonido para eventos en Tenerife</strong> incluyen altavoces profesionales, mezcladoras, controladores DJ, pantallas LED, iluminación inteligente, efectos visuales, photocall y mobiliario. Todo integrado en paquetes a medida para bodas, cumpleaños, fiestas empresariales, lanzamientos de producto y cualquier tipo de celebración.</p>' . "\n";
+        $gallery_html .= '</div>' . "\n";
+        $gallery_html .= '</section>' . "\n";
+
+        // Gallery Filters
+        $gallery_html .= '<section class="am-gallery-section">' . "\n";
+        $gallery_html .= '<div class="am-container">' . "\n";
+        $gallery_html .= '  <div class="am-gallery-filters">' . "\n";
+        $gallery_html .= '    <button class="am-filter-btn active" data-filter="all">Todas</button>' . "\n";
+        $gallery_html .= '    <button class="am-filter-btn" data-filter="bodas">Bodas</button>' . "\n";
+        $gallery_html .= '    <button class="am-filter-btn" data-filter="dj">DJ</button>' . "\n";
+        $gallery_html .= '    <button class="am-filter-btn" data-filter="sonido">Sonido</button>' . "\n";
+        $gallery_html .= '    <button class="am-filter-btn" data-filter="iluminacion">Iluminación</button>' . "\n";
+        $gallery_html .= '    <button class="am-filter-btn" data-filter="corporativo">Corporativo</button>' . "\n";
+        $gallery_html .= '    <button class="am-filter-btn" data-filter="fiestas">Fiestas</button>' . "\n";
+        $gallery_html .= '  </div>' . "\n";
+
+        // Gallery Grid
+        $gallery_html .= '  <div class="am-gallery-grid" id="am-gallery-grid">' . "\n";
+
+        foreach ( $gallery_images as $idx => $img ) {
+            $url = $base . $img['file'];
+            $gallery_html .= '    <div class="am-gallery-item" data-category="' . esc_attr( $img['cat'] ) . '">' . "\n";
+            $gallery_html .= '      <div class="am-gallery-item-inner">' . "\n";
+            $gallery_html .= '        <div class="am-gallery-img-wrap">' . "\n";
+            $gallery_html .= '          <img src="' . esc_url( $url ) . '" alt="' . esc_attr( $img['title'] ) . '" title="' . esc_attr( $img['title'] ) . '" loading="lazy" class="am-gallery-img">' . "\n";
+            $gallery_html .= '          <div class="am-gallery-overlay">' . "\n";
+            $gallery_html .= '            <span class="am-gallery-zoom-icon">⤢</span>' . "\n";
+            $gallery_html .= '            <span class="am-gallery-cat-tag">' . esc_html( $img['label'] ) . '</span>' . "\n";
+            $gallery_html .= '          </div>' . "\n";
+            $gallery_html .= '        </div>' . "\n";
+            $gallery_html .= '        <div class="am-gallery-info">' . "\n";
+            $gallery_html .= '          <h3>' . esc_html( $img['title'] ) . '</h3>' . "\n";
+            $gallery_html .= '          <p>' . esc_html( $img['desc'] ) . '</p>' . "\n";
+            $gallery_html .= '        </div>' . "\n";
+            $gallery_html .= '      </div>' . "\n";
+            $gallery_html .= '    </div>' . "\n";
+        }
+
+        $gallery_html .= '  </div>' . "\n";
+        $gallery_html .= '</div>' . "\n";
+        $gallery_html .= '</section>' . "\n";
+
+        // SEO Bottom Text
+        $gallery_html .= '<section class="am-gallery-seo-bottom">' . "\n";
+        $gallery_html .= '<div class="am-container">' . "\n";
+        $gallery_html .= '  <div class="am-gallery-seo-content">' . "\n";
+        $gallery_html .= '    <h3>¿Por qué elegir Audiomania Eventos para tu evento en Tenerife?</h3>' . "\n";
+        $gallery_html .= '    <div class="am-gallery-features">' . "\n";
+        $gallery_html .= '      <div class="am-feature-card">' . "\n";
+        $gallery_html .= '        <span class="am-feature-icon">🎵</span>' . "\n";
+        $gallery_html .= '        <h4>Sonido Profesional</h4>' . "\n";
+        $gallery_html .= '        <p>Altavoces line array, mezcladoras digitales y controladores de última generación. Sonido cristalino para bodas, conciertos y eventos corporativos en toda Tenerife.</p>' . "\n";
+        $gallery_html .= '      </div>' . "\n";
+        $gallery_html .= '      <div class="am-feature-card">' . "\n";
+        $gallery_html .= '        <span class="am-feature-icon">💡</span>' . "\n";
+        $gallery_html .= '        <h4>Iluminación LED</h4>' . "\n";
+        $gallery_html .= '        <p>Pantallas LED, iluminación inteligente, luces robóticas, efectos de humo y láser. Creamos ambientes únicos para cada tipo de evento en Canarias.</p>' . "\n";
+        $gallery_html .= '      </div>' . "\n";
+        $gallery_html .= '      <div class="am-feature-card">' . "\n";
+        $gallery_html .= '        <span class="am-feature-icon">🎧</span>' . "\n";
+        $gallery_html .= '        <h4>DJ Expertos</h4>' . "\n";
+        $gallery_html .= '        <p>DJs profesionales con experiencia en bodas, fiestas privadas y eventos corporativos. Música a medida, animación y control total del evento.</p>' . "\n";
+        $gallery_html .= '      </div>' . "\n";
+        $gallery_html .= '      <div class="am-feature-card">' . "\n";
+        $gallery_html .= '        <span class="am-feature-icon">📋</span>' . "\n";
+        $gallery_html .= '        <h4>Organización Integral</h4>' . "\n";
+        $gallery_html .= '        <p>Desde el montaje hasta el desmontaje, nos encargamos de todo: sonorización, iluminación, mobiliario, photocall y coordinación completa del evento.</p>' . "\n";
+        $gallery_html .= '      </div>' . "\n";
+        $gallery_html .= '    </div>' . "\n";
+        $gallery_html .= '    <div class="am-gallery-cta">' . "\n";
+        $gallery_html .= '      <h3>¿Listo para tu evento en Tenerife?</h3>' . "\n";
+        $gallery_html .= '      <p>Contacta con nosotros y te prepararemos un presupuesto personalizado sin compromiso. Más de 15 años de experiencia nos avalan.</p>' . "\n";
+        $gallery_html .= '      <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-primary">Contactar Ahora</a>' . "\n";
+        $gallery_html .= '    </div>' . "\n";
+        $gallery_html .= '  </div>' . "\n";
+        $gallery_html .= '</div>' . "\n";
+        $gallery_html .= '</section>' . "\n";
+
+        $hero_html = $gallery_html;
     }
 
     // CONTACTO

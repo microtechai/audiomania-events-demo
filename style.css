@@ -1400,9 +1400,297 @@ html {
 }
 
 /* ======================================================
-   23. UTILITY CLASSES
+   23. GALLERY
    ====================================================== */
-.text-center { text-align: center; }
+
+/* Intro SEO text */
+.am-gallery-seo-intro,
+.am-gallery-seo-bottom {
+    padding: var(--space-2xl) var(--space-md);
+    background: var(--am-bg-deep);
+}
+
+.am-gallery-seo-intro h2,
+.am-gallery-seo-bottom h2,
+.am-gallery-seo-bottom h3 {
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.am-gallery-seo-intro p,
+.am-gallery-seo-bottom p {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 16px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--am-text);
+}
+
+.am-gallery-seo-intro p:last-child,
+.am-gallery-seo-bottom p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Gallery filters */
+.am-gallery-section {
+    padding: var(--space-2xl) var(--space-md);
+    background: var(--am-bg-deepest);
+}
+
+.am-gallery-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+}
+
+.am-filter-btn {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 24px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--am-border);
+    background: var(--am-surface);
+    color: var(--am-text);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    letter-spacing: 0.02em;
+}
+
+.am-filter-btn:hover {
+    border-color: #4d7cff;
+    color: #4d7cff;
+    background: rgba(77, 124, 255, 0.08);
+}
+
+.am-filter-btn.active {
+    background: var(--grad-primary);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 4px 20px rgba(77, 124, 255, 0.3);
+}
+
+/* Gallery grid */
+.am-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.am-gallery-item {
+    display: block;
+    transition: all var(--transition);
+}
+
+.am-gallery-item:hover {
+    transform: translateY(-4px);
+}
+
+.am-gallery-item-inner {
+    background: var(--am-surface);
+    border: 1px solid var(--am-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.am-gallery-item:hover .am-gallery-item-inner {
+    border-color: var(--am-border-hover);
+    box-shadow: var(--shadow-lg), 0 0 40px rgba(77, 124, 255, 0.12);
+}
+
+/* Gallery image */
+.am-gallery-img-wrap {
+    position: relative;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    background: var(--am-surface-raised);
+}
+
+.am-gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease-out);
+}
+
+.am-gallery-item:hover .am-gallery-img {
+    transform: scale(1.08);
+}
+
+.am-gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(2,2,5,0.7) 0%, transparent 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.am-gallery-item:hover .am-gallery-overlay {
+    opacity: 1;
+}
+
+.am-gallery-zoom-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.am-gallery-cat-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    background: var(--grad-primary);
+    color: #fff;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    align-self: flex-start;
+}
+
+/* Gallery info */
+.am-gallery-info {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.am-gallery-info h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--am-text-heading);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.am-gallery-info p {
+    font-size: 0.88rem;
+    color: var(--am-text-muted);
+    margin: 0;
+    line-height: 1.6;
+    flex: 1;
+}
+
+/* Feature cards */
+.am-gallery-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin: 40px 0;
+}
+
+.am-feature-card {
+    background: var(--am-surface);
+    border: 1px solid var(--am-border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    text-align: center;
+    transition: all var(--transition);
+}
+
+.am-feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--am-border-hover);
+    box-shadow: var(--shadow-md);
+}
+
+.am-feature-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.am-feature-card h4 {
+    font-size: 1.05rem;
+    color: var(--am-text-heading);
+    margin: 0 0 10px;
+}
+
+.am-feature-card p {
+    font-size: 0.88rem;
+    color: var(--am-text-muted);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Gallery bottom CTA */
+.am-gallery-cta {
+    text-align: center;
+    padding-top: 32px;
+    border-top: 1px solid var(--am-border);
+    margin-top: 40px;
+}
+
+.am-gallery-cta h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+.am-gallery-cta p {
+    font-size: 1.05rem;
+    color: var(--am-text);
+    margin-bottom: 24px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Gallery responsive */
+@media (max-width: 900px) {
+    .am-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .am-gallery-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .am-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .am-gallery-features {
+        grid-template-columns: 1fr;
+    }
+    .am-gallery-filters {
+        gap: 6px;
+    }
+    .am-filter-btn {
+        padding: 8px 16px;
+        font-size: 0.82rem;
+    }
+}
+
+/* ======================================================
+   24. UTILITY CLASSES
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 
