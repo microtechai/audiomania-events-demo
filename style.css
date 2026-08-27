@@ -5,7 +5,7 @@
  Author URI: https://nousresearch.com
  Description: Child theme de hello-elementor para Audiomania Eventos — modo oscuro premium + glassmorphism + animaciones modernas.
  Template: hello-elementor
- Version: 5.0.0
+ Version: 6.0.0
  Text Domain: audiomania-events-child
  Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, translation-ready, dark-mode, glassmorphism
 */
@@ -2114,7 +2114,342 @@ html {
 }
 
 /* ======================================================
-   25. UTILITY CLASSES
+   26. CONTACT PAGE — FORM + INFO CARDS
+   ====================================================== */
+
+/* Contact Section */
+.am-contact-section {
+    padding: 60px 0 80px;
+}
+
+/* Contact Layout: Form + Info Side by Side */
+.am-contact-layout {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 48px;
+}
+
+/* LEFT: Form Wrapper */
+.am-contact-form-wrapper {
+    background: var(--am-surface);
+    border: 1px solid var(--am-border);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+}
+
+.am-contact-form-wrapper h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--am-text-heading);
+    margin: 0 0 8px;
+}
+
+.am-contact-form-desc {
+    font-size: 0.95rem;
+    color: var(--am-text-muted);
+    margin: 0 0 28px;
+    line-height: 1.6;
+}
+
+/* Form Layout */
+.am-contact-form .am-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 0;
+}
+
+/* Form Groups */
+.am-contact-form .am-form-group {
+    margin-bottom: 20px;
+}
+
+.am-contact-form label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--am-text-heading);
+    margin-bottom: 6px;
+}
+
+.am-contact-form .am-required {
+    color: #ef4444;
+}
+
+/* Form Inputs */
+.am-contact-form input,
+.am-contact-form select,
+.am-contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid var(--am-border);
+    border-radius: var(--radius-md);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--am-text);
+    background: var(--am-bg-deep);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.am-contact-form input:focus,
+.am-contact-form select:focus,
+.am-contact-form textarea:focus {
+    border-color: #4d7cff;
+    box-shadow: 0 0 0 3px rgba(77, 124, 255, 0.12);
+    background: var(--am-surface);
+}
+
+.am-contact-form input::placeholder,
+.am-contact-form textarea::placeholder {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.am-contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.am-contact-form select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+}
+
+/* Submit Button */
+.am-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    background: linear-gradient(135deg, #123A92, #4d7cff);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(77, 124, 255, 0.3);
+    width: 100%;
+    justify-content: center;
+}
+
+.am-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(77, 124, 255, 0.45);
+}
+
+.am-submit-btn svg {
+    flex-shrink: 0;
+}
+
+/* RIGHT: Contact Info Wrapper */
+.am-contact-info-wrapper {
+    padding-top: 8px;
+}
+
+.am-contact-info-wrapper h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--am-text-heading);
+    margin: 0 0 8px;
+}
+
+.am-contact-info-desc {
+    font-size: 0.95rem;
+    color: var(--am-text-muted);
+    margin: 0 0 28px;
+    line-height: 1.6;
+}
+
+/* Contact Cards Grid */
+.am-contact-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+/* Individual Contact Card */
+.am-contact-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--am-border);
+    background: var(--am-surface);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.am-contact-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Card Phone — blue */
+.am-contact-card-phone {
+    border-left: 4px solid #4d7cff;
+}
+.am-contact-card-phone:hover {
+    border-left-color: #123A92;
+    box-shadow: 0 4px 20px rgba(77, 124, 255, 0.15);
+}
+
+/* Card Email — purple */
+.am-contact-card-email {
+    border-left: 4px solid #a855f7;
+}
+.am-contact-card-email:hover {
+    border-left-color: #7c3aed;
+    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.15);
+}
+
+/* Card WhatsApp — green */
+.am-contact-card-whatsapp {
+    border-left: 4px solid #25D366;
+}
+.am-contact-card-whatsapp:hover {
+    border-left-color: #20bd5a;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.15);
+}
+
+/* Card Location — terracotta */
+.am-contact-card-location {
+    border-left: 4px solid #A75D42;
+}
+.am-contact-card-location:hover {
+    border-left-color: #8b4532;
+    box-shadow: 0 4px 20px rgba(167, 93, 66, 0.15);
+}
+
+/* Card Hours — olive */
+.am-contact-card-hours {
+    border-left: 4px solid #6F7653;
+}
+.am-contact-card-hours:hover {
+    border-left-color: #555c3d;
+    box-shadow: 0 4px 20px rgba(111, 118, 83, 0.15);
+}
+
+/* Card Icon */
+.am-contact-card-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(77, 124, 255, 0.06);
+}
+
+.am-contact-card-phone .am-contact-card-icon { background: rgba(77, 124, 255, 0.1); }
+.am-contact-card-email .am-contact-card-icon { background: rgba(168, 85, 247, 0.1); }
+.am-contact-card-whatsapp .am-contact-card-icon { background: rgba(37, 211, 102, 0.1); }
+.am-contact-card-location .am-contact-card-icon { background: rgba(167, 93, 66, 0.1); }
+.am-contact-card-hours .am-contact-card-icon { background: rgba(111, 118, 83, 0.1); }
+
+/* Card Content */
+.am-contact-card-content {
+    flex-grow: 1;
+}
+
+.am-contact-card-content h3 {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--am-text-heading);
+    margin: 0 0 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.am-contact-card-content p {
+    font-size: 0.95rem;
+    color: var(--am-text);
+    margin: 0 0 6px;
+    line-height: 1.5;
+}
+
+.am-contact-card-content p a,
+.am-contact-card-link {
+    color: var(--am-text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.am-contact-card-content p a:hover {
+    color: #4d7cff;
+}
+
+/* Card Link Button */
+.am-contact-card-link {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #4d7cff;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.am-contact-card-link:hover {
+    color: #123A92;
+    text-decoration: underline;
+}
+
+.am-contact-card-whatsapp .am-contact-card-link {
+    color: #25D366;
+}
+.am-contact-card-whatsapp .am-contact-card-link:hover {
+    color: #20bd5a;
+}
+
+/* Contact Responsive */
+@media (max-width: 1024px) {
+    .am-contact-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .am-contact-form-wrapper .am-form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .am-contact-section {
+        padding: 40px 0 60px;
+    }
+    .am-contact-form-wrapper {
+        padding: 28px 22px;
+    }
+    .am-contact-cards {
+        gap: 12px;
+    }
+    .am-contact-card {
+        padding: 16px;
+        gap: 12px;
+    }
+    .am-contact-card-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.6rem;
+    }
+}
+
+/* ======================================================
+   27. UTILITY CLASSES
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 
