@@ -732,29 +732,29 @@ function audiomania_hero_content( $content ) {
 
     // RESERVAR
     elseif ( is_page( 'reservar' ) || is_page( 13 ) ) {
-        // === SEO: JSON-LD ===
-        $hero_html .= '<!-- SEO JSON-LD: Service (Reserva) -->' . "\n";
-        $hero_html .= '<script type="application/ld+json">' . "\n";
-        $hero_html .= '{' . "\n";
-        $hero_html .= '  "@context": "https://schema.org",' . "\n";
-        $hero_html .= '  "@type": "Service",' . "\n";
-        $hero_html .= '  "serviceType": "Alquiler de Equipos para Eventos",' . "\n";
-        $hero_html .= '  "provider": {' . "\n";
-        $hero_html .= '    "@type": "LocalBusiness",' . "\n";
-        $hero_html .= '    "name": "Audiomania Eventos",' . "\n";
-        $hero_html .= '    "telephone": "+346****1139",' . "\n";
-        $hero_html .= '    "email": "carlostoledodj@gmail.com",' . "\n";
-        $hero_html .= '    "address": {' . "\n";
-        $hero_html .= '      "@type": "PostalAddress",' . "\n";
-        $hero_html .= '      "addressLocality": "Tenerife",' . "\n";
-        $hero_html .= '      "addressRegion": "Canarias",' . "\n";
-        $hero_html .= '      "addressCountry": "ES"' . "\n";
-        $hero_html .= '    }' . "\n";
-        $hero_html .= '  },' . "\n";
-        $hero_html .= '  "areaServed": "Tenerife, Canarias",' . "\n";
-        $hero_html .= '  "description": "Reserva tu equipo profesional para eventos: DJ, sonido, iluminación LED, photocall y coordinación integral en Tenerife y toda Canarias. Presupuesto sin compromiso."' . "\n";
-        $hero_html .= '}' . "\n";
-        $hero_html .= '</script>' . "\n";
+        // SEO: JSON-LD
+        $seo_json = '<!-- SEO JSON-LD: Service (Reserva) -->' . "\n" .
+        '<script type="application/ld+json">' . "\n" .
+        '{' . "\n" .
+        '  "@context": "https://schema.org",' . "\n" .
+        '  "@type": "Service",' . "\n" .
+        '  "serviceType": "Alquiler de Equipos para Eventos",' . "\n" .
+        '  "provider": {' . "\n" .
+        '    "@type": "LocalBusiness",' . "\n" .
+        '    "name": "Audiomania Eventos",' . "\n" .
+        '    "telephone": "+346****1139",' . "\n" .
+        '    "email": "carlostoledodj@gmail.com",' . "\n" .
+        '    "address": {' . "\n" .
+        '      "@type": "PostalAddress",' . "\n" .
+        '      "addressLocality": "Tenerife",' . "\n" .
+        '      "addressRegion": "Canarias",' . "\n" .
+        '      "addressCountry": "ES"' . "\n" .
+        '    }' . "\n" .
+        '  },' . "\n" .
+        '  "areaServed": "Tenerife, Canarias",' . "\n" .
+        '  "description": "Reserva tu equipo profesional para eventos: DJ, sonido, iluminación LED, photocall y coordinación integral en Tenerife y toda Canarias. Presupuesto sin compromiso."' . "\n" .
+        '}' . "\n" .
+        '</script>' . "\n";
 
         $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'Organizacion-Eventos-Tenerife.webp\');">' . "\n";
         $hero_html .= '<div class="am-hero-content">' . "\n";
@@ -770,6 +770,7 @@ function audiomania_hero_content( $content ) {
         $hero_html .= '    <div class="am-feature-item">🔧 Montaje Incluido</div>' . "\n";
         $hero_html .= '    <div class="am-feature-item">⚡ Reserva en 5 Min</div>' . "\n";
         $hero_html .= '  </div>' . "\n";
+        $hero_html .= $seo_json;
         $hero_html .= '</div>' . "\n";
         $hero_html .= '</section>' . "\n";
     }
