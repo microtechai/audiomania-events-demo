@@ -1110,43 +1110,64 @@ function audiomania_hero_content( $content ) {
         $about_html .= '</div>' . "\n";
         $about_html .= '</section>' . "\n";
 
-        // Features
-        $about_html .= '<section class="am-gallery-section">' . "\n";
+        // Features — Contact-card style
+        $about_html .= '<section class="am-about-section">' . "\n";
         $about_html .= '<div class="am-container">' . "\n";
-        $about_html .= '  <div class="am-gallery-seo-content">' . "\n";
-        $about_html .= '    <h3>¿Por qué confiar en Audiomania Eventos?</h3>' . "\n";
-        $about_html .= '    <div class="am-gallery-features">' . "\n";
-        $about_html .= '      <div class="am-feature-card">' . "\n";
-        $about_html .= '        <span class="am-feature-icon">🎵</span>' . "\n";
-        $about_html .= '        <h4>+15 Años de Experiencia</h4>' . "\n";
+
+        $about_html .= '  <div class="am-about-intro">' . "\n";
+        $about_html .= '    <h2>¿Por qué confiar en Audiomania Eventos?</h2>' . "\n";
+        $about_html .= '  </div>' . "\n";
+
+        // Features — same card style as contact page
+        $about_html .= '  <div class="am-about-cards">' . "\n";
+
+        // Card 1 — Experience (blue)
+        $about_html .= '    <div class="am-about-card am-about-card-experience">' . "\n";
+        $about_html .= '      <div class="am-about-card-icon">🎵</div>' . "\n";
+        $about_html .= '      <div class="am-about-card-content">' . "\n";
+        $about_html .= '        <h3>+15 Años de Experiencia</h3>' . "\n";
         $about_html .= '        <p>Más de 1.500 eventos producidos en Tenerife y Canarias. Bodas, corporativos, fiestas privadas, conciertos y celebraciones.</p>' . "\n";
         $about_html .= '      </div>' . "\n";
-        $about_html .= '      <div class="am-feature-card">' . "\n";
-        $about_html .= '        <span class="am-feature-icon">💎</span>' . "\n";
-        $about_html .= '        <h4>Equipamiento Profesional de Última Generación</h4>' . "\n";
+        $about_html .= '    </div>' . "\n";
+
+        // Card 2 — Equipment (purple)
+        $about_html .= '    <div class="am-about-card am-about-card-equipment">' . "\n";
+        $about_html .= '      <div class="am-about-card-icon">💎</div>' . "\n";
+        $about_html .= '      <div class="am-about-card-content">' . "\n";
+        $about_html .= '        <h3>Equipamiento Profesional de Última Generación</h3>' . "\n";
         $about_html .= '        <p>Line arrays, pantallas LED, controladores Pioneer, mezcladoras digitales. Solo trabajamos con marcas premium.</p>' . "\n";
         $about_html .= '      </div>' . "\n";
-        $about_html .= '      <div class="am-feature-card">' . "\n";
-        $about_html .= '        <span class="am-feature-icon">👥</span>' . "\n";
-        $about_html .= '        <h4>Equipo Humano Profesional</h4>' . "\n";
+        $about_html .= '    </div>' . "\n";
+
+        // Card 3 — Team (green)
+        $about_html .= '    <div class="am-about-card am-about-card-team">' . "\n";
+        $about_html .= '      <div class="am-about-card-icon">👥</div>' . "\n";
+        $about_html .= '      <div class="am-about-card-content">' . "\n";
+        $about_html .= '        <h3>Equipo Humano Profesional</h3>' . "\n";
         $about_html .= '        <p>DJs con carrera internacional, técnicos de sonido certificados, montadores especializados y coordinadores de evento.</p>' . "\n";
         $about_html .= '      </div>' . "\n";
-        $about_html .= '      <div class="am-feature-card">' . "\n";
-        $about_html .= '        <span class="am-feature-icon">📍</span>' . "\n";
-        $about_html .= '        <h4>Base en Tenerife, Cobertura Canaria</h4>' . "\n";
+        $about_html .= '    </div>' . "\n";
+
+        // Card 4 — Coverage (terracotta)
+        $about_html .= '    <div class="am-about-card am-about-card-coverage">' . "\n";
+        $about_html .= '      <div class="am-about-card-icon">📍</div>' . "\n";
+        $about_html .= '      <div class="am-about-card-content">' . "\n";
+        $about_html .= '        <h3>Base en Tenerife, Cobertura Canaria</h3>' . "\n";
         $about_html .= '        <p>Desde nuestra base en Tenerife, cubrimos toda la isla y las demás islas: Gran Canaria, Lanzarote, Fuerteventura, La Palma y El Hierro.</p>' . "\n";
         $about_html .= '      </div>' . "\n";
         $about_html .= '    </div>' . "\n";
 
+        $about_html .= '  </div>' . "\n"; // end am-about-cards
+
         // CTA
-        $about_html .= '    <div class="am-gallery-cta">' . "\n";
-        $about_html .= '      <h3>¿Quieres conocernos?</h3>' . "\n";
-        $about_html .= '      <p>Contacta con nosotros y te contaremos todo sobre Audiomania Eventos. Presupuesto sin compromiso.</p>' . "\n";
-        $about_html .= '      <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-primary">Contactar Ahora</a>' . "\n";
-        $about_html .= '    </div>' . "\n";
+        $about_html .= '  <div class="am-about-cta">' . "\n";
+        $about_html .= '    <h3>¿Quieres conocernos?</h3>' . "\n";
+        $about_html .= '    <p>Contacta con nosotros y te contaremos todo sobre Audiomania Eventos. Presupuesto sin compromiso.</p>' . "\n";
+        $about_html .= '    <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-primary">Contactar Ahora</a>' . "\n";
         $about_html .= '  </div>' . "\n";
-        $about_html .= '</div>' . "\n";
-        $about_html .= '</section>' . "\n";
+
+        $about_html .= '</div>' . "\n"; // end container
+        $about_html .= '</section>' . "\n"; // end am-about-section
 
         $hero_html = $about_html;
     }
