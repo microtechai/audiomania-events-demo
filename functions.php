@@ -732,6 +732,30 @@ function audiomania_hero_content( $content ) {
 
     // RESERVAR
     elseif ( is_page( 'reservar' ) || is_page( 13 ) ) {
+        // === SEO: JSON-LD ===
+        $hero_html .= '<!-- SEO JSON-LD: Service (Reserva) -->' . "\n";
+        $hero_html .= '<script type="application/ld+json">' . "\n";
+        $hero_html .= '{' . "\n";
+        $hero_html .= '  "@context": "https://schema.org",' . "\n";
+        $hero_html .= '  "@type": "Service",' . "\n";
+        $hero_html .= '  "serviceType": "Alquiler de Equipos para Eventos",' . "\n";
+        $hero_html .= '  "provider": {' . "\n";
+        $hero_html .= '    "@type": "LocalBusiness",' . "\n";
+        $hero_html .= '    "name": "Audiomania Eventos",' . "\n";
+        $hero_html .= '    "telephone": "+346****1139",' . "\n";
+        $hero_html .= '    "email": "carlostoledodj@gmail.com",' . "\n";
+        $hero_html .= '    "address": {' . "\n";
+        $hero_html .= '      "@type": "PostalAddress",' . "\n";
+        $hero_html .= '      "addressLocality": "Tenerife",' . "\n";
+        $hero_html .= '      "addressRegion": "Canarias",' . "\n";
+        $hero_html .= '      "addressCountry": "ES"' . "\n";
+        $hero_html .= '    }' . "\n";
+        $hero_html .= '  },' . "\n";
+        $hero_html .= '  "areaServed": "Tenerife, Canarias",' . "\n";
+        $hero_html .= '  "description": "Reserva tu equipo profesional para eventos: DJ, sonido, iluminación LED, photocall y coordinación integral en Tenerife y toda Canarias. Presupuesto sin compromiso."' . "\n";
+        $hero_html .= '}' . "\n";
+        $hero_html .= '</script>' . "\n";
+
         $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'Organizacion-Eventos-Tenerife.webp\');">' . "\n";
         $hero_html .= '<div class="am-hero-content">' . "\n";
         $hero_html .= '  <div class="am-hero-badge">🎯 Reserva tu Fecha</div>' . "\n";
@@ -1184,7 +1208,7 @@ function audiomania_child_header() {
             <div class="header-left">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-branding">
                     <div class="brand-top">
-                        <span class="brand-main">AUDIO</span><span class="brand-dot">.</span><span class="brand-sub">eventos</span>
+                        <span class="brand-main">Audiomania</span><span class="brand-dot">.</span><span class="brand-sub">eventos</span>
                     </div>
                     <div class="brand-subtitle">Eventos</div>
                 </a>
@@ -1240,7 +1264,7 @@ function audiomania_child_footer() {
         <div class="footer-grid">
             <div class="footer-col">
                 <div class="footer-branding">
-                    <span class="footer-brand-main">AUDIO</span><span class="footer-brand-dot">.</span><span class="footer-brand-sub">eventos</span>
+                    <span class="footer-brand-main">Audiomania</span><span class="footer-brand-dot">.</span><span class="footer-brand-sub">eventos</span>
                     <div class="footer-brand-tagline">Servicios profesionales de sonido, iluminación y animación para eventos en Tenerife y toda Canarias.</div>
                 </div>
             </div>
