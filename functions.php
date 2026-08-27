@@ -930,16 +930,158 @@ function audiomania_hero_content( $content ) {
 
     // CONTACTO
     elseif ( is_page( 'contacto' ) || is_page( 15 ) ) {
-        $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'hero-fondo-oscuro-bg-1.webp\');">' . "\n";
+        // Hero
+        $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'Organizacion-Eventos-Tenerife.webp\');">' . "\n";
         $hero_html .= '<div class="am-hero-content">' . "\n";
-        $hero_html .= '  <div class="am-hero-badge">Contacto</div>' . "\n";
-        $hero_html .= '  <h1>Hablemos de tu <span>Proyecto</span></h1>' . "\n";
-        $hero_html .= '  <p class="hero-subtitle">¿Tienes un evento en mente? Cuéntanos tu idea y te preparamos un presupuesto a medida.</p>' . "\n";
+        $hero_html .= '  <div class="am-hero-badge">📞 Contacto Directo</div>' . "\n";
+        $hero_html .= '  <h1>Hablemos de tu <span>Próximo Evento</span></h1>' . "\n";
+        $hero_html .= '  <p class="hero-subtitle">¿Tienes un evento en mente? Cuéntanos tu idea y te preparamos un presupuesto personalizado sin compromiso en menos de 24 horas.</p>' . "\n";
         $hero_html .= '  <div class="am-hero-cta-group">' . "\n";
-        $hero_html .= '    <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-primary">Enviar Mensaje</a>' . "\n";
+        $hero_html .= '    <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20un%20presupuesto%20para%20mi%20evento" class="am-hero-cta am-hero-cta-whatsapp" target="_blank" rel="noopener">WhatsApp Directo</a>' . "\n";
+        $hero_html .= '    <a href="tel:+34669621139" class="am-hero-cta am-hero-cta-primary">Llamar Ahora</a>' . "\n";
+        $hero_html .= '  </div>' . "\n";
+        $hero_html .= '  <div class="am-hero-features">' . "\n";
+        $hero_html .= '    <div class="am-feature-item">⚡ Respuesta en 24h</div>' . "\n";
+        $hero_html .= '    <div class="am-feature-item">📋 Presupuesto Gratis</div>' . "\n";
+        $hero_html .= '    <div class="am-feature-item">📍 Toda Canarias</div>' . "\n";
         $hero_html .= '  </div>' . "\n";
         $hero_html .= '</div>' . "\n";
         $hero_html .= '</section>' . "\n";
+
+        // === SECCIÓN: FORMULARIO + INFO DE CONTACTO ===
+        $contact_html = '<section class="am-contact-section">' . "\n";
+        $contact_html .= '<div class="am-container">' . "\n";
+
+        // Contact Layout: Form + Info
+        $contact_html .= '<div class="am-contact-layout">' . "\n";
+
+        // LEFT: Formulario
+        $contact_html .= '  <div class="am-contact-form-wrapper">' . "\n";
+        $contact_html .= '    <h2>Envíanos un Mensaje</h2>' . "\n";
+        $contact_html .= '    <p class="am-contact-form-desc">Rellena el formulario y te responderemos en menos de 24 horas con un presupuesto personalizado.</p>' . "\n";
+        $contact_html .= '    <form class="am-contact-form" action="' . esc_url( home_url( '/audiomaniaeventos/contacto/' ) ) . '" method="POST" novalidate>' . "\n";
+        $contact_html .= '      <div class="am-form-row">' . "\n";
+        $contact_html .= '        <div class="am-form-group">' . "\n";
+        $contact_html .= '          <label for="am-name">Nombre completo <span class="am-required">*</span></label>' . "\n";
+        $contact_html .= '          <input type="text" id="am-name" name="am_name" required placeholder="Tu nombre completo">' . "\n";
+        $contact_html .= '        </div>' . "\n";
+        $contact_html .= '        <div class="am-form-group">' . "\n";
+        $contact_html .= '          <label for="am-phone">Teléfono <span class="am-required">*</span></label>' . "\n";
+        $contact_html .= '          <input type="tel" id="am-phone" name="am_phone" required placeholder="+34 600 000 000">' . "\n";
+        $contact_html .= '        </div>' . "\n";
+        $contact_html .= '      </div>' . "\n";
+        $contact_html .= '      <div class="am-form-group">' . "\n";
+        $contact_html .= '        <label for="am-email">Email <span class="am-required">*</span></label>' . "\n";
+        $contact_html .= '        <input type="email" id="am-email" name="am_email" required placeholder="tu@email.com">' . "\n";
+        $contact_html .= '      </div>' . "\n";
+        $contact_html .= '      <div class="am-form-group">' . "\n";
+        $contact_html .= '        <label for="am-event-type">Tipo de evento</label>' . "\n";
+        $contact_html .= '        <select id="am-event-type" name="am_event_type">' . "\n";
+        $contact_html .= '          <option value="">Selecciona una opción</option>' . "\n";
+        $contact_html .= '          <option value="boda">💒 Boda</option>' . "\n";
+        $contact_html .= '          <option value="corporativo">🏢 Evento Corporativo</option>' . "\n";
+        $contact_html .= '          <option value="fiesta">🎉 Fiesta Privada</option>' . "\n";
+        $contact_html .= '          <option value="dj">🎧 DJ para Evento</option>' . "\n";
+        $contact_html .= '          <option value="sonido">🔊 Alquiler de Sonido</option>' . "\n";
+        $contact_html .= '          <option value="iluminacion">💡 Iluminación LED</option>' . "\n";
+        $contact_html .= '          <option value="photocall">📸 Photocall</option>' . "\n";
+        $contact_html .= '          <option value="completo">⭐ Paquete Completo</option>' . "\n";
+        $contact_html .= '          <option value="otro">📋 Otro</option>' . "\n";
+        $contact_html .= '        </select>' . "\n";
+        $contact_html .= '      </div>' . "\n";
+        $contact_html .= '      <div class="am-form-row">' . "\n";
+        $contact_html .= '        <div class="am-form-group">' . "\n";
+        $contact_html .= '          <label for="am-event-date">Fecha del evento</label>' . "\n";
+        $contact_html .= '          <input type="date" id="am-event-date" name="am_event_date">' . "\n";
+        $contact_html .= '        </div>' . "\n";
+        $contact_html .= '        <div class="am-form-group">' . "\n";
+        $contact_html .= '          <label for="am-guests">Nº de invitados</label>' . "\n";
+        $contact_html .= '          <select id="am-guests" name="am_guests">' . "\n";
+        $contact_html .= '            <option value="">Selecciona</option>' . "\n";
+        $contact_html .= '            <option value="50-100">50 - 100</option>' . "\n";
+        $contact_html .= '            <option value="100-200">100 - 200</option>' . "\n";
+        $contact_html .= '            <option value="200-500">200 - 500</option>' . "\n";
+        $contact_html .= '            <option value="500+">500+</option>' . "\n";
+        $contact_html .= '          </select>' . "\n";
+        $contact_html .= '        </div>' . "\n";
+        $contact_html .= '      </div>' . "\n";
+        $contact_html .= '      <div class="am-form-group">' . "\n";
+        $contact_html .= '        <label for="am-message">Mensaje <span class="am-required">*</span></label>' . "\n";
+        $contact_html .= '        <textarea id="am-message" name="am_message" rows="5" required placeholder="Cuéntanos los detalles de tu evento: lugar, estilo, servicios que necesitas..."></textarea>' . "\n";
+        $contact_html .= '      </div>' . "\n";
+        $contact_html .= '      <button type="submit" class="am-submit-btn"><span>Enviar Mensaje</span> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>' . "\n";
+        $contact_html .= '    </form>' . "\n";
+        $contact_html .= '  </div>' . "\n";
+
+        // RIGHT: Información de Contacto
+        $contact_html .= '  <div class="am-contact-info-wrapper">' . "\n";
+        $contact_html .= '    <h2>Información de Contacto</h2>' . "\n";
+        $contact_html .= '    <p class="am-contact-info-desc">Estamos aquí para ayudarte. Pídenos presupuesto sin compromiso.</p>' . "\n";
+
+        $contact_html .= '    <div class="am-contact-cards">' . "\n";
+
+        // Teléfono Card
+        $contact_html .= '      <div class="am-contact-card am-contact-card-phone">' . "\n";
+        $contact_html .= '        <div class="am-contact-card-icon">📞</div>' . "\n";
+        $contact_html .= '        <div class="am-contact-card-content">' . "\n";
+        $contact_html .= '          <h3>Teléfono</h3>' . "\n";
+        $contact_html .= '          <p><a href="tel:+34669621139">+34 669 621 139</a></p>' . "\n";
+        $contact_html .= '          <a href="tel:+34669621139" class="am-contact-card-link">Llamar Ahora</a>' . "\n";
+        $contact_html .= '        </div>' . "\n";
+        $contact_html .= '      </div>' . "\n";
+
+        // Email Card
+        $contact_html .= '      <div class="am-contact-card am-contact-card-email">' . "\n";
+        $contact_html .= '        <div class="am-contact-card-icon">📧</div>' . "\n";
+        $contact_html .= '        <div class="am-contact-card-content">' . "\n";
+        $contact_html .= '          <h3>Email</h3>' . "\n";
+        $contact_html .= '          <p><a href="mailto:carlostoledodj@gmail.com">carlostoledodj@gmail.com</a></p>' . "\n";
+        $contact_html .= '          <a href="mailto:carlostoledodj@gmail.com" class="am-contact-card-link">Enviar Email</a>' . "\n";
+        $contact_html .= '        </div>' . "\n";
+        $contact_html .= '      </div>' . "\n";
+
+        // WhatsApp Card
+        $contact_html .= '      <div class="am-contact-card am-contact-card-whatsapp">' . "\n";
+        $contact_html .= '        <div class="am-contact-card-icon">💬</div>' . "\n";
+        $contact_html .= '        <div class="am-contact-card-content">' . "\n";
+        $contact_html .= '          <h3>WhatsApp</h3>' . "\n";
+        $contact_html .= '          <p><a href="https://wa.me/34669621139" target="_blank" rel="noopener">+34 669 621 139</a></p>' . "\n";
+        $contact_html .= '          <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20un%20presupuesto" class="am-contact-card-link" target="_blank" rel="noopener">Escribir por WhatsApp</a>' . "\n";
+        $contact_html .= '        </div>' . "\n";
+        $contact_html .= '      </div>' . "\n";
+
+        // Ubicación Card
+        $contact_html .= '      <div class="am-contact-card am-contact-card-location">' . "\n";
+        $contact_html .= '        <div class="am-contact-card-icon">📍</div>' . "\n";
+        $contact_html .= '        <div class="am-contact-card-content">' . "\n";
+        $contact_html .= '          <h3>Ubicación</h3>' . "\n";
+        $contact_html .= '          <p>Tenerife, Canarias, España</p>' . "\n";
+        $contact_html .= '          <span class="am-contact-card-link">Cubrimos toda la isla</span>' . "\n";
+        $contact_html .= '        </div>' . "\n";
+        $contact_html .= '      </div>' . "\n";
+
+        // Horario Card
+        $contact_html .= '      <div class="am-contact-card am-contact-card-hours">' . "\n";
+        $contact_html .= '        <div class="am-contact-card-icon">🕐</div>' . "\n";
+        $contact_html .= '        <div class="am-contact-card-content">' . "\n";
+        $contact_html .= '          <h3>Horario</h3>' . "\n";
+        $contact_html .= '          <p>Lun - Vie: 9:00 - 20:00</p>' . "\n";
+        $contact_html .= '          <span class="am-contact-card-link">Sáb y Dom: Pre-evento</span>' . "\n";
+        $contact_html .= '        </div>' . "\n";
+        $contact_html .= '      </div>' . "\n";
+
+        $contact_html .= '    </div>' . "\n";
+        $contact_html .= '  </div>' . "\n";
+
+        $contact_html .= '</div>' . "\n"; // end contact layout
+
+        $contact_html .= '</div>' . "\n"; // end container
+        $contact_html .= '</section>' . "\n"; // end contact section
+
+        $hero_html .= $contact_html;
+
+        // Return hero_html only, DO NOT append Elementor content
+        return $hero_html;
     }
 
     // SOBRE NOSOTROS
