@@ -2,7 +2,7 @@
 /**
  * Audiomania Eventos Child Theme — header.php
  *
- * Custom header with logo image, favicons, and navigation menu.
+ * Custom header with logo image + text, navigation menu, and CTA buttons.
  */
 ?>
 <!DOCTYPE html>
@@ -25,11 +25,15 @@
 
 <header class="site-header am-header" role="banner">
     <div class="header-inner">
+        <!-- Logo: imagen + texto -->
         <div class="header-left">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-branding">
-                <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/08/logo-trasparente-final.png' ) ); ?>" alt="Audiomania Eventos" class="site-logo" width="80" height="60">
+                <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/08/logo-trasparente-final.png' ) ); ?>" class="brand-logo-img" alt="Audiomania Eventos Logo" width="50" height="auto">
+                <span class="brand-text">AUDIOMANIA<span class="brand-dot">.</span><span class="brand-sub">eventos</span></span>
             </a>
         </div>
+
+        <!-- Navigation Menu -->
         <nav class="header-nav" role="navigation" aria-label="<?php esc_attr_e( 'Menú principal', 'audiomania-events-child' ); ?>">
             <?php
             if ( has_nav_menu( 'primary' ) ) {
@@ -44,7 +48,28 @@
                 audiomania_child_fallback_menu();
             }
             ?>
+            <!-- Mobile CTA Buttons (shown only on mobile via CSS) -->
+            <div class="mobile-cta-group">
+                <a href="<?php echo esc_url( home_url( '/reservar/' ) ); ?>" class="cta-btn cta-btn-primary">
+                    Reservar
+                </a>
+                <a href="<?php echo esc_url( home_url( '/contacto/' ) ); ?>" class="cta-btn cta-btn-outline">
+                    Contactar
+                </a>
+            </div>
         </nav>
+
+        <!-- CTA Buttons -->
+        <div class="header-cta-group">
+            <a href="<?php echo esc_url( home_url( '/reservar/' ) ); ?>" class="cta-btn cta-btn-primary">
+                Reservar
+            </a>
+            <a href="<?php echo esc_url( home_url( '/contacto/' ) ); ?>" class="cta-btn cta-btn-outline">
+                Contactar
+            </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
         <button class="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
             <span class="hamburger-icon">
                 <span class="bar"></span>
