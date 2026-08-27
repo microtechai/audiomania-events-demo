@@ -405,15 +405,15 @@ function audiomania_hero_content( $content ) {
     if ( is_front_page() || is_home() ) {
         $carousel = '<section class="am-hero am-hero-carousel">' . "\n";
         $carousel .= '<!-- Slide 1 -->' . "\n";
-        $carousel .= '<div class="am-carousel-slide active" style="background-image:url(\'' . $base . 'hero-party-bg.webp\');">' . "\n";
+        $carousel .= '<div class="am-carousel-slide active" style="background-image:url(\'' . $base . 'Eventos-Tenerife.webp\');">' . "\n";
         $carousel .= '  <div class="am-carousel-overlay"></div>' . "\n";
         $carousel .= '</div>' . "\n";
         $carousel .= '<!-- Slide 2 -->' . "\n";
-        $carousel .= '<div class="am-carousel-slide" style="background-image:url(\'' . $base . 'hero-dj-bg.webp\');">' . "\n";
+        $carousel .= '<div class="am-carousel-slide" style="background-image:url(\'' . $base . 'Eventos-Canarias.webp\');">' . "\n";
         $carousel .= '  <div class="am-carousel-overlay"></div>' . "\n";
         $carousel .= '</div>' . "\n";
         $carousel .= '<!-- Slide 3 -->' . "\n";
-        $carousel .= '<div class="am-carousel-slide" style="background-image:url(\'' . $base . 'hero-fiesta-bg.webp\');">' . "\n";
+        $carousel .= '<div class="am-carousel-slide" style="background-image:url(\'' . $base . 'Dj-tenerife.webp\');">' . "\n";
         $carousel .= '  <div class="am-carousel-overlay"></div>' . "\n";
         $carousel .= '</div>' . "\n";
 
