@@ -732,13 +732,19 @@ function audiomania_hero_content( $content ) {
 
     // RESERVAR
     elseif ( is_page( 'reservar' ) || is_page( 13 ) ) {
-        $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'hero-party-bg.webp\');">' . "\n";
+        $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'Organizacion-Eventos-Tenerife.webp\');">' . "\n";
         $hero_html .= '<div class="am-hero-content">' . "\n";
-        $hero_html .= '  <div class="am-hero-badge">Reserva tu Equipo</div>' . "\n";
-        $hero_html .= '  <h1>Reserva tu <span>Equipo</span></h1>' . "\n";
-        $hero_html .= '  <p class="hero-subtitle">Elige el equipo perfecto para tu evento. Presupuesto personalizado sin compromiso en menos de 24 horas.</p>' . "\n";
+        $hero_html .= '  <div class="am-hero-badge">🎯 Reserva tu Fecha</div>' . "\n";
+        $hero_html .= '  <h1>Tu Evento Merece un <span>Equipo Profesional</span></h1>' . "\n";
+        $hero_html .= '  <p class="hero-subtitle">Las mejores fechas se reservan antes. Elige el equipo, la fecha y déjanos el resto: montaje, sonido, iluminación y coordinación integral para que tú solo disfrutes.</p>' . "\n";
         $hero_html .= '  <div class="am-hero-cta-group">' . "\n";
-        $hero_html .= '    <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-primary">Contactar</a>' . "\n";
+        $hero_html .= '    <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-primary">Solicitar Presupuesto Gratis</a>' . "\n";
+        $hero_html .= '    <a href="https://wa.me/34669621139?text=Hola%2C%20quiero%20reservar%20equipo%20para%20mi%20evento" class="am-hero-cta am-hero-cta-whatsapp" target="_blank" rel="noopener">WhatsApp Directo</a>' . "\n";
+        $hero_html .= '  </div>' . "\n";
+        $hero_html .= '  <div class="am-hero-features">' . "\n";
+        $hero_html .= '    <div class="am-feature-item">📅 Fechas Limitadas</div>' . "\n";
+        $hero_html .= '    <div class="am-feature-item">🔧 Montaje Incluido</div>' . "\n";
+        $hero_html .= '    <div class="am-feature-item">⚡ Reserva en 5 Min</div>' . "\n";
         $hero_html .= '  </div>' . "\n";
         $hero_html .= '</div>' . "\n";
         $hero_html .= '</section>' . "\n";
@@ -1177,7 +1183,10 @@ function audiomania_child_header() {
         <div class="header-inner">
             <div class="header-left">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-branding">
-                    <span class="brand-main">AUDIO</span><span class="brand-dot">.</span><span class="brand-sub">eventos</span>
+                    <div class="brand-top">
+                        <span class="brand-main">AUDIO</span><span class="brand-dot">.</span><span class="brand-sub">eventos</span>
+                    </div>
+                    <div class="brand-subtitle">Eventos</div>
                 </a>
             </div>
             <nav class="header-nav" role="navigation" aria-label="<?php esc_attr_e( 'Menú principal', 'audiomania-events-child' ); ?>">
@@ -1230,8 +1239,10 @@ function audiomania_child_footer() {
     <footer class="site-footer" role="contentinfo">
         <div class="footer-grid">
             <div class="footer-col">
-                <h3><?php esc_html_e( 'Audiomania Eventos', 'audiomania-events-child' ); ?></h3>
-                <p><?php esc_html_e( 'Servicios profesionales de sonido, iluminación y animación para eventos en Tenerife y toda Canarias.', 'audiomania-events-child' ); ?></p>
+                <div class="footer-branding">
+                    <span class="footer-brand-main">AUDIO</span><span class="footer-brand-dot">.</span><span class="footer-brand-sub">eventos</span>
+                    <div class="footer-brand-tagline">Servicios profesionales de sonido, iluminación y animación para eventos en Tenerife y toda Canarias.</div>
+                </div>
             </div>
             <div class="footer-col">
                 <h4><?php esc_html_e( 'Servicios', 'audiomania-events-child' ); ?></h4>

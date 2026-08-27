@@ -241,10 +241,17 @@ a:hover {
 /* Brand */
 .site-branding {
     display: inline-flex;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: flex-start;
     text-decoration: none;
-    gap: 0;
+    gap: 2px;
     line-height: 1;
+}
+
+.brand-top {
+    display: flex;
+    align-items: baseline;
+    line-height: 1.2;
 }
 
 .brand-main {
@@ -271,6 +278,16 @@ a:hover {
     letter-spacing: 0.25em;
     color: rgba(255, 255, 255, 0.6);
     text-transform: lowercase;
+}
+
+.brand-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    margin-top: 2px;
 }
 
 /* Nav */
@@ -1265,6 +1282,46 @@ section.dark-bg {
 .footer-links li a:hover {
     opacity: 1;
     color: #4d7cff;
+}
+
+/* Footer Branding Logo */
+.footer-branding {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.footer-brand-main {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 1.3rem;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.footer-brand-dot {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 1.3rem;
+    color: #00e5ff;
+    margin: 0 2px;
+}
+
+.footer-brand-sub {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: lowercase;
+}
+
+.footer-brand-tagline {
+    font-size: 0.88rem;
+    color: var(--am-text-muted);
+    line-height: 1.6;
+    margin-top: 12px;
+    max-width: 280px;
 }
 
 .footer-bottom {
