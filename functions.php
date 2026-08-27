@@ -2,16 +2,14 @@
 /**
  * Audiomania Eventos Child Theme — functions.php
  *
- * Child theme de hello-elementor. Aplica el sistema de diseño completo:
- * modo oscuro, animación 3D disco, tipografías, paleta de colores, overrides
- * de WooCommerce, header/footer personalizados, botón WhatsApp flotante,
- * y CSS adicional inyectado dinámicamente.
+ * Hero carousel animado en home, hero estático en otras páginas,
+ * UI moderna con glassmorphism y animaciones de scroll.
  *
  * @package AudiomaniaEventsChild
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Prevent direct access
+    exit;
 }
 
 /**
@@ -61,7 +59,6 @@ add_action( 'after_setup_theme', 'audiomania_child_setup' );
  * ------------------------------------------------------------------
  */
 function audiomania_child_enqueue_scripts() {
-    // Parent theme style
     wp_enqueue_style(
         'hello-elementor',
         get_template_directory_uri() . '/style.css',
@@ -69,7 +66,6 @@ function audiomania_child_enqueue_scripts() {
         wp_get_theme()->get( 'Version' )
     );
 
-    // Child theme style (dark mode design system)
     wp_enqueue_style(
         'audiomania-child',
         get_stylesheet_uri(),
@@ -77,15 +73,13 @@ function audiomania_child_enqueue_scripts() {
         wp_get_theme()->get( 'Version' )
     );
 
-    // Google Fonts
     wp_enqueue_style(
         'audiomania-fonts',
-        'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Serif:wght@400;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif:wght@400;500;700;900&display=swap',
         array(),
         null
     );
 
-    // Child theme JS (disco 3D + mobile menu)
     wp_enqueue_script(
         'audiomania-child-js',
         get_stylesheet_directory_uri() . '/js/main.js',
@@ -94,9 +88,8 @@ function audiomania_child_enqueue_scripts() {
         true
     );
 
-    // Config para JS
     wp_localize_script( 'audiomania-child-js', 'audiomaniaConfig', array(
-        'whatsappNumber' => get_option( '«redacted:am_…»', '34669621139' ),
+        'whatsappNumber' => '34669621139',
         'siteUrl'        => esc_url_raw( home_url() ),
     ) );
 }
@@ -104,7 +97,7 @@ add_action( 'wp_enqueue_scripts', 'audiomania_child_enqueue_scripts', 20 );
 
 /**
  * ------------------------------------------------------------------
- * 3. INJECT ADDITIONAL CUSTOM CSS
+ * 3. CUSTOM CSS INLINE
  * ------------------------------------------------------------------
  */
 function audiomania_child_custom_css() {
@@ -117,7 +110,7 @@ add_action( 'wp_enqueue_scripts', 'audiomania_child_custom_css', 15 );
 
 /**
  * ------------------------------------------------------------------
- * 3.5 INSERT DISCO CANVAS (after body open)
+ * 4. DISCO CANVAS
  * ------------------------------------------------------------------
  */
 function audiomania_child_disco_canvas() {
@@ -130,12 +123,419 @@ add_action( 'wp_body_open', 'audiomania_child_disco_canvas', 5 );
 
 /**
  * ------------------------------------------------------------------
- * 4. CUSTOM HEADER WITH NAVIGATION
+ * 5. HERO SECTION — PHP Server-Side Injection
  * ------------------------------------------------------------------
  */
+function audiomania_hero_css() {
+    if ( is_admin() ) return;
+    ?>
+    <style>
+    /* === HERO BASE === */
+    .am-hero {
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        z-index: 1;
+    }
+
+    /* === HOME CAROUSEL === */
+    .am-hero-carousel {
+        min-height: 100vh;
+        position: relative;
+    }
+
+    .am-carousel-slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+        transform: scale(1.05);
+    }
+
+    .am-carousel-slide.active {
+        opacity: 1;
+        transform: scale(1);
+        z-index: 2;
+    }
+
+    .am-carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .am-carousel-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(3,3,8,0.65) 0%,
+            rgba(3,3,8,0.45) 40%,
+            rgba(3,3,8,0.7) 100%
+        );
+        z-index: 3;
+    }
+
+    .am-carousel-dots {
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 10;
+    }
+
+    .am-carousel-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.35);
+        border: 2px solid rgba(255,255,255,0.5);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .am-carousel-dot.active {
+        background: #fff;
+        border-color: #fff;
+        transform: scale(1.3);
+        box-shadow: 0 0 12px rgba(77,124,255,0.6);
+    }
+
+    .am-carousel-progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #4d7cff, #a855f7, #ec4899);
+        z-index: 10;
+        transition: width linear;
+        box-shadow: 0 0 10px rgba(77,124,255,0.5);
+    }
+
+    /* === HERO CONTENT === */
+    .am-hero-content {
+        position: relative;
+        z-index: 5;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 120px 24px 80px;
+        text-align: center;
+    }
+
+    .am-hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 20px;
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: rgba(255,255,255,0.9);
+        margin-bottom: 24px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    .am-hero-content h1 {
+        font-family: 'Noto Serif', serif;
+        font-size: clamp(2.4rem, 6vw, 4.2rem);
+        font-weight: 900;
+        line-height: 1.1;
+        margin: 0 0 20px;
+        text-shadow: 0 2px 40px rgba(0,0,0,0.5);
+        letter-spacing: -0.02em;
+    }
+
+    .am-hero-content h1 span {
+        background: linear-gradient(135deg, #4d7cff, #a855f7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .am-hero-content .hero-subtitle {
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+        color: rgba(255,255,255,0.85);
+        margin: 0 0 40px;
+        line-height: 1.7;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .am-hero-cta-group {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .am-hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 36px;
+        border-radius: 12px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 1.05rem;
+        text-decoration: none;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+    }
+
+    .am-hero-cta-primary {
+        background: linear-gradient(135deg, #123A92, #4d7cff);
+        color: #fff;
+        border: none;
+        box-shadow: 0 4px 24px rgba(77,124,255,0.4);
+    }
+
+    .am-hero-cta-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 40px rgba(77,124,255,0.6), 0 0 60px rgba(77,124,255,0.2);
+    }
+
+    .am-hero-cta-secondary {
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 2px solid rgba(255,255,255,0.25);
+        color: #fff;
+    }
+
+    .am-hero-cta-secondary:hover {
+        background: rgba(255,255,255,0.2);
+        border-color: rgba(255,255,255,0.5);
+        transform: translateY(-2px);
+    }
+
+    /* === SINGLE PAGE HERO === */
+    .am-hero-single {
+        min-height: 65vh;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+    }
+
+    .am-hero-single::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(3,3,8,0.7) 0%,
+            rgba(3,3,8,0.5) 50%,
+            rgba(3,3,8,0.85) 100%
+        );
+        z-index: 1;
+    }
+
+    .am-hero-single .am-hero-content {
+        z-index: 3;
+        position: relative;
+    }
+
+    /* === SCROLL INDICATOR === */
+    .am-scroll-indicator {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        animation: scrollBounce 2s ease-in-out infinite;
+    }
+
+    .am-scroll-indicator span {
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.5);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+    }
+
+    @keyframes scrollBounce {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+        .am-hero-carousel { min-height: 85vh; }
+        .am-hero-content { padding: 80px 20px 60px; }
+        .am-hero-content h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+        .am-hero-cta-group { flex-direction: column; align-items: center; }
+        .am-hero-cta { width: 100%; max-width: 300px; justify-content: center; }
+        .am-hero-single { min-height: 55vh; }
+    }
+
+    @media (max-width: 480px) {
+        .am-hero-carousel { min-height: 75vh; }
+        .am-hero-content { padding: 60px 16px 50px; }
+    }
+    </style>
+    <?php
+}
+add_action( 'wp_head', 'audiomania_hero_css', 1 );
+
+add_filter( 'the_content', 'audiomania_hero_content' );
+function audiomania_hero_content( $content ) {
+    if ( is_admin() || is_cart() || is_checkout() || is_account_page() ) {
+        return $content;
+    }
+
+    $hero_html = '';
+    $base = '/audiomaniaeventos/wp-content/uploads/2026/08/';
+
+    // HOME — Carousel con 3 imágenes
+    if ( is_front_page() || is_home() ) {
+        $carousel = '<section class="am-hero am-hero-carousel">' . "\n";
+        $carousel .= '<!-- Slide 1 -->' . "\n";
+        $carousel .= '<div class="am-carousel-slide active" style="background-image:url(\'' . $base . 'hero-hero-bg-1.webp\');">' . "\n";
+        $carousel .= '  <div class="am-carousel-overlay"></div>' . "\n";
+        $carousel .= '</div>' . "\n";
+        $carousel .= '<!-- Slide 2 -->' . "\n";
+        $carousel .= '<div class="am-carousel-slide" style="background-image:url(\'' . $base . 'hero-party-bg.webp\');">' . "\n";
+        $carousel .= '  <div class="am-carousel-overlay"></div>' . "\n";
+        $carousel .= '</div>' . "\n";
+        $carousel .= '<!-- Slide 3 -->' . "\n";
+        $carousel .= '<div class="am-carousel-slide" style="background-image:url(\'' . $base . 'hero-fiesta-bg.webp\');">' . "\n";
+        $carousel .= '  <div class="am-carousel-overlay"></div>' . "\n";
+        $carousel .= '</div>' . "\n";
+
+        $carousel .= '<div class="am-hero-content">' . "\n";
+        $carousel .= '  <div class="am-hero-badge">🎵 Eventos Profesionales en Tenerife</div>' . "\n";
+        $carousel .= '  <h1>Sonido, Iluminación y <span>Animación</span> para tu Evento</h1>' . "\n";
+        $carousel .= '  <p class="hero-subtitle">DJ profesional, alquiler de sonido, iluminación LED, photocall y más. Todo lo que necesitas para una fiesta inolvidable en Tenerife.</p>' . "\n";
+        $carousel .= '  <div class="am-hero-cta-group">' . "\n";
+        $carousel .= '    <a href="/audiomaniaeventos/reservar/" class="am-hero-cta am-hero-cta-primary">Solicitar Presupuesto <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>' . "\n";
+        $carousel .= '    <a href="/audiomaniaeventos/servicios/" class="am-hero-cta am-hero-cta-secondary">Ver Servicios</a>' . "\n";
+        $carousel .= '  </div>' . "\n";
+        $carousel .= '</div>' . "\n";
+
+        $carousel .= '<div class="am-carousel-dots">' . "\n";
+        $carousel .= '  <span class="am-carousel-dot active" data-slide="0"></span>' . "\n";
+        $carousel .= '  <span class="am-carousel-dot" data-slide="1"></span>' . "\n";
+        $carousel .= '  <span class="am-carousel-dot" data-slide="2"></span>' . "\n";
+        $carousel .= '</div>' . "\n";
+        $carousel .= '<div class="am-carousel-progress" style="width:0%;"></div>' . "\n";
+        $carousel .= '<div class="am-scroll-indicator">' . "\n";
+        $carousel .= '  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>' . "\n";
+        $carousel .= '  <span>Scroll</span>' . "\n";
+        $carousel .= '</div>' . "\n";
+        $carousel .= '</section>' . "\n";
+
+        $hero_html = $carousel;
+    }
+
+    // SERVICIOS
+    elseif ( is_page( 'servicios' ) || is_page( 12 ) ) {
+        $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'hero-sonido-bg.webp\');">' . "\n";
+        $hero_html .= '<div class="am-hero-content">' . "\n";
+        $hero_html .= '  <div class="am-hero-badge">Nuestros Servicios</div>' . "\n";
+        $hero_html .= '  <h1>Servicios <span>Profesionales</span></h1>' . "\n";
+        $hero_html .= '  <p class="hero-subtitle">Equipos profesionales de sonido, iluminación y animación para bodas, eventos corporativos, fiestas y celebraciones.</p>' . "\n";
+        $hero_html .= '  <div class="am-hero-cta-group">' . "\n";
+        $hero_html .= '    <a href="/audiomaniaeventos/reservar/" class="am-hero-cta am-hero-cta-primary">Reservar Ahora</a>' . "\n";
+        $hero_html .= '  </div>' . "\n";
+        $hero_html .= '</div>' . "\n";
+        $hero_html .= '</section>' . "\n";
+    }
+
+    // RESERVAR
+    elseif ( is_page( 'reservar' ) || is_page( 13 ) ) {
+        $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'hero-party-bg.webp\');">' . "\n";
+        $hero_html .= '<div class="am-hero-content">' . "\n";
+        $hero_html .= '  <div class="am-hero-badge">Reserva tu Equipo</div>' . "\n";
+        $hero_html .= '  <h1>Reserva tu <span>Equipo</span></h1>' . "\n";
+        $hero_html .= '  <p class="hero-subtitle">Elige el equipo perfecto para tu evento. Presupuesto personalizado sin compromiso en menos de 24 horas.</p>' . "\n";
+        $hero_html .= '  <div class="am-hero-cta-group">' . "\n";
+        $hero_html .= '    <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-primary">Contactar</a>' . "\n";
+        $hero_html .= '  </div>' . "\n";
+        $hero_html .= '</div>' . "\n";
+        $hero_html .= '</section>' . "\n";
+    }
+
+    // GALERÍA
+    elseif ( is_page( 'galeria' ) || is_page( 14 ) ) {
+        $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'hero-fiesta-bg.webp\');">' . "\n";
+        $hero_html .= '<div class="am-hero-content">' . "\n";
+        $hero_html .= '  <div class="am-hero-badge">Galería de Eventos</div>' . "\n";
+        $hero_html .= '  <h1>Galería de <span>Eventos</span></h1>' . "\n";
+        $hero_html .= '  <p class="hero-subtitle">Mira cómo transformamos espacios con nuestros equipos de sonido, iluminación y animación profesional.</p>' . "\n";
+        $hero_html .= '  <div class="am-hero-cta-group">' . "\n";
+        $hero_html .= '    <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-primary">Contactar Ahora</a>' . "\n";
+        $hero_html .= '  </div>' . "\n";
+        $hero_html .= '</div>' . "\n";
+        $hero_html .= '</section>' . "\n";
+    }
+
+    // CONTACTO
+    elseif ( is_page( 'contacto' ) || is_page( 15 ) ) {
+        $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'hero-fondo-oscuro-bg-1.webp\');">' . "\n";
+        $hero_html .= '<div class="am-hero-content">' . "\n";
+        $hero_html .= '  <div class="am-hero-badge">Contacto</div>' . "\n";
+        $hero_html .= '  <h1>Hablemos de tu <span>Proyecto</span></h1>' . "\n";
+        $hero_html .= '  <p class="hero-subtitle">¿Tienes un evento en mente? Cuéntanos tu idea y te preparamos un presupuesto a medida.</p>' . "\n";
+        $hero_html .= '  <div class="am-hero-cta-group">' . "\n";
+        $hero_html .= '    <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-primary">Enviar Mensaje</a>' . "\n";
+        $hero_html .= '  </div>' . "\n";
+        $hero_html .= '</div>' . "\n";
+        $hero_html .= '</section>' . "\n";
+    }
+
+    // SOBRE NOSOTROS
+    elseif ( is_page( 'sobre-nosotros' ) || is_page( 16 ) ) {
+        $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'hero-corporativo-bg-1.webp\');">' . "\n";
+        $hero_html .= '<div class="am-hero-content">' . "\n";
+        $hero_html .= '  <div class="am-hero-badge">Sobre Nosotros</div>' . "\n";
+        $hero_html .= '  <h1>+15 Años <span>Creando Eventos</span></h1>' . "\n";
+        $hero_html .= '  <p class="hero-subtitle">Más de 15 años bringing la mejor experiencia de sonido e iluminación a eventos en Tenerife y Canarias.</p>' . "\n";
+        $hero_html .= '  <div class="am-hero-cta-group">' . "\n";
+        $hero_html .= '    <a href="/audiomaniaeventos/servicios/" class="am-hero-cta am-hero-cta-primary">Nuestros Servicios</a>' . "\n";
+        $hero_html .= '  </div>' . "\n";
+        $hero_html .= '</div>' . "\n";
+        $hero_html .= '</section>' . "\n";
+    }
+
+    // WOOCOMMERCE ARCHIVE
+    elseif ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
+        $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'hero-evento-bg.webp\');">' . "\n";
+        $hero_html .= '<div class="am-hero-content">' . "\n";
+        $hero_html .= '  <div class="am-hero-badge">Tienda de Equipos</div>' . "\n";
+        $hero_html .= '  <h1>Nuestra <span>Tienda</span></h1>' . "\n";
+        $hero_html .= '  <p class="hero-subtitle">Alquiler de equipos profesionales: altavoces, mezcladoras, iluminación LED, estructuras y más.</p>' . "\n";
+        $hero_html .= '  <div class="am-hero-cta-group">' . "\n";
+        $hero_html .= '    <a href="/audiomaniaeventos/servicios/" class="am-hero-cta am-hero-cta-primary">Ver Servicios</a>' . "\n";
+        $hero_html .= '  </div>' . "\n";
+        $hero_html .= '</div>' . "\n";
+        $hero_html .= '</section>' . "\n";
+    }
+
+    if ( $hero_html ) {
+        return $hero_html . $content;
+    }
+
+    return $content;
+}
+
 /**
  * ------------------------------------------------------------------
- * 4. CUSTOM HEADER WITH NAVIGATION
+ * 6. CUSTOM HEADER
  * ------------------------------------------------------------------
  */
 function audiomania_child_header() {
@@ -189,7 +589,7 @@ function audiomania_child_fallback_menu() {
 
 /**
  * ------------------------------------------------------------------
- * 5. CUSTOM FOOTER
+ * 7. CUSTOM FOOTER
  * ------------------------------------------------------------------
  */
 function audiomania_child_footer() {
@@ -227,13 +627,12 @@ function audiomania_child_footer() {
 
 /**
  * ------------------------------------------------------------------
- * 6. WHATSAPP FLOATING BUTTON
+ * 8. WHATSAPP FLOATING BUTTON
  * ------------------------------------------------------------------
  */
 function audiomania_child_whatsapp_button() {
     if ( is_admin() ) return;
-    $number = get_option( '«redacted:am_…»', '34600000000' );
-    $number = preg_replace( '/[^0-9]/', '', $number );
+    $number = '34669621139';
     $url = 'https://wa.me/' . $number;
     ?>
     <a href="<?php echo esc_url( $url ); ?>" class="am-whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
@@ -246,7 +645,7 @@ function audiomania_child_whatsapp_button() {
 
 /**
  * ------------------------------------------------------------------
- * 7. OVERRIDES FOR WOOCOMMERCE
+ * 9. WOOCOMMERCE OVERRIDES
  * ------------------------------------------------------------------
  */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
@@ -262,10 +661,7 @@ function audiomania_woocommerce_after_main_content() {
 }
 add_action( 'woocommerce_after_main_content', 'audiomania_woocommerce_after_main_content', 10 );
 
-add_filter( 'loop_shop_columns', function() {
-    return 3;
-} );
-
+add_filter( 'loop_shop_columns', function() { return 3; } );
 add_filter( 'loop_shop_per_page', function( $cols ) { return 12; }, 20 );
 
 add_action( 'wp_enqueue_scripts', function() {
@@ -275,7 +671,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 /**
  * ------------------------------------------------------------------
- * 8. MOBILE MENU JS INJECTION
+ * 10. MOBILE MENU JS
  * ------------------------------------------------------------------
  */
 function audiomania_child_mobile_menu_js() {
@@ -301,7 +697,7 @@ function audiomania_child_mobile_menu_js() {
             });
 
             window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
+                if (window.innerWidth > 900) {
                     toggle.setAttribute('aria-expanded', 'false');
                     nav.classList.remove('nav-open');
                 }
@@ -315,59 +711,7 @@ add_action( 'wp_footer', 'audiomania_child_mobile_menu_js', 99 );
 
 /**
  * ------------------------------------------------------------------
- * 9. ADMIN: CUSTOMIZER ENHANCEMENTS
- * ------------------------------------------------------------------
- */
-function audiomania_child_customize_register( $wp_customize ) {
-    // WhatsApp number
-    $wp_customize->add_setting( '«redacted:am_…»', array(
-        'default'           => '34669621139',
-        'sanitize_callback' => 'esc_telephone',
-    ) );
-    $wp_customize->add_control( '«redacted:am_…»', array(
-        'label'   => __( 'Número de WhatsApp', 'audiomania-events-child' ),
-        'section' => 'title_tagline',
-        'type'    => 'text',
-    ) );
-
-    // Hero section settings
-    $wp_customize->add_section( 'am_hero', array(
-        'title'    => __( 'Sección Hero', 'audiomania-events-child' ),
-        'priority' => 30,
-    ) );
-
-    $wp_customize->add_setting( '«redacted:am_…»', array(
-        'default' => 'Sonido e Iluminación Profesional para tu Evento',
-    ) );
-    $wp_customize->add_control( '«redacted:am_…»', array(
-        'label'   => __( 'Título del Hero', 'audiomania-events-child' ),
-        'section' => 'am_hero',
-        'type'    => 'text',
-    ) );
-
-    $wp_customize->add_setting( '«redacted:am_…»', array(
-        'default' => 'DJ, sonido, iluminación, photocall y más.',
-    ) );
-    $wp_customize->add_control( '«redacted:am_…»', array(
-        'label'   => __( 'Subtítulo del Hero', 'audiomania-events-child' ),
-        'section' => 'am_hero',
-        'type'    => 'textarea',
-    ) );
-
-    $wp_customize->add_setting( '«redacted:am_…»', array(
-        'default' => 'Solicitar Presupuesto',
-    ) );
-    $wp_customize->add_control( '«redacted:am_…»', array(
-        'label'   => __( 'Texto del Botón CTA', 'audiomania-events-child' ),
-        'section' => 'am_hero',
-        'type'    => 'text',
-    ) );
-}
-add_action( 'customize_register', 'audiomania_child_customize_register' );
-
-/**
- * ------------------------------------------------------------------
- * 10. SHORTCODES
+ * 11. SHORTCODES
  * ------------------------------------------------------------------
  */
 function audiomania_stats_shortcode( $atts ) {
@@ -402,7 +746,7 @@ add_shortcode( 'am_services', 'audiomania_services_shortcode' );
 
 /**
  * ------------------------------------------------------------------
- * 11. PERFORMANCE
+ * 12. PERFORMANCE
  * ------------------------------------------------------------------
  */
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -412,132 +756,9 @@ add_filter( 'wp_lazy_loading_enabled', '__return_true' );
 
 /**
  * ------------------------------------------------------------------
- * 12. SECURITY
+ * 13. SECURITY
  * ------------------------------------------------------------------
  */
 add_filter( 'login_errors', function() { return null; } );
 remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
 remove_action( 'template_redirect', 'rest_output_link_header', 11 );
-
-/**
- * ------------------------------------------------------------------
- * 13. HERO SECTION INJECTION — Client-side JS approach (Elementor-safe)
- * ------------------------------------------------------------------
- */
-function audiomania_hero_js_inject() {
-    if ( is_admin() ) return;
-    // Don't inject on cart, checkout, my-account
-    if ( is_cart() || is_checkout() || is_account_page() ) return;
-
-    ?>
-    <script>
-    (function() {
-        var HERO_DATA = {
-            "audiomaniaeventos/": {
-                "class": "hero-home",
-                "title": "Sonido, Iluminación y Animación para tu Evento",
-                "subtitle": "DJ profesional, alquiler de sonido, iluminación LED, photocall y más. Todo lo que necesitas para una fiesta inolvidable en Tenerife.",
-                "cta_text": "Solicitar Presupuesto",
-                "cta_url": "/audiomaniaeventos/reservar/"
-            },
-            "audiomaniaeventos/servicios/": {
-                "class": "hero-servicios",
-                "title": "Nuestros Servicios",
-                "subtitle": "Equipos profesionales de sonido, iluminación y animación para bodas, eventos corporativos, fiestas y celebraciones.",
-                "cta_text": "Ver Todos los Servicios",
-                "cta_url": "/audiomaniaeventos/reservar/"
-            },
-            "audiomaniaeventos/reservar/": {
-                "class": "hero-reservar",
-                "title": "Reserva tu Equipo",
-                "subtitle": "Elige el equipo perfecto para tu evento. Presupuesto personalizado sin compromiso en menos de 24 horas.",
-                "cta_text": "Solicitar Presupuesto",
-                "cta_url": "/audiomaniaeventos/contacto/"
-            },
-            "audiomaniaeventos/galeria/": {
-                "class": "hero-galeria",
-                "title": "Galería de Eventos",
-                "subtitle": "Mira cómo transformamos espacios con nuestros equipos de sonido, iluminación y animación profesional.",
-                "cta_text": "Contactar Ahora",
-                "cta_url": "/audiomaniaeventos/contacto/"
-            },
-            "audiomaniaeventos/contacto/": {
-                "class": "hero-contacto",
-                "title": "Contacto",
-                "subtitle": "¿Tienes un evento en mente? Cuéntanos tu idea y te preparamos un presupuesto a medida.",
-                "cta_text": "Enviar Mensaje",
-                "cta_url": "/audiomaniaeventos/contacto/"
-            },
-            "audiomaniaeventos/sobre-nosotros/": {
-                "class": "hero-sobre-nosotros",
-                "title": "Sobre Nosotros",
-                "subtitle": "Más de 15 años Bringing la mejor experiencia de sonido e iluminación a eventos en Tenerife y Canarias.",
-                "cta_text": "Nuestros Servicios",
-                "cta_url": "/audiomaniaeventos/servicios/"
-            },
-            "audiomaniaeventos/shop/": {
-                "class": "hero-shop",
-                "title": "Tienda de Equipos",
-                "subtitle": "Alquiler de equipos profesionales: altavoces, mezcladoras, iluminación LED, estructuras y más.",
-                "cta_text": "Ver Equipos",
-                "cta_url": "/audiomaniaeventos/servicios/"
-            }
-        };
-
-        function getHeroKey() {
-            var path = window.location.pathname;
-            // Remove trailing slash for matching, except root
-            if (path !== '/' && path.endsWith('/')) {
-                path = path.slice(0, -1);
-            }
-            if (path === '/' || path === '') path = '';
-            return 'audiomaniaeventos' + path + '/';
-        }
-
-        function injectHero() {
-            var heroData = HERO_DATA[getHeroKey()];
-            if (!heroData) return;
-
-            // Check if hero already exists
-            if (document.querySelector('.am-hero-section')) return;
-
-            var main = document.querySelector('main.site-main') || document.querySelector('#primary');
-            if (!main) return;
-
-            var hero = document.createElement('section');
-            hero.className = 'am-hero-section ' + heroData.class;
-            hero.innerHTML = '<div class="am-hero-content">' +
-                '<h1>' + heroData.title + '</h1>' +
-                '<p class="hero-subtitle">' + heroData.subtitle + '</p>' +
-                '<a href="' + heroData.cta_url + '" class="hero-cta">' +
-                    heroData.cta_text +
-                    '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>' +
-                '</a>' +
-            '</div>' +
-            '<div class="am-hero-scroll-indicator">' +
-                '<svg viewBox="0 0 24 24"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>' +
-            '</div>';
-
-            main.insertBefore(hero, main.firstChild);
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', injectHero);
-        } else {
-            injectHero();
-        }
-
-        // Observe DOM changes for Elementor AJAX loading
-        if (typeof MutationObserver !== 'undefined') {
-            var observer = new MutationObserver(function() {
-                if (!document.querySelector('.am-hero-section')) {
-                    injectHero();
-                }
-            });
-            observer.observe(document.body, { childList: true, subtree: true });
-        }
-    })();
-    </script>
-    <?php
-}
-add_action( 'wp_footer', 'audiomania_hero_js_inject', 20 );
