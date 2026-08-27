@@ -138,80 +138,57 @@ function audiomania_hero_css() {
         z-index: 1;
     }
 
-    /* === HOME CAROUSEL === */
-    .am-hero-carousel {
+    /* === HOME — 3 SECCIONES HERO === */
+    .am-hero-section {
         min-height: 100vh;
         position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        scroll-margin-top: 0;
     }
 
-    .am-carousel-slide {
+    .am-hero-section:nth-child(2) {
+        background: linear-gradient(180deg, rgba(3,3,8,1) 0%, rgba(3,3,8,0) 5%, rgba(3,3,8,0) 95%, rgba(3,3,8,1) 100%);
+    }
+    .am-hero-section:last-child {
+        background: linear-gradient(180deg, rgba(3,3,8,1) 0%, rgba(3,3,8,0) 5%, rgba(3,3,8,0) 95%, rgba(3,3,8,1) 100%);
+    }
+
+    .am-hero-bg {
         position: absolute;
         inset: 0;
-        opacity: 0;
-        transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
-        transform: scale(1.05);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 0;
+        will-change: transform;
+        transition: transform 0.1s linear;
     }
 
-    .am-carousel-slide.active {
-        opacity: 1;
-        transform: scale(1);
-        z-index: 2;
+    .am-hero-section-1 .am-hero-bg {
+        background-image: url('/audiomaniaeventos/wp-content/uploads/2026/08/Eventos-Tenerife.webp');
     }
 
-    .am-carousel-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .am-hero-section-2 .am-hero-bg {
+        background-image: url('/audiomaniaeventos/wp-content/uploads/2026/08/Eventos-Canarias.webp');
     }
 
-    .am-carousel-overlay {
+    .am-hero-section-3 .am-hero-bg {
+        background-image: url('/audiomaniaeventos/wp-content/uploads/2026/08/Dj-tenerife.webp');
+    }
+
+    .am-hero-overlay {
         position: absolute;
         inset: 0;
         background: linear-gradient(
             180deg,
-            rgba(3,3,8,0.65) 0%,
-            rgba(3,3,8,0.45) 40%,
-            rgba(3,3,8,0.7) 100%
+            rgba(3,3,8,0.7) 0%,
+            rgba(3,3,8,0.5) 40%,
+            rgba(3,3,8,0.6) 70%,
+            rgba(3,3,8,0.95) 100%
         );
-        z-index: 3;
-    }
-
-    .am-carousel-dots {
-        position: absolute;
-        bottom: 32px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 10px;
-        z-index: 10;
-    }
-
-    .am-carousel-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.35);
-        border: 2px solid rgba(255,255,255,0.5);
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .am-carousel-dot.active {
-        background: #fff;
-        border-color: #fff;
-        transform: scale(1.3);
-        box-shadow: 0 0 12px rgba(77,124,255,0.6);
-    }
-
-    .am-carousel-progress {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 3px;
-        background: linear-gradient(90deg, #4d7cff, #a855f7, #ec4899);
-        z-index: 10;
-        transition: width linear;
-        box-shadow: 0 0 10px rgba(77,124,255,0.5);
+        z-index: 1;
     }
 
     /* === HERO CONTENT === */
@@ -317,6 +294,50 @@ function audiomania_hero_css() {
         transform: translateY(-2px);
     }
 
+    .am-hero-cta-whatsapp {
+        background: #25D366;
+        color: #fff;
+        border: none;
+        box-shadow: 0 4px 24px rgba(37,211,102,0.4);
+    }
+
+    .am-hero-cta-whatsapp:hover {
+        background: #20bd5a;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 40px rgba(37,211,102,0.6);
+    }
+
+    /* === FEATURE ITEMS === */
+    .am-hero-features {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .am-feature-item {
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 50px;
+        padding: 8px 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: rgba(255,255,255,0.85);
+        letter-spacing: 0.02em;
+        transition: all 0.3s ease;
+        cursor: default;
+    }
+
+    .am-feature-item:hover {
+        background: rgba(255,255,255,0.15);
+        border-color: rgba(255,255,255,0.3);
+        color: #fff;
+        transform: translateY(-2px);
+    }
+
     /* === SINGLE PAGE HERO === */
     .am-hero-single {
         min-height: 65vh;
@@ -375,17 +396,24 @@ function audiomania_hero_css() {
 
     /* === RESPONSIVE === */
     @media (max-width: 768px) {
-        .am-hero-carousel { min-height: 85vh; }
+        .am-hero-section { min-height: 85vh; }
         .am-hero-content { padding: 80px 20px 60px; }
         .am-hero-content h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+        .am-hero-content h2 { font-size: clamp(1.5rem, 6vw, 2.2rem); }
         .am-hero-cta-group { flex-direction: column; align-items: center; }
         .am-hero-cta { width: 100%; max-width: 300px; justify-content: center; }
+        .am-hero-features { gap: 8px; }
+        .am-feature-item { font-size: 0.75rem; padding: 6px 14px; }
         .am-hero-single { min-height: 55vh; }
     }
 
     @media (max-width: 480px) {
-        .am-hero-carousel { min-height: 75vh; }
+        .am-hero-section { min-height: 80vh; }
         .am-hero-content { padding: 60px 16px 50px; }
+        .am-hero-content h1 { font-size: 1.6rem; }
+        .am-hero-content h2 { font-size: 1.4rem; }
+        .am-hero-content .hero-subtitle { font-size: 0.95rem; }
+        .am-feature-item { font-size: 0.7rem; padding: 5px 12px; }
     }
     </style>
     <?php
@@ -401,45 +429,101 @@ function audiomania_hero_content( $content ) {
     $hero_html = '';
     $base = '/audiomaniaeventos/wp-content/uploads/2026/08/';
 
-    // HOME — Carousel con 3 imágenes
+    // HOME — 3 secciones hero con imágenes separadas
     if ( is_front_page() || is_home() ) {
-        $carousel = '<section class="am-hero am-hero-carousel">' . "\n";
-        $carousel .= '<!-- Slide 1 -->' . "\n";
-        $carousel .= '<div class="am-carousel-slide active" style="background-image:url(\'' . $base . 'Eventos-Tenerife.webp\');">' . "\n";
-        $carousel .= '  <div class="am-carousel-overlay"></div>' . "\n";
-        $carousel .= '</div>' . "\n";
-        $carousel .= '<!-- Slide 2 -->' . "\n";
-        $carousel .= '<div class="am-carousel-slide" style="background-image:url(\'' . $base . 'Eventos-Canarias.webp\');">' . "\n";
-        $carousel .= '  <div class="am-carousel-overlay"></div>' . "\n";
-        $carousel .= '</div>' . "\n";
-        $carousel .= '<!-- Slide 3 -->' . "\n";
-        $carousel .= '<div class="am-carousel-slide" style="background-image:url(\'' . $base . 'Dj-tenerife.webp\');">' . "\n";
-        $carousel .= '  <div class="am-carousel-overlay"></div>' . "\n";
-        $carousel .= '</div>' . "\n";
+        $hero_html = "\n";
+        $hero_html .= '<!-- SEO JSON-LD: LocalBusiness + Service -->' . "\n";
+        $hero_html .= '<script type="application/ld+json">' . "\n";
+        $hero_html .= '{' . "\n";
+        $hero_html .= '  "@context": "https://schema.org",' . "\n";
+        $hero_html .= '  "@type": "LocalBusiness",' . "\n";
+        $hero_html .= '  "name": "Audiomania Eventos",' . "\n";
+        $hero_html .= '  "description": "Servicios profesionales de sonido, iluminación y animación para eventos en Tenerife y Canarias. DJ profesional, alquiler de sonido, iluminación LED, photocall y más.",' . "\n";
+        $hero_html .= '  "url": "' . esc_url( home_url( '/audiomaniaeventos/' ) ) . '",' . "\n";
+        $hero_html .= '  "telephone": "+34669621139",' . "\n";
+        $hero_html .= '  "email": "info@audiomaniaeventos.com",' . "\n";
+        $hero_html .= '  "address": {' . "\n";
+        $hero_html .= '    "@type": "PostalAddress",' . "\n";
+        $hero_html .= '    "addressLocality": "Tenerife",' . "\n";
+        $hero_html .= '    "addressRegion": "Canarias",' . "\n";
+        $hero_html .= '    "addressCountry": "ES"' . "\n";
+        $hero_html .= '  },' . "\n";
+        $hero_html .= '  "serviceType": ["DJ para Eventos", "Alquiler de Sonido", "Iluminación LED", "Photocall", "Animación de Eventos"],' . "\n";
+        $hero_html .= '  "areaServed": {' . "\n";
+        $hero_html .= '    "@type": "Place",' . "\n";
+        $hero_html .= '    "name": "Tenerife, Canarias, España"' . "\n";
+        $hero_html .= '  },' . "\n";
+        $hero_html .= '  "priceRange": "$$"' . "\n";
+        $hero_html .= '}' . "\n";
+        $hero_html .= '</script>' . "\n";
 
-        $carousel .= '<div class="am-hero-content">' . "\n";
-        $carousel .= '  <div class="am-hero-badge">🎵 Eventos Profesionales en Tenerife</div>' . "\n";
-        $carousel .= '  <h1>Sonido, Iluminación y <span>Animación</span> para tu Evento</h1>' . "\n";
-        $carousel .= '  <p class="hero-subtitle">DJ profesional, alquiler de sonido, iluminación LED, photocall y más. Todo lo que necesitas para una fiesta inolvidable en Tenerife.</p>' . "\n";
-        $carousel .= '  <div class="am-hero-cta-group">' . "\n";
-        $carousel .= '    <a href="/audiomaniaeventos/reservar/" class="am-hero-cta am-hero-cta-primary">Solicitar Presupuesto <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>' . "\n";
-        $carousel .= '    <a href="/audiomaniaeventos/servicios/" class="am-hero-cta am-hero-cta-secondary">Ver Servicios</a>' . "\n";
-        $carousel .= '  </div>' . "\n";
-        $carousel .= '</div>' . "\n";
+        // === SECCION 1: HERO PRINCIPAL ===
+        $hero_html .= '<section class="am-hero-section am-hero-section-1" id="am-hero-1">' . "\n";
+        $hero_html .= '  <div class="am-hero-bg" style="background-image:url(\'' . $base . 'Eventos-Tenerife.webp\');"></div>' . "\n";
+        $hero_html .= '  <div class="am-hero-overlay"></div>' . "\n";
+        $hero_html .= '  <div class="am-hero-content">' . "\n";
+        $hero_html .= '    <div class="am-hero-badge">🎵 Eventos Profesionales en Tenerife</div>' . "\n";
+        $hero_html .= '    <h1>Sonido, Iluminación y <span>Animación</span> para tu Evento</h1>' . "\n";
+        $hero_html .= '    <p class="hero-subtitle">DJ profesional, alquiler de sonido, iluminación LED, photocall y más. Todo lo que necesitas para una fiesta inolvidable en Tenerife y Canarias.</p>' . "\n";
+        $hero_html .= '    <div class="am-hero-cta-group">' . "\n";
+        $hero_html .= '      <a href="/audiomaniaeventos/reservar/" class="am-hero-cta am-hero-cta-primary">Solicitar Presupuesto <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>' . "\n";
+        $hero_html .= '      <a href="/audiomaniaeventos/servicios/" class="am-hero-cta am-hero-cta-secondary">Ver Servicios</a>' . "\n";
+        $hero_html .= '    </div>' . "\n";
+        $hero_html .= '    <div class="am-hero-features">' . "\n";
+        $hero_html .= '      <div class="am-feature-item">🔊 Sonido Profesional</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item">💡 Iluminación LED</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item">🎧 DJ Expertos</div>' . "\n";
+        $hero_html .= '    </div>' . "\n";
+        $hero_html .= '  </div>' . "\n";
+        $hero_html .= '  <a href="#am-hero-2" class="am-scroll-indicator" aria-label="Ver más servicios">' . "\n";
+        $hero_html .= '    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>' . "\n";
+        $hero_html .= '    <span>Descubre nuestros servicios</span>' . "\n";
+        $hero_html .= '  </a>' . "\n";
+        $hero_html .= '</section>' . "\n";
 
-        $carousel .= '<div class="am-carousel-dots">' . "\n";
-        $carousel .= '  <span class="am-carousel-dot active" data-slide="0"></span>' . "\n";
-        $carousel .= '  <span class="am-carousel-dot" data-slide="1"></span>' . "\n";
-        $carousel .= '  <span class="am-carousel-dot" data-slide="2"></span>' . "\n";
-        $carousel .= '</div>' . "\n";
-        $carousel .= '<div class="am-carousel-progress" style="width:0%;"></div>' . "\n";
-        $carousel .= '<div class="am-scroll-indicator">' . "\n";
-        $carousel .= '  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>' . "\n";
-        $carousel .= '  <span>Scroll</span>' . "\n";
-        $carousel .= '</div>' . "\n";
-        $carousel .= '</section>' . "\n";
+        // === SECCION 2: EVENTOS CANARIAS ===
+        $hero_html .= '<section class="am-hero-section am-hero-section-2" id="am-hero-2">' . "\n";
+        $hero_html .= '  <div class="am-hero-bg" style="background-image:url(\'' . $base . 'Eventos-Canarias.webp\');"></div>' . "\n";
+        $hero_html .= '  <div class="am-hero-overlay"></div>' . "\n";
+        $hero_html .= '  <div class="am-hero-content">' . "\n";
+        $hero_html .= '    <div class="am-hero-badge">🏝️ Llevamos tu evento por toda Canarias</div>' . "\n";
+        $hero_html .= '    <h2>Montaje Profesional en <span>Tenerife y Todas las Islas</span></h2>' . "\n";
+        $hero_html .= '    <p class="hero-subtitle">Bodas en Adeje, fiestas en La Laguna, corporativos en Santa Cruz, celebraciones en La Orotava. Llevamos equipamiento profesional a cualquier punto de la isla y las demás islas canarias.</p>' . "\n";
+        $hero_html .= '    <div class="am-hero-cta-group">' . "\n";
+        $hero_html .= '      <a href="/audiomaniaeventos/servicios/" class="am-hero-cta am-hero-cta-primary">Ver Servicios <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>' . "\n";
+        $hero_html .= '      <a href="/audiomaniaeventos/galeria/" class="am-hero-cta am-hero-cta-secondary">Ver Galería</a>' . "\n";
+        $hero_html .= '    </div>' . "\n";
+        $hero_html .= '    <div class="am-hero-features">' . "\n";
+        $hero_html .= '      <div class="am-feature-item">📍 Toda la isla</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item">🎪 Montaje incluido</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item">⚡ Respuesta en 24h</div>' . "\n";
+        $hero_html .= '    </div>' . "\n";
+        $hero_html .= '  </div>' . "\n";
+        $hero_html .= '  <a href="#am-hero-3" class="am-scroll-indicator" aria-label="Ver servicios de DJ">' . "\n";
+        $hero_html .= '    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>' . "\n";
+        $hero_html .= '    <span>Servicio DJ Profesional</span>' . "\n";
+        $hero_html .= '  </a>' . "\n";
+        $hero_html .= '</section>' . "\n";
 
-        $hero_html = $carousel;
+        // === SECCION 3: DJ TENERIFE ===
+        $hero_html .= '<section class="am-hero-section am-hero-section-3" id="am-hero-3">' . "\n";
+        $hero_html .= '  <div class="am-hero-bg" style="background-image:url(\'' . $base . 'Dj-tenerife.webp\');"></div>' . "\n";
+        $hero_html .= '  <div class="am-hero-overlay"></div>' . "\n";
+        $hero_html .= '  <div class="am-hero-content">' . "\n";
+        $hero_html .= '    <div class="am-hero-badge">🎧 DJ Profesional para tu Evento</div>' . "\n";
+        $hero_html .= '    <h2>El Mejor <span>DJ para tu Fiesta</span> en Tenerife</h2>' . "\n";
+        $hero_html .= '    <p class="hero-subtitle">Bodas, cumpleaños, fiestas privadas, eventos corporativos. DJs profesionales con equipamiento premium, playlists a medida y experiencia en más de 500 eventos en Canarias.</p>' . "\n";
+        $hero_html .= '    <div class="am-hero-cta-group">' . "\n";
+        $hero_html .= '      <a href="https://wa.me/34669621139?text=Hola%2C%20quiero%20un%20DJ%20para%20mi%20evento%20en%20Tenerife" class="am-hero-cta am-hero-cta-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp Directo <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>' . "\n";
+        $hero_html .= '      <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-secondary">Contactar</a>' . "\n";
+        $hero_html .= '    </div>' . "\n";
+        $hero_html .= '    <div class="am-hero-features">' . "\n";
+        $hero_html .= '      <div class="am-feature-item">🎵 Música a medida</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item">🔥 +500 eventos</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item">⭐ Equipamiento premium</div>' . "\n";
+        $hero_html .= '    </div>' . "\n";
+        $hero_html .= '  </div>' . "\n";
+        $hero_html .= '</section>' . "\n";
     }
 
     // SERVICIOS
@@ -475,94 +559,94 @@ function audiomania_hero_content( $content ) {
         $gallery_images = array(
             array(
                 'file'   => 'hero-hero-bg-1.webp',
-                'title'  => 'Iluminación profesional para bodas en Tenerife',
-                'desc'   => 'Montaje completo de iluminación LED y escenografía para eventos nupciales en Tenerife.',
-                'cat'    => 'bodas',
-                'label'  => 'Bodas',
+                'title'  => 'Equipo de alta gama alquiler',
+                'desc'   => 'Equipos de sonido profesional de alta gama para alquiler en eventos en Tenerife.',
+                'cat'    => 'sonido',
+                'label'  => 'Sonido',
             ),
             array(
                 'file'   => 'hero-party-bg.webp',
-                'title'  => 'Fiestas y eventos corporativos en Tenerife',
-                'desc'   => 'Servicio integral de sonido, iluminación y animación para fiestas y eventos corporativos en Tenerife y Canarias.',
-                'cat'    => 'corporativo',
-                'label'  => 'Corporativo',
-            ),
-            array(
-                'file'   => 'hero-fiesta-bg.webp',
-                'title'  => 'Celebraciones y fiestas privadas en Tenerife',
-                'desc'   => 'Transformamos cualquier espacio en una fiesta inolvidable con equipamiento profesional de sonido y luz.',
+                'title'  => 'Hinchables Led',
+                'desc'   => 'Hinchables LED y mobiliario inflable para eventos y fiestas en Tenerife.',
                 'cat'    => 'fiestas',
                 'label'  => 'Fiestas',
             ),
             array(
+                'file'   => 'hero-fiesta-bg.webp',
+                'title'  => 'Iluminación LED y Efectos',
+                'desc'   => 'Iluminación LED profesional y efectos especiales para eventos en Tenerife.',
+                'cat'    => 'iluminacion',
+                'label'  => 'Iluminación',
+            ),
+            array(
                 'file'   => 'hero-sonido-bg.webp',
-                'title'  => 'Alquiler de sonido profesional en Tenerife',
-                'desc'   => 'Equipos de sonorización de última generación para eventos de cualquier tamaño en toda la isla de Tenerife.',
+                'title'  => 'Alquiler Altavoz',
+                'desc'   => 'Alquiler de altavoces y sistemas de sonido profesional para eventos en Tenerife.',
                 'cat'    => 'sonido',
                 'label'  => 'Sonido',
             ),
             array(
                 'file'   => 'hero-fondo-oscuro-bg-1.webp',
-                'title'  => 'DJ profesional para eventos en Tenerife',
-                'desc'   => 'Servicio de DJ profesional con equipamiento premium para bodas, fiestas y eventos corporativos en Tenerife.',
+                'title'  => 'Dj para Eventos',
+                'desc'   => 'Servicio de DJ profesional para todo tipo de eventos en Tenerife y Canarias.',
                 'cat'    => 'dj',
                 'label'  => 'DJ',
             ),
             array(
                 'file'   => 'Dj-Boda.webp',
-                'title'  => 'DJ para bodas en Tenerife — Audiomania Eventos',
-                'desc'   => 'Somos especialistas en DJ para bodas en Tenerife. Música personalizada, ambientación sonora y control total de tu evento nupcial.',
+                'title'  => 'Dj Boda',
+                'desc'   => 'DJ especializado en bodas en Tenerife. Música personalizada y ambientación sonora.',
                 'cat'    => 'bodas',
                 'label'  => 'Bodas',
             ),
             array(
                 'file'   => 'Dj-tenerife.webp',
-                'title'  => 'DJ y animación de eventos en Tenerife y Canary Islands',
-                'desc'   => 'DJ profesional y animación para eventos en Tenerife. Sonido de alta fidelidad, playlists a medida y experiencia en más de 500 eventos.',
+                'title'  => 'Eventos Tenerife',
+                'desc'   => 'Servicios completos de sonido y animación para eventos en Tenerife.',
                 'cat'    => 'dj',
                 'label'  => 'DJ',
             ),
             array(
                 'file'   => 'Alquiler-altavoz.webp',
-                'title'  => 'Alquiler de altavoces y sonido para eventos en Tenerife',
-                'desc'   => 'Alquiler de altavoces, mezcladoras y sistemas de sonido profesional para eventos en Tenerife. Desde pequeños reuniones hasta grandes conciertos.',
+                'title'  => 'Alquiler Altavoz',
+                'desc'   => 'Altavoces y sonorización profesional para eventos de cualquier tamaño en Tenerife.',
                 'cat'    => 'sonido',
                 'label'  => 'Sonido',
             ),
             array(
                 'file'   => 'Alquiler-Dj-boot.webp',
-                'title'  => 'Alquiler de DJ y equipment para fiestas en Tenerife',
-                'desc'   => 'Servicio de alquiler de DJ con boot completo: altavoces, mezcladora, controladores y software profesional para tu evento en Tenerife.',
+                'title'  => 'Alquiler Dj Boot',
+                'desc'   => 'Alquiler de DJ con equipo completo: altavoces, mezcladora y controladores.',
                 'cat'    => 'dj',
                 'label'  => 'DJ',
             ),
             array(
                 'file'   => 'Alquiler-nexus-tenerife.webp',
-                'title'  => 'Alquiler de iluminación LED y Nexus para eventos en Tenerife',
-                'desc'   => 'Iluminación LED, pantallas Nexus y efectos visuales para eventos en Tenerife. Transformamos tu espacio con tecnología de última generación.',
+                'title'  => 'Alquiler Nexus',
+                'desc'   => 'Alquiler de pantallas Nexus y sistemas LED para eventos en Tenerife.',
                 'cat'    => 'iluminacion',
                 'label'  => 'Iluminación',
             ),
             array(
                 'file'   => 'Mobiliario-eventos-alquiler.webp',
-                'title'  => 'Mobiliario y organización de eventos en Tenerife — Audiomania',
-                'desc'   => 'Mobiliario elegante y organización completa para eventos en Tenerife. Sillas, mesas, mantelería, photocall y todo lo que necesitas para tu celebración.',
+                'title'  => 'Mobiliario Eventos',
+                'desc'   => 'Mobiliario profesional para eventos: sillas, mesas, mantelería y photocall.',
                 'cat'    => 'corporativo',
                 'label'  => 'Corporativo',
             ),
             array(
                 'file'   => 'Organizacion-Eventos-Tenerife.webp',
-                'title'  => 'Organización profesional de eventos en Tenerife — Audiomania Eventos',
-                'desc'   => 'Organización integral de eventos en Tenerife: sonido, iluminación, DJ, mobiliario, photocall y coordinación completa. Más de 15 años de experiencia.',
-                'cat'    => 'fiestas',
-                'label'  => 'Fiestas',
+                'title'  => 'Organización de Eventos Tenerife',
+                'desc'   => 'Organización integral de eventos en Tenerife: sonido, iluminación, DJ y coordinación completa.',
+                'cat'    => 'bodas',
+                'label'  => 'Bodas',
             ),
         );
 
         $gallery_html = '';
 
         // Hero section
-        $gallery_html .= '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'hero-fiesta-bg.webp\');">' . "\n";
+        $gallery_html .= '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'Organizacion-Eventos-Tenerife.webp\');">' . "\n";
         $gallery_html .= '<div class="am-hero-content">' . "\n";
         $gallery_html .= '  <div class="am-hero-badge">📸 Nuestro Portfolio</div>' . "\n";
         $gallery_html .= '  <h1>Galería de <span>Eventos</span></h1>' . "\n";

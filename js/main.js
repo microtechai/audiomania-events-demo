@@ -1,8 +1,7 @@
 /**
  * Audiomania Eventos — Animaciones y JS interactivo
- * - Hero carousel con autoplay, transiciones y dots
+ * - 3 secciones hero con parallax y scroll suave
  * - Scroll reveal con IntersectionObserver
- * - Parallax en hero slides
  * - Header scroll shrink
  * - Scroll progress bar
  * - Back to top
@@ -13,152 +12,72 @@
     'use strict';
 
     // === UTILITY ===
-    function $ (sel, ctx) { return (ctx || document).querySelector(sel); }
+    function $(sel, ctx) { return (ctx || document).querySelector(sel); }
     function $$(sel, ctx) { return Array.from((ctx || document).querySelectorAll(sel)); }
 
-    // === HERO CAROUSEL ===
-    function initCarousel() {
-        var carousel = $('.am-hero-carousel');
-        if (!carousel) return;
-
-        var slides = $$('.am-carousel-slide', carousel);
-        var dots = $$('.am-carousel-dot', carousel);
-        var progress = $('.am-carousel-progress', carousel);
-        if (!slides.length) return;
-
-        var INTERVAL = 6000;
-        var current = 0;
-        var isTransitioning = false;
-        var isHovering = false;
-        var autoTimer = null;
-
-        // ---- Reset progress bar via CSS ----
-        function resetProgress() {
-            if (!progress) return;
-            progress.style.transition = 'none';
-            progress.style.width = '0%';
-            requestAnimationFrame(function() {
-                requestAnimationFrame(function() {
-                    progress.style.transition = 'width ' + INTERVAL + 'ms linear';
-                    progress.style.width = '100%';
-                });
-            });
-        }
-
-        // ---- Go to slide (with transition lock, timer reset, progress reset) ----
-        function goTo(index) {
-            if (isTransitioning) return;
-            if (index === current && slides[current].classList.contains('active')) return;
-
-            isTransitioning = true;
-
-            slides[current].classList.remove('active');
-            dots.forEach(function(d) { d.classList.remove('active'); });
-
-            current = index;
-
-            slides[current].classList.add('active');
-            dots[current].classList.add('active');
-
-            resetProgress();
-            restartAutoTimer();
-
-            setTimeout(function() {
-                isTransitioning = false;
-            }, 1200);
-        }
-
-        // ---- Next slide ----
-        function nextSlide() {
-            if (isTransitioning) return;
-            var next = (current + 1) % slides.length;
-            goTo(next);
-        }
-
-        // ---- Auto timer with proper restart ----
-        function restartAutoTimer() {
-            if (autoTimer) {
-                clearInterval(autoTimer);
-                autoTimer = null;
-            }
-            if (!isHovering) {
-                autoTimer = setInterval(function() {
-                    if (!isHovering) {
-                        nextSlide();
-                    }
-                }, INTERVAL);
-            }
-        }
-
-        restartAutoTimer();
-        resetProgress();
-
-        // ---- Dot click (with stopPropagation to avoid swipe) ----
-        dots.forEach(function(dot, i) {
-            dot.addEventListener('click', function(e) {
-                e.stopPropagation();
-                goTo(i);
-            });
-        });
-
-        // ---- Pause on hover ----
-        carousel.addEventListener('mouseenter', function() {
-            isHovering = true;
-            if (autoTimer) {
-                clearInterval(autoTimer);
-                autoTimer = null;
-            }
-        });
-        carousel.addEventListener('mouseleave', function() {
-            isHovering = false;
-            restartAutoTimer();
-        });
-
-        // ---- Touch/swipe (dots excluded via stopPropagation) ----
-        var touchStartX = 0;
-        var touchStartY = 0;
-
-        carousel.addEventListener('touchstart', function(e) {
-            touchStartX = e.changedTouches[0].clientX;
-            touchStartY = e.changedTouches[0].clientY;
-        }, { passive: true });
-
-        carousel.addEventListener('touchend', function(e) {
-            var touchEndX = e.changedTouches[0].clientX;
-            var touchEndY = e.changedTouches[0].clientY;
-            var diffX = touchStartX - touchEndX;
-            var diffY = Math.abs(touchStartY - touchEndY);
-
-            // Only horizontal swipe (ignore vertical movement and dot clicks)
-            if (Math.abs(diffX) > 50 && Math.abs(diffX) > diffY) {
-                e.stopPropagation();
-                if (!isTransitioning) {
-                    if (diffX > 0) {
-                        goTo((current + 1) % slides.length);
-                    } else {
-                        goTo((current - 1 + slides.length) % slides.length);
+    // === SMOOTH SCROLL (scroll indicators) ===
+    function initSmoothScroll() {
+        // Scroll indicators within hero sections
+        $$('.am-scroll-indicator').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var href = this.getAttribute('href');
+                if (href && href.charAt(0) === '#') {
+                    var target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 }
+            });
+        });
+    }
+
+    // === HERO PARALLAX ===
+    function initHeroParallax() {
+        var sections = $$('.am-hero-section');
+        if (!sections.length) return;
+
+        var ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(function() {
+                    var scrollY = window.scrollY;
+                    sections.forEach(function(section) {
+                        var bg = $('.am-hero-bg', section);
+                        if (!bg) return;
+                        var rect = section.getBoundingClientRect();
+                        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                            var yOffset = scrollY - (section.offsetTop - window.innerHeight);
+                            bg.style.transform = 'translateY(' + (yOffset * 0.3) + 'px) scale(1.1)';
+                        }
+                    });
+                    ticking = false;
+                });
+                ticking = true;
             }
         }, { passive: true });
+    }
 
-        // ---- Keyboard ----
-        document.addEventListener('keydown', function(e) {
-            var carouselRect = carousel.getBoundingClientRect();
-            if (carouselRect.top < 0 || carouselRect.bottom > window.innerHeight) return;
+    // === HERO SECTION REVEAL ===
+    function initHeroReveal() {
+        var sections = $$('.am-hero-section');
+        if (!sections.length) return;
 
-            if (e.key === 'ArrowRight') {
-                clearInterval(autoTimer);
-                isHovering = true;
-                goTo((current + 1) % slides.length);
-                setTimeout(function() { isHovering = false; restartAutoTimer(); }, 3000);
-            }
-            if (e.key === 'ArrowLeft') {
-                clearInterval(autoTimer);
-                isHovering = true;
-                goTo((current - 1 + slides.length) % slides.length);
-                setTimeout(function() { isHovering = false; restartAutoTimer(); }, 3000);
-            }
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('am-hero-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '-80px 0px -60px 0px'
+        });
+
+        sections.forEach(function(section) {
+            section.classList.add('am-hero-reveal');
+            observer.observe(section);
         });
     }
 
@@ -337,30 +256,20 @@
         observer.observe(document.body);
     }
 
-    // === PARALLAX ON HERO SLIDES ===
-    function initParallax() {
-        var slides = $$('.am-carousel-slide');
-        if (!slides.length) return;
-
-        var ticking = false;
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                requestAnimationFrame(function() {
-                    var scrollY = window.scrollY;
-                    slides.forEach(function(slide) {
-                        var rect = slide.getBoundingClientRect();
-                        if (rect.bottom > 0 && rect.top < window.innerHeight) {
-                            var yOffset = scrollY * 0.15;
-                            if (slide.style.backgroundImage) {
-                                slide.style.backgroundPosition = 'center ' + (50 + yOffset * 0.02) + '%';
-                            }
-                        }
-                    });
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        }, { passive: true });
+    // === NAV LINK SMOOTH SCROLL ===
+    function initNavSmoothScroll() {
+        $$('a[href^="#"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                var href = this.getAttribute('href');
+                if (href && href.charAt(0) === '#' && href.length > 1) {
+                    var target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
     }
 
     // === INIT ===
@@ -372,13 +281,15 @@
         }
 
         function run() {
-            initCarousel();
+            initSmoothScroll();
+            initHeroParallax();
+            initHeroReveal();
             initScrollReveal();
             initHeaderShrink();
             initScrollProgress();
             initBackToTop();
             initDiscoCanvas();
-            initParallax();
+            initNavSmoothScroll();
         }
     }
 

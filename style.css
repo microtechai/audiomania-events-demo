@@ -5,7 +5,7 @@
  Author URI: https://nousresearch.com
  Description: Child theme de hello-elementor para Audiomania Eventos — modo oscuro premium + glassmorphism + animaciones modernas.
  Template: hello-elementor
- Version: 3.0.0
+ Version: 4.0.0
  Text Domain: audiomania-events-child
  Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, translation-ready, dark-mode, glassmorphism
 */
@@ -387,54 +387,80 @@ a:hover {
 }
 
 /* ======================================================
-   8. HERO — CAROUSEL (HOME)
+   8. HERO — 3 SECCIONES HOME
    ====================================================== */
-.am-hero-carousel {
+
+/* === HERO SECTIONS (3 full-viewport sections) === */
+.am-hero-section {
     min-height: 100vh;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-margin-top: 0;
 }
 
-.am-carousel-slide {
+/* Separator gradients between sections */
+.am-hero-section:nth-of-type(2) {
+    margin-top: 0;
+}
+
+.am-hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--am-bg-deepest));
+    z-index: 2;
+    pointer-events: none;
+}
+
+.am-hero-section:last-child::after {
+    display: none;
+}
+
+/* Background image */
+.am-hero-bg {
     position: absolute;
     inset: 0;
-    opacity: 0;
-    transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
-    transform: scale(1.05);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: 0;
+    will-change: transform;
+    transition: transform 0.05s linear;
 }
 
-.am-carousel-slide.active {
-    opacity: 1;
-    transform: scale(1);
-    z-index: 2;
+.am-hero-section-1 .am-hero-bg {
+    background-image: url('/audiomaniaeventos/wp-content/uploads/2026/08/Eventos-Tenerife.webp');
 }
 
-/* Ken Burns parallax */
-.am-carousel-slide.active {
-    animation: kenBurns 12s ease-in-out infinite alternate;
+.am-hero-section-2 .am-hero-bg {
+    background-image: url('/audiomaniaeventos/wp-content/uploads/2026/08/Eventos-Canarias.webp');
 }
 
-@keyframes kenBurns {
-    0% { transform: scale(1.0) translate(0, 0); }
-    100% { transform: scale(1.08) translate(-1%, -1%); }
+.am-hero-section-3 .am-hero-bg {
+    background-image: url('/audiomaniaeventos/wp-content/uploads/2026/08/Dj-tenerife.webp');
 }
 
-.am-carousel-overlay {
+/* Overlay */
+.am-hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
         180deg,
-        rgba(2,2,5,0.7) 0%,
+        rgba(2,2,5,0.65) 0%,
         rgba(2,2,5,0.4) 40%,
-        rgba(2,2,5,0.65) 100%
+        rgba(2,2,5,0.55) 70%,
+        rgba(2,2,5,0.9) 100%
     );
-    z-index: 3;
+    z-index: 1;
 }
 
-/* Hero content */
+/* Hero content with staggered animations */
 .am-hero-content {
     position: relative;
     z-index: 5;
@@ -444,7 +470,7 @@ a:hover {
     text-align: center;
 }
 
-/* Badge pill */
+/* Hero badge with glassmorphism */
 .am-hero-badge {
     display: inline-flex;
     align-items: center;
@@ -461,7 +487,16 @@ a:hover {
     margin: 0 auto 28px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    animation: fadeSlideDown 0.8s var(--ease-out) both;
+}
+
+.am-hero-section:nth-child(1) .am-hero-badge {
+    animation: fadeSlideDown 0.8s var(--ease-out) 0.1s both;
+}
+.am-hero-section:nth-child(2) .am-hero-badge {
+    animation: fadeSlideDown 0.8s var(--ease-out) 0.15s both;
+}
+.am-hero-section:nth-child(3) .am-hero-badge {
+    animation: fadeSlideDown 0.8s var(--ease-out) 0.2s both;
 }
 
 @keyframes fadeSlideDown {
@@ -477,19 +512,23 @@ a:hover {
     line-height: 1.05;
     margin: 0 0 24px;
     letter-spacing: -0.03em;
-    animation: fadeSlideUp 1s var(--ease-out) 0.2s both;
 }
 
-.am-hero-content h1 span {
+.am-hero-content h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+    font-weight: 900;
+    line-height: 1.08;
+    margin: 0 0 24px;
+    letter-spacing: -0.02em;
+}
+
+.am-hero-content h1 span,
+.am-hero-content h2 span {
     background: var(--grad-hero);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-}
-
-@keyframes fadeSlideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Subtitle */
@@ -502,7 +541,6 @@ a:hover {
     max-width: 650px;
     margin-left: auto;
     margin-right: auto;
-    animation: fadeSlideUp 1s var(--ease-out) 0.4s both;
 }
 
 /* CTA buttons */
@@ -511,7 +549,6 @@ a:hover {
     gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
-    animation: fadeSlideUp 1s var(--ease-out) 0.6s both;
 }
 
 .am-hero-cta {
@@ -569,51 +606,51 @@ a:hover {
     transform: translateY(-2px);
 }
 
-/* Carousel dots */
-.am-carousel-dots {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+.am-hero-cta-whatsapp {
+    background: #25D366;
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 24px rgba(37,211,102,0.4);
+}
+
+.am-hero-cta-whatsapp:hover {
+    background: #20bd5a;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 40px rgba(37,211,102,0.6);
+}
+
+/* Feature items (pill badges below CTAs) */
+.am-hero-features {
     display: flex;
     gap: 12px;
-    z-index: 10;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
 }
 
-.am-carousel-dot {
-    width: 12px;
-    height: 12px;
+.am-feature-item {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: var(--radius-full);
-    background: rgba(255,255,255,0.3);
-    border: 2px solid rgba(255,255,255,0.4);
-    cursor: pointer;
-    transition: all var(--transition-fast);
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 0.02em;
+    transition: all var(--transition);
+    cursor: default;
 }
 
-.am-carousel-dot.active {
-    background: #fff;
-    border-color: #fff;
-    transform: scale(1.3);
-    box-shadow: 0 0 16px rgba(77, 124, 255, 0.6);
+.am-feature-item:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.25);
+    color: #fff;
+    transform: translateY(-2px);
 }
 
-.am-carousel-dot:hover {
-    background: rgba(255,255,255,0.6);
-}
-
-/* Progress bar */
-.am-carousel-progress {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    background: var(--grad-accent);
-    z-index: 10;
-    transition: width 0.1s linear;
-    box-shadow: 0 0 12px rgba(77, 124, 255, 0.6);
-}
-
-/* Scroll indicator */
+/* Scroll indicator (functional, smooth scroll) */
 .am-scroll-indicator {
     position: absolute;
     bottom: 28px;
@@ -626,11 +663,12 @@ a:hover {
     gap: 8px;
     animation: scrollBounce 2s ease-in-out infinite;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .am-scroll-indicator span {
     font-size: 0.7rem;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.5);
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-weight: 600;
@@ -641,9 +679,57 @@ a:hover {
     50% { transform: translateX(-50%) translateY(8px); }
 }
 
-/* ======================================================
-   9. HERO — SINGLE PAGE (static)
-   ====================================================== */
+/* Hero reveal animation (JS-driven) */
+.am-hero-reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+}
+
+.am-hero-reveal.am-hero-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.am-hero-reveal.am-hero-visible .am-hero-badge {
+    animation: fadeSlideDown 0.8s var(--ease-out) both;
+}
+
+.am-hero-reveal.am-hero-visible .am-hero-content h1,
+.am-hero-reveal.am-hero-visible .am-hero-content h2 {
+    animation: fadeSlideUp 1s var(--ease-out) 0.2s both;
+}
+
+.am-hero-reveal.am-hero-visible .am-hero-content .hero-subtitle {
+    animation: fadeSlideUp 1s var(--ease-out) 0.4s both;
+}
+
+.am-hero-reveal.am-hero-visible .am-hero-cta-group {
+    animation: fadeSlideUp 1s var(--ease-out) 0.6s both;
+}
+
+.am-hero-reveal.am-hero-visible .am-hero-features {
+    animation: fadeSlideUp 1s var(--ease-out) 0.7s both;
+}
+
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ken Burns subtle zoom on active hero bg */
+.am-hero-section-1 .am-hero-bg,
+.am-hero-section-2 .am-hero-bg,
+.am-hero-section-3 .am-hero-bg {
+    animation: kenBurns 15s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.06) translate(-0.5%, -0.5%); }
+}
+
+/* === HERO SINGLE PAGE (static) === */
 .am-hero-single {
     min-height: 65vh;
     position: relative;
