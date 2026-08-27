@@ -967,7 +967,7 @@ function audiomania_hero_content( $content ) {
         $contact_html .= '        </div>' . "\n";
         $contact_html .= '        <div class="am-form-group">' . "\n";
         $contact_html .= '          <label for="am-phone">Teléfono <span class="am-required">*</span></label>' . "\n";
-        $contact_html .= '          <input type="tel" id="am-phone" name="am_phone" required placeholder="+34 600 000 000">' . "\n";
+        $contact_html .= '          <input type="tel" id="am-phone" name="am_phone" required placeholder="+34 6XX XXX XXX">' . "\n";
         $contact_html .= '        </div>' . "\n";
         $contact_html .= '      </div>' . "\n";
         $contact_html .= '      <div class="am-form-group">' . "\n";
@@ -1160,7 +1160,7 @@ function audiomania_hero_content( $content ) {
     }
 
     if ( $hero_html ) {
-        return $hero_html . $content;
+        return $hero_html;
     }
 
     return $content;
