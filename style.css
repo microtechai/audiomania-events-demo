@@ -955,3 +955,228 @@ html {
         height: 40px;
     }
 }
+
+/* ======================================================
+   20. HERO SECTIONS — Full-screen WebP backgrounds
+   ====================================================== */
+.am-hero-section {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.am-hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(3,3,8,0.75) 0%, rgba(3,3,8,0.55) 50%, rgba(3,3,8,0.85) 100%);
+    z-index: 1;
+}
+
+.am-hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, var(--am-bg) 0%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.am-hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    padding: 60px 24px;
+}
+
+.am-hero-content h1 {
+    font-family: var(--am-font-heading);
+    font-weight: 700;
+    color: #fff;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    line-height: 1.15;
+    margin: 0 0 16px;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.5), 0 0 60px rgba(77,124,255,0.15);
+    letter-spacing: -0.02em;
+}
+
+.am-hero-content .hero-subtitle {
+    font-family: var(--am-font-body);
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    color: rgba(255,255,255,0.85);
+    margin: 0 0 36px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.am-hero-content .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--am-font-body);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, var(--am-neon-blue) 0%, #6366f1 100%);
+    color: #fff;
+    border: none;
+    border-radius: var(--am-radius);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 24px rgba(77,124,255,0.35);
+    text-transform: none;
+    letter-spacing: 0.02em;
+}
+
+.am-hero-content .hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 40px rgba(77,124,255,0.5), 0 0 60px rgba(77,124,255,0.2);
+    background: linear-gradient(135deg, #6366f1 0%, var(--am-neon-pink) 100%);
+}
+
+.am-hero-content .hero-cta-secondary {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.4);
+    box-shadow: none;
+    margin-left: 12px;
+}
+
+.am-hero-content .hero-cta-secondary:hover {
+    border-color: #fff;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 0 30px rgba(255,255,255,0.1);
+}
+
+/* Service-specific hero tints */
+.am-hero-section.hero-home { background-image: url('/wp-content/uploads/2026/08/hero-hero-bg-1.webp'); }
+.am-hero-section.hero-servicios { background-image: url('/wp-content/uploads/2026/08/hero-sonido-bg.webp'); }
+.am-hero-section.hero-reservar { background-image: url('/wp-content/uploads/2026/08/hero-party-bg.webp'); }
+.am-hero-section.hero-galeria { background-image: url('/wp-content/uploads/2026/08/hero-fiesta-bg.webp'); }
+.am-hero-section.hero-contacto { background-image: url('/wp-content/uploads/2026/08/hero-fondo-oscuro-bg-1.webp'); }
+.am-hero-section.hero-sobre-nosotros { background-image: url('/wp-content/uploads/2026/08/hero-corporativo-bg-1.webp'); }
+.am-hero-section.hero-shop { background-image: url('/wp-content/uploads/2026/08/hero-evento-bg.webp'); }
+
+/* Service cards with WebP images */
+.am-service-card {
+    background: var(--am-surface);
+    border-radius: var(--am-radius);
+    border: 1px solid var(--am-border);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.am-service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--am-shadow-hover), 0 0 40px rgba(77,124,255,0.2);
+    border-color: var(--am-neon-blue);
+}
+
+.am-service-card .card-image {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.am-service-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.am-service-card .card-image-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.am-service-card .card-image-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to top, var(--am-surface), transparent);
+}
+
+.am-service-card .card-body {
+    padding: 20px;
+}
+
+.am-service-card .card-body h3 {
+    color: var(--am-text-heading);
+    font-size: 1.15rem;
+    margin: 0 0 8px;
+}
+
+.am-service-card .card-body p {
+    color: var(--am-text);
+    opacity: 0.75;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Hero scroll indicator */
+.am-hero-scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    animation: heroBounce 2s ease-in-out infinite;
+}
+
+.am-hero-scroll-indicator svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: rgba(255,255,255,0.5);
+    stroke-width: 2;
+}
+
+@keyframes heroBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* Hero responsive */
+@media (max-width: 768px) {
+    .am-hero-section {
+        min-height: 70vh;
+    }
+    .am-hero-content {
+        padding: 40px 20px;
+    }
+    .am-hero-content .hero-cta {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 8px 0;
+    }
+    .am-hero-content .hero-cta-secondary {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .am-hero-section {
+        min-height: 60vh;
+    }
+    .am-hero-content {
+        padding: 30px 16px;
+    }
+}

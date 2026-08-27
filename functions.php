@@ -418,3 +418,126 @@ add_filter( 'wp_lazy_loading_enabled', '__return_true' );
 add_filter( 'login_errors', function() { return null; } );
 remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
 remove_action( 'template_redirect', 'rest_output_link_header', 11 );
+
+/**
+ * ------------------------------------------------------------------
+ * 13. HERO SECTION INJECTION — Client-side JS approach (Elementor-safe)
+ * ------------------------------------------------------------------
+ */
+function audiomania_hero_js_inject() {
+    if ( is_admin() ) return;
+    // Don't inject on cart, checkout, my-account
+    if ( is_cart() || is_checkout() || is_account_page() ) return;
+
+    ?>
+    <script>
+    (function() {
+        var HERO_DATA = {
+            "audiomaniaeventos/": {
+                "class": "hero-home",
+                "title": "Sonido, Iluminación y Animación para tu Evento",
+                "subtitle": "DJ profesional, alquiler de sonido, iluminación LED, photocall y más. Todo lo que necesitas para una fiesta inolvidable en Tenerife.",
+                "cta_text": "Solicitar Presupuesto",
+                "cta_url": "/audiomaniaeventos/reservar/"
+            },
+            "audiomaniaeventos/servicios/": {
+                "class": "hero-servicios",
+                "title": "Nuestros Servicios",
+                "subtitle": "Equipos profesionales de sonido, iluminación y animación para bodas, eventos corporativos, fiestas y celebraciones.",
+                "cta_text": "Ver Todos los Servicios",
+                "cta_url": "/audiomaniaeventos/reservar/"
+            },
+            "audiomaniaeventos/reservar/": {
+                "class": "hero-reservar",
+                "title": "Reserva tu Equipo",
+                "subtitle": "Elige el equipo perfecto para tu evento. Presupuesto personalizado sin compromiso en menos de 24 horas.",
+                "cta_text": "Solicitar Presupuesto",
+                "cta_url": "/audiomaniaeventos/contacto/"
+            },
+            "audiomaniaeventos/galeria/": {
+                "class": "hero-galeria",
+                "title": "Galería de Eventos",
+                "subtitle": "Mira cómo transformamos espacios con nuestros equipos de sonido, iluminación y animación profesional.",
+                "cta_text": "Contactar Ahora",
+                "cta_url": "/audiomaniaeventos/contacto/"
+            },
+            "audiomaniaeventos/contacto/": {
+                "class": "hero-contacto",
+                "title": "Contacto",
+                "subtitle": "¿Tienes un evento en mente? Cuéntanos tu idea y te preparamos un presupuesto a medida.",
+                "cta_text": "Enviar Mensaje",
+                "cta_url": "/audiomaniaeventos/contacto/"
+            },
+            "audiomaniaeventos/sobre-nosotros/": {
+                "class": "hero-sobre-nosotros",
+                "title": "Sobre Nosotros",
+                "subtitle": "Más de 15 años Bringing la mejor experiencia de sonido e iluminación a eventos en Tenerife y Canarias.",
+                "cta_text": "Nuestros Servicios",
+                "cta_url": "/audiomaniaeventos/servicios/"
+            },
+            "audiomaniaeventos/shop/": {
+                "class": "hero-shop",
+                "title": "Tienda de Equipos",
+                "subtitle": "Alquiler de equipos profesionales: altavoces, mezcladoras, iluminación LED, estructuras y más.",
+                "cta_text": "Ver Equipos",
+                "cta_url": "/audiomaniaeventos/servicios/"
+            }
+        };
+
+        function getHeroKey() {
+            var path = window.location.pathname;
+            // Remove trailing slash for matching, except root
+            if (path !== '/' && path.endsWith('/')) {
+                path = path.slice(0, -1);
+            }
+            if (path === '/' || path === '') path = '';
+            return 'audiomaniaeventos' + path + '/';
+        }
+
+        function injectHero() {
+            var heroData = HERO_DATA[getHeroKey()];
+            if (!heroData) return;
+
+            // Check if hero already exists
+            if (document.querySelector('.am-hero-section')) return;
+
+            var main = document.querySelector('main.site-main') || document.querySelector('#primary');
+            if (!main) return;
+
+            var hero = document.createElement('section');
+            hero.className = 'am-hero-section ' + heroData.class;
+            hero.innerHTML = '<div class="am-hero-content">' +
+                '<h1>' + heroData.title + '</h1>' +
+                '<p class="hero-subtitle">' + heroData.subtitle + '</p>' +
+                '<a href="' + heroData.cta_url + '" class="hero-cta">' +
+                    heroData.cta_text +
+                    '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>' +
+                '</a>' +
+            '</div>' +
+            '<div class="am-hero-scroll-indicator">' +
+                '<svg viewBox="0 0 24 24"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>' +
+            '</div>';
+
+            main.insertBefore(hero, main.firstChild);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', injectHero);
+        } else {
+            injectHero();
+        }
+
+        // Observe DOM changes for Elementor AJAX loading
+        if (typeof MutationObserver !== 'undefined') {
+            var observer = new MutationObserver(function() {
+                if (!document.querySelector('.am-hero-section')) {
+                    injectHero();
+                }
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+        }
+    })();
+    </script>
+    <?php
+}
+add_action( 'wp_footer', 'audiomania_hero_js_inject', 20 );
