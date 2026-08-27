@@ -528,16 +528,206 @@ function audiomania_hero_content( $content ) {
 
     // SERVICIOS
     elseif ( is_page( 'servicios' ) || is_page( 12 ) ) {
-        $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'hero-sonido-bg.webp\');">' . "\n";
+        $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'Eventos-Tenerife.webp\');">' . "\n";
         $hero_html .= '<div class="am-hero-content">' . "\n";
-        $hero_html .= '  <div class="am-hero-badge">Nuestros Servicios</div>' . "\n";
-        $hero_html .= '  <h1>Servicios <span>Profesionales</span></h1>' . "\n";
-        $hero_html .= '  <p class="hero-subtitle">Equipos profesionales de sonido, iluminación y animación para bodas, eventos corporativos, fiestas y celebraciones.</p>' . "\n";
+        $hero_html .= '  <div class="am-hero-badge">Servicios Profesionales</div>' . "\n";
+        $hero_html .= '  <h1>Tu Evento, <span>Nuestra Pasión</span></h1>' . "\n";
+        $hero_html .= '  <p class="hero-subtitle">Sonido, iluminación, DJ y animación profesional para bodas, eventos corporativos, fiestas y celebraciones en Tenerife y toda Canarias.</p>' . "\n";
         $hero_html .= '  <div class="am-hero-cta-group">' . "\n";
-        $hero_html .= '    <a href="/audiomaniaeventos/reservar/" class="am-hero-cta am-hero-cta-primary">Reservar Ahora</a>' . "\n";
+        $hero_html .= '    <a href="/audiomaniaeventos/reservar/" class="am-hero-cta am-hero-cta-primary">Solicitar Presupuesto</a>' . "\n";
+        $hero_html .= '    <a href="https://wa.me/34669621139" class="am-hero-cta am-hero-cta-whatsapp" target="_blank" rel="noopener">WhatsApp Directo</a>' . "\n";
+        $hero_html .= '  </div>' . "\n";
+        $hero_html .= '  <div class="am-hero-features">' . "\n";
+        $hero_html .= '    <div class="am-feature-item">🔊 15+ Años Experiencia</div>' . "\n";
+        $hero_html .= '    <div class="am-feature-item">⚡ Presupuesto en 24h</div>' . "\n";
+        $hero_html .= '    <div class="am-feature-item">📍 Toda Canarias</div>' . "\n";
         $hero_html .= '  </div>' . "\n";
         $hero_html .= '</div>' . "\n";
         $hero_html .= '</section>' . "\n";
+
+        // === SECCIÓN: GRID DE SERVICIOS CON PRECIOS ===
+        $services_content = '<section class="am-services-section">' . "\n";
+        $services_content .= '<div class="am-container">' . "\n";
+
+        // SEO Intro
+        $services_content .= '<div class="am-services-intro">' . "\n";
+        $services_content .= '  <h2>Servicios de Sonido, Iluminación y Animación en Tenerife</h2>' . "\n";
+        $services_content .= '  <p class="am-services-intro-text">Audiomania Eventos ofrece servicios profesionales para todo tipo de celebraciones en Tenerife y Canarias. Desde bodas íntimas hasta eventos corporativos de gran formato, adaptamos cada paquete a tu presupuesto y necesidades. Todos los precios son orientativos — contacta con nosotros para un presupuesto personalizado sin compromiso.</p>' . "\n";
+        $services_content .= '</div>' . "\n";
+
+        // Services Grid
+        $services_content .= '<div class="am-services-grid">' . "\n";
+
+        // Service 1: DJ para Eventos
+        $services_content .= '  <div class="am-service-card" id="dj">' . "\n";
+        $services_content .= '    <div class="am-service-card-inner">' . "\n";
+        $services_content .= '      <div class="am-service-icon-wrap">🎧</div>' . "\n";
+        $services_content .= '      <h3>DJ para Eventos</h3>' . "\n";
+        $services_content .= '      <div class="am-service-price">' . "\n";
+        $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
+        $services_content .= '        <span class="am-price-value">300€</span>' . "\n";
+        $services_content .= '      </div>' . "\n";
+        $services_content .= '      <ul class="am-service-features">' . "\n";
+        $services_content .= '        <li>Equipment Pioneer + USB controlador</li>' . "\n";
+        $services_content .= '        <li>2altavoces activos FBT 12&quot;</li>' . "\n";
+        $services_content .= '        <li>Mesa de mezclas profesional</li>' . "\n";
+        $services_content .= '        <li>Música a medida según estilo</li>' . "\n";
+        $services_content .= '        <li>Duración: hasta 4h + preparación</li>' . "\n";
+        $services_content .= '        <li>Micrófono inalámbrico para anuncios</li>' . "\n";
+        $services_content .= '      </ul>' . "\n";
+        $services_content .= '      <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20DJ%20para%20mi%20evento" class="am-service-cta" target="_blank" rel="noopener">Solicitar Presupuesto</a>' . "\n";
+        $services_content .= '    </div>' . "\n";
+        $services_content .= '  </div>' . "\n";
+
+        // Service 2: Alquiler de Sonido
+        $services_content .= '  <div class="am-service-card" id="sonido">' . "\n";
+        $services_content .= '    <div class="am-service-card-inner">' . "\n";
+        $services_content .= '      <div class="am-service-icon-wrap">🔊</div>' . "\n";
+        $services_content .= '      <h3>Alquiler de Sonido</h3>' . "\n";
+        $services_content .= '      <div class="am-service-price">' . "\n";
+        $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
+        $services_content .= '        <span class="am-price-value">200€</span>' . "\n";
+        $services_content .= '      </div>' . "\n";
+        $services_content .= '      <ul class="am-service-features">' . "\n";
+        $services_content .= '        <li>Sistema FBT profesional completo</li>' . "\n";
+        $services_content .= '        <li>Altavoces + subgraves + monitores</li>' . "\n";
+        $services_content .= '        <li>Mescla digital Yamaha/Allen &amp; Heath</li>' . "\n";
+        $services_content .= '        <li>2micrófonos inalámbricos Shure</li>' . "\n";
+        $services_content .= '        <li>Montaje y montaje incluido</li>' . "\n";
+        $services_content .= '        <li>Técnico de sonido disponible (+50€)</li>' . "\n";
+        $services_content .= '      </ul>' . "\n";
+        $services_content .= '      <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20el%20alquiler%20de%20sonido%20para%20mi%20evento" class="am-service-cta" target="_blank" rel="noopener">Solicitar Presupuesto</a>' . "\n";
+        $services_content .= '    </div>' . "\n";
+        $services_content .= '  </div>' . "\n";
+
+        // Service 3: Iluminación LED
+        $services_content .= '  <div class="am-service-card" id="iluminacion">' . "\n";
+        $services_content .= '    <div class="am-service-card-inner">' . "\n";
+        $services_content .= '      <div class="am-service-icon-wrap">💡</div>' . "\n";
+        $services_content .= '      <h3>Iluminación LED</h3>' . "\n";
+        $services_content .= '      <div class="am-service-price">' . "\n";
+        $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
+        $services_content .= '        <span class="am-price-value">400€</span>' . "\n";
+        $services_content .= '      </div>' . "\n";
+        $services_content .= '      <ul class="am-service-features">' . "\n";
+        $services_content .= '        <li>Luces robóticas moving heads</li>' . "\n";
+        $services_content .= '        <li>Par LEDs RGBW + DMX controller</li>' . "\n";
+        $services_content .= '        <li>Máquina de humo/neblina</li>' . "\n";
+        $services_content .= '        <li>Iluminación stage wash</li>' . "\n";
+        $services_content .= '        <li>Control DMX programado</li>' . "\n";
+        $services_content .= '        <li>Efectos láser (+80€)</li>' . "\n";
+        $services_content .= '      </ul>' . "\n";
+        $services_content .= '      <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20la%20iluminaci%C3%B3n%20LED%20para%20mi%20evento" class="am-service-cta" target="_blank" rel="noopener">Solicitar Presupuesto</a>' . "\n";
+        $services_content .= '    </div>' . "\n";
+        $services_content .= '  </div>' . "\n";
+
+        // Service 4: Pantallas LED / Nexus
+        $services_content .= '  <div class="am-service-card" id="pantallas">' . "\n";
+        $services_content .= '    <div class="am-service-card-inner">' . "\n";
+        $services_content .= '      <div class="am-service-icon-wrap">📺</div>' . "\n";
+        $services_content .= '      <h3>Pantallas LED / Nexus</h3>' . "\n";
+        $services_content .= '      <div class="am-service-price">' . "\n";
+        $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
+        $services_content .= '        <span class="am-price-value">600€</span>' . "\n";
+        $services_content .= '      </div>' . "\n";
+        $services_content .= '      <ul class="am-service-features">' . "\n";
+        $services_content .= '        <li>Pantalla LED P3 interior / P4 exterior</li>' . "\n";
+        $services_content .= '        <li>Tamaño: hasta 4x3m (personalizable)</li>' . "\n";
+        $services_content .= '        <li>Video Wall con controlador Novastar</li>' . "\n";
+        $services_content .= '        <li>Reproducción de contenido en vivo</li>' . "\n";
+        $services_content .= '        <li>Estructura y montaje incluido</li>' . "\n";
+        $services_content .= '        <li>Backup de video (USB/HDMI)</li>' . "\n";
+        $services_content .= '      </ul>' . "\n";
+        $services_content .= '      <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20la%20pantalla%20LED%20para%20mi%20evento" class="am-service-cta" target="_blank" rel="noopener">Solicitar Presupuesto</a>' . "\n";
+        $services_content .= '    </div>' . "\n";
+        $services_content .= '  </div>' . "\n";
+
+        // Service 5: Photocall
+        $services_content .= '  <div class="am-service-card" id="photocall">' . "\n";
+        $services_content .= '    <div class="am-service-card-inner">' . "\n";
+        $services_content .= '      <div class="am-service-icon-wrap">📸</div>' . "\n";
+        $services_content .= '      <h3>Photocall &amp; Backdrop</h3>' . "\n";
+        $services_content .= '      <div class="am-service-price">' . "\n";
+        $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
+        $services_content .= '        <span class="am-price-value">180€</span>' . "\n";
+        $services_content .= '      </div>' . "\n";
+        $services_content .= '      <ul class="am-service-features">' . "\n";
+        $services_content .= '        <li>Photocall personalizado con tu logo/nombre</li>' . "\n";
+        $services_content .= '        <li>Backdrop letras individuales (3D)</li>' . "\n";
+        $services_content .= '        <li>Iluminación incluida</li>' . "\n";
+        $services_content .= '        <li>Impresión fotos al momento</li>' . "\n";
+        $services_content .= '        <li>Accesorios y props para fotos</li>' . "\n";
+        $services_content .= '        <li>Backdrop LED (+100€)</li>' . "\n";
+        $services_content .= '      </ul>' . "\n";
+        $services_content .= '      <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20el%20photocall%20para%20mi%20evento" class="am-service-cta" target="_blank" rel="noopener">Solicitar Presupuesto</a>' . "\n";
+        $services_content .= '    </div>' . "\n";
+        $services_content .= '  </div>' . "\n";
+
+        // Service 6: Paquetes Bodas
+        $services_content .= '  <div class="am-service-card am-service-card-highlight" id="bodas">' . "\n";
+        $services_content .= '    <div class="am-service-card-inner">' . "\n";
+        $services_content .= '      <div class="am-service-badge">⭐ Más Popular</div>' . "\n";
+        $services_content .= '      <div class="am-service-icon-wrap">💒</div>' . "\n";
+        $services_content .= '      <h3>Paquete Boda Completo</h3>' . "\n";
+        $services_content .= '      <div class="am-service-price">' . "\n";
+        $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
+        $services_content .= '        <span class="am-price-value">1.200€</span>' . "\n";
+        $services_content .= '      </div>' . "\n";
+        $services_content .= '      <ul class="am-service-features">' . "\n";
+        $services_content .= '        <li>DJ profesional + animación ceremonia</li>' . "\n";
+        $services_content .= '        <li>Sonido completo banquete + fiesta</li>' . "\n";
+        $services_content .= '        <li>Iluminación ambientación sala</li>' . "\n";
+        $services_content .= '        <li>Photocall personalizado</li>' . "\n";
+        $services_content .= '        <li>Micrófonos inalámbricos ceremonia</li>' . "\n";
+        $services_content .= '        <li>Hasta 6h de servicio completo</li>' . "\n";
+        $services_content .= '        <li>Playlist personalizada a medida</li>' . "\n";
+        $services_content .= '        <li>Coordiador de evento incluido</li>' . "\n";
+        $services_content .= '      </ul>' . "\n";
+        $services_content .= '      <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20el%20paquete%20boda%20completo" class="am-service-cta am-service-cta-highlight" target="_blank" rel="noopener">Solicitar Presupuesto</a>' . "\n";
+        $services_content .= '    </div>' . "\n";
+        $services_content .= '  </div>' . "\n";
+
+        $services_content .= '</div>' . "\n"; // end services grid
+
+        // Additional services row
+        $services_content .= '<div class="am-services-extra">' . "\n";
+        $services_content .= '  <h3>Servicios Complementarios</h3>' . "\n";
+        $services_content .= '  <div class="am-services-extra-grid">' . "\n";
+
+        $extras = array(
+            array('icon' => '🎪', 'title' => 'Escenarios y Tarimas', 'price' => '350€', 'desc' => 'Tarimas de abedul, estructuras metálicas, escenarios modulares. Montaje profesional incluido.'),
+            array('icon' => '🎤', 'title' => 'Karaoke', 'price' => '120€', 'desc' => 'Sistema completo con pantalla, micrófonos, base de canciones actualizada.'),
+            array('icon' => '🪩', 'title' => 'Machine Humo / Nieve', 'price' => '80€', 'desc' => 'Máquina de humo, nieve sintética, confeti. Efectos especiales para momentos clave.'),
+            array('icon' => '💺', 'title' => 'Mobiliario Premium', 'price' => '2€/pza', 'desc' => 'Sillas Tiffany, mesas redondas, mantelería, banquetes. Todo personalizable.'),
+        );
+
+        foreach ( $extras as $ex ) {
+            $services_content .= '    <div class="am-extra-card">' . "\n";
+            $services_content .= '      <div class="am-extra-icon">' . esc_html( $ex['icon'] ) . '</div>' . "\n";
+            $services_content .= '      <h4>' . esc_html( $ex['title'] ) . '</h4>' . "\n";
+            $services_content .= '      <p>' . esc_html( $ex['desc'] ) . '</p>' . "\n";
+            $services_content .= '      <span class="am-extra-price">' . esc_html( $ex['price'] ) . '</span>' . "\n";
+            $services_content .= '    </div>' . "\n";
+        }
+
+        $services_content .= '  </div>' . "\n";
+        $services_content .= '</div>' . "\n";
+
+        // CTA Final
+        $services_content .= '<div class="am-services-cta-section">' . "\n";
+        $services_content .= '  <h2>¿Necesitas un servicio personalizado?</h2>' . "\n";
+        $services_content .= '  <p>Creamos paquetes a medida para tu evento. Cuéntanos qué necesitas y te prepararemos una propuesta adaptada a tu presupuesto.</p>' . "\n";
+        $services_content .= '  <div class="am-services-cta-buttons">' . "\n";
+        $services_content .= '    <a href="/audiomaniaeventos/reservar/" class="am-hero-cta am-hero-cta-primary">Solicitar Presupuesto</a>' . "\n";
+        $services_content .= '    <a href="https://wa.me/34669621139" class="am-hero-cta am-hero-cta-whatsapp" target="_blank" rel="noopener">WhatsApp Directo</a>' . "\n";
+        $services_content .= '  </div>' . "\n";
+        $services_content .= '</div>' . "\n";
+
+        $services_content .= '</div>' . "\n"; // end container
+        $services_content .= '</section>' . "\n"; // end services section
+
+        // Append services content after hero
+        $hero_html .= $services_content;
     }
 
     // RESERVAR
@@ -558,35 +748,35 @@ function audiomania_hero_content( $content ) {
     elseif ( is_page( 'galeria' ) || is_page( 14 ) ) {
         $gallery_images = array(
             array(
-                'file'   => 'hero-hero-bg-1.webp',
+                'file'   => 'Alquiler-altavoz.webp',
                 'title'  => 'Equipo de alta gama alquiler',
                 'desc'   => 'Equipos de sonido profesional de alta gama para alquiler en eventos en Tenerife.',
                 'cat'    => 'sonido',
                 'label'  => 'Sonido',
             ),
             array(
-                'file'   => 'hero-party-bg.webp',
+                'file'   => 'hinchables-led.webp',
                 'title'  => 'Hinchables Led',
                 'desc'   => 'Hinchables LED y mobiliario inflable para eventos y fiestas en Tenerife.',
                 'cat'    => 'fiestas',
                 'label'  => 'Fiestas',
             ),
             array(
-                'file'   => 'hero-fiesta-bg.webp',
+                'file'   => 'iluminacion-led-y-efectos.webp',
                 'title'  => 'Iluminación LED y Efectos',
                 'desc'   => 'Iluminación LED profesional y efectos especiales para eventos en Tenerife.',
                 'cat'    => 'iluminacion',
                 'label'  => 'Iluminación',
             ),
             array(
-                'file'   => 'hero-sonido-bg.webp',
+                'file'   => 'Equipo-de-alta-gama-alquiler.webp',
                 'title'  => 'Alquiler Altavoz',
                 'desc'   => 'Alquiler de altavoces y sistemas de sonido profesional para eventos en Tenerife.',
                 'cat'    => 'sonido',
                 'label'  => 'Sonido',
             ),
             array(
-                'file'   => 'hero-fondo-oscuro-bg-1.webp',
+                'file'   => 'dj-para-eventos.webp',
                 'title'  => 'Dj para Eventos',
                 'desc'   => 'Servicio de DJ profesional para todo tipo de eventos en Tenerife y Canarias.',
                 'cat'    => 'dj',
@@ -600,18 +790,11 @@ function audiomania_hero_content( $content ) {
                 'label'  => 'Bodas',
             ),
             array(
-                'file'   => 'Dj-tenerife.webp',
+                'file'   => 'Eventos-Tenerife.webp',
                 'title'  => 'Eventos Tenerife',
                 'desc'   => 'Servicios completos de sonido y animación para eventos en Tenerife.',
                 'cat'    => 'dj',
                 'label'  => 'DJ',
-            ),
-            array(
-                'file'   => 'Alquiler-altavoz.webp',
-                'title'  => 'Alquiler Altavoz',
-                'desc'   => 'Altavoces y sonorización profesional para eventos de cualquier tamaño en Tenerife.',
-                'cat'    => 'sonido',
-                'label'  => 'Sonido',
             ),
             array(
                 'file'   => 'Alquiler-Dj-boot.webp',
