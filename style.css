@@ -5,7 +5,7 @@
  Author URI: https://nousresearch.com
  Description: Child theme de hello-elementor para Audiomania Eventos — modo oscuro premium + glassmorphism + animaciones modernas.
  Template: hello-elementor
- Version: 6.0.2
+ Version: 6.0.3
  Text Domain: audiomania-events-child
  Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, translation-ready, dark-mode, glassmorphism
 */
@@ -2717,20 +2717,21 @@ html {
    25. HERO ROUNDED CORNERS + HOVER ANIMATIONS
    ====================================================== */
 
-/* Base: sin bordes, sin sombra */
+/* Base: bordes redondeados siempre */
 .am-hero-section,
 .am-hero-single {
-    border-radius: 0;
+    border-radius: 20px;
     overflow: hidden;
     transition: border-radius 0.6s cubic-bezier(0.23, 1, 0.32, 1),
-                box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+                box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+                transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Hover: bordes redondeados + sombra suave */
+/* Hover: sombra + escala */
 .am-hero-section:hover,
 .am-hero-single:hover {
-    border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    transform: scale(1.015);
 }
 
 /* Hero sections (Home 3 secciones): zoom de fondo en hover */
@@ -2740,11 +2741,6 @@ html {
 .am-hero-section:hover .am-hero-bg {
     animation: none;
     transform: scale(1.05);
-}
-
-/* Hero single (Servicios, Reservar, Contacto, etc.): zoom sutil */
-.am-hero-single:hover {
-    transform: scale(1.015);
 }
 
 /* Contenido se eleva sutilmente en hover */
