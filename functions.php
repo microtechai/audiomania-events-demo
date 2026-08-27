@@ -110,16 +110,53 @@ add_action( 'wp_enqueue_scripts', 'audiomania_child_custom_css', 15 );
 
 /**
  * ------------------------------------------------------------------
- * 4. DISCO CANVAS
+ * 4. 3D SOUNDAPE TERRAIN BACKGROUND
  * ------------------------------------------------------------------
  */
-function audiomania_child_disco_canvas() {
+function audiomania_child_soundwave_canvas() {
     if ( is_admin() ) return;
     ?>
-    <canvas id="am-disco-canvas" aria-hidden="true"></canvas>
+    <canvas id="am-soundwave-canvas" aria-hidden="true"></canvas>
     <?php
 }
-add_action( 'wp_body_open', 'audiomania_child_disco_canvas', 5 );
+add_action( 'wp_body_open', 'audiomania_child_soundwave_canvas', 5 );
+
+/**
+ * ------------------------------------------------------------------
+ * 4.5. THREE.JS IMPORTMAP (CDN)
+ * ------------------------------------------------------------------
+ */
+function audiomania_child_importmap() {
+    if ( is_admin() ) return;
+    ?>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+        }
+    }
+    </script>
+    <?php
+}
+add_action( 'wp_head', 'audiomania_child_importmap', 1 );
+
+/**
+ * ------------------------------------------------------------------
+ * 4.6. SOUNDAPE TERRAIN MODULE
+ * ------------------------------------------------------------------
+ */
+function audiomania_child_soundwave_js() {
+    if ( is_admin() ) return;
+    wp_enqueue_script(
+        'audiomania-soundwave',
+        get_stylesheet_directory_uri() . '/js/soundwave-terrain.js',
+        array(),
+        wp_get_theme()->get( 'Version' ),
+        true
+    );
+}
+add_action( 'wp_enqueue_scripts', 'audiomania_child_soundwave_js', 30 );
 
 /**
  * ------------------------------------------------------------------

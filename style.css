@@ -185,14 +185,14 @@ a:hover {
 }
 
 /* ======================================================
-   6. 3D DISCO CANVAS
+   6. 3D SOUNDAPE TERRAIN
    ====================================================== */
-#am-disco-canvas {
+#am-soundwave-canvas {
     position: fixed;
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.4;
+    opacity: 0.85;
 }
 
 .site-header,
@@ -2695,7 +2695,7 @@ html {
 @media print {
     .am-hero-carousel,
     .am-hero-single,
-    #am-disco-canvas,
+    #am-soundwave-canvas,
     .am-whatsapp-float,
     .am-back-to-top,
     .scroll-progress,
