@@ -2496,40 +2496,31 @@ html {
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-/* Card Experience — blue (like contact-card-phone) */
-.am-about-card-experience {
+/* Card Equipos — blue (like contact-card-phone) */
+.am-about-card-equipos {
     border-left: 4px solid #4d7cff;
 }
-.am-about-card-experience:hover {
+.am-about-card-equipos:hover {
     border-left-color: #123A92;
     box-shadow: 0 4px 20px rgba(77, 124, 255, 0.15);
 }
 
-/* Card Equipment — purple */
-.am-about-card-equipment {
-    border-left: 4px solid #a855f7;
-}
-.am-about-card-equipment:hover {
-    border-left-color: #7c3aed;
-    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.15);
-}
-
-/* Card Team — green */
-.am-about-card-team {
+/* Card Operarios — green */
+.am-about-card-operarios {
     border-left: 4px solid #25D366;
 }
-.am-about-card-team:hover {
+.am-about-card-operarios:hover {
     border-left-color: #20bd5a;
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.15);
 }
 
-/* Card Coverage — terracotta */
-.am-about-card-coverage {
-    border-left: 4px solid #A75D42;
+/* Card Servicio integral — purple */
+.am-about-card-servicio {
+    border-left: 4px solid #a855f7;
 }
-.am-about-card-coverage:hover {
-    border-left-color: #8b4532;
-    box-shadow: 0 4px 20px rgba(167, 93, 66, 0.15);
+.am-about-card-servicio:hover {
+    border-left-color: #7c3aed;
+    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.15);
 }
 
 /* Card Icon — same as contact-card-icon */
@@ -2545,10 +2536,9 @@ html {
     background: rgba(77, 124, 255, 0.06);
 }
 
-.am-about-card-experience .am-about-card-icon { background: rgba(77, 124, 255, 0.1); }
-.am-about-card-equipment .am-about-card-icon { background: rgba(168, 85, 247, 0.1); }
-.am-about-card-team .am-about-card-icon { background: rgba(37, 211, 102, 0.1); }
-.am-about-card-coverage .am-about-card-icon { background: rgba(167, 93, 66, 0.1); }
+.am-about-card-equipos .am-about-card-icon { background: rgba(77, 124, 255, 0.1); }
+.am-about-card-operarios .am-about-card-icon { background: rgba(37, 211, 102, 0.1); }
+.am-about-card-servicio .am-about-card-icon { background: rgba(168, 85, 247, 0.1); }
 
 /* Card Content */
 .am-about-card-content {

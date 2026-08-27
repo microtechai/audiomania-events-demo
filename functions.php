@@ -1088,83 +1088,56 @@ function audiomania_hero_content( $content ) {
     elseif ( is_page( 'sobre-nosotros' ) || is_page( 16 ) ) {
         $about_html = '';
 
-        // Hero
-        $about_html .= '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'hero-corporativo-bg-1.webp\');">' . "\n";
+        // Hero — Alquiler-nexus-tenerife.webp
+        $about_html .= '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'Alquiler-nexus-tenerife.webp\');">' . "\n";
         $about_html .= '<div class="am-hero-content">' . "\n";
-        $about_html .= '  <div class="am-hero-badge">🏢 Nuestra Historia</div>' . "\n";
-        $about_html .= '  <h1>Sobre <span>Audiomania Eventos</span></h1>' . "\n";
-        $about_html .= '  <p class="hero-subtitle">Más de 15 años llevando la mejor experiencia de sonido e iluminación a eventos en Tenerife y toda Canarias. Profesionalidad, pasión y tecnología de vanguardia.</p>' . "\n";
-        $about_html .= '  <div class="am-hero-cta-group">' . "\n";
-        $about_html .= '    <a href="/audiomaniaeventos/galeria/" class="am-hero-cta am-hero-cta-primary">Ver Nuestro Trabajo</a>' . "\n";
-        $about_html .= '  </div>' . "\n";
+        $about_html .= '  <div class="am-hero-badge">Nuestra Historia</div>' . "\n";
+        $about_html .= '  <h1>Más de 10 años haciendo que cada evento sea <span>inolvidable</span></h1>' . "\n";
         $about_html .= '</div>' . "\n";
         $about_html .= '</section>' . "\n";
 
-        // SEO Intro
-        $about_html .= '<section class="am-gallery-seo-intro">' . "\n";
-        $about_html .= '<div class="am-container">' . "\n";
-        $about_html .= '  <h2>Quién es Audiomania Eventos en Tenerife</h2>' . "\n";
-        $about_html .= '  <p><strong>Audiomania Eventos</strong> es la empresa de referencia en <strong>sonido, iluminación y animación profesional para eventos en Tenerife</strong>. Con más de <strong>15 años de experiencia</strong>, hemos producido miles de eventos en toda la isla — desde bodas íntimas en Puerto de la Cruz hasta grandes eventos corporativos en Costa Adeje.</p>' . "\n";
-        $about_html .= '  <p>Nuestro equipo está formado por profesionales del sonido, DJs con carrera internacional, técnicos de iluminación LED y coordinadores de eventos. Trabajamos con equipamiento de última generación: line arrays, pantallas Nexus, controladores Pioneer y software de última generación para garantizar que cada evento sea impecable.</p>' . "\n";
-        $about_html .= '  <p>Desde nuestra base en Tenerife, cubrimos toda la isla — Santa Cruz, La Laguna, Garachico, Icod, La Orotava, Adeje, Los Cristianos — y también realizamos montajes en Gran Canaria, Lanzarote, Fuerteventura y el resto de las Islas Canarias.</p>' . "\n";
-        $about_html .= '</div>' . "\n";
-        $about_html .= '</section>' . "\n";
-
-        // Features — Contact-card style
+        // Historia
         $about_html .= '<section class="am-about-section">' . "\n";
         $about_html .= '<div class="am-container">' . "\n";
 
         $about_html .= '  <div class="am-about-intro">' . "\n";
-        $about_html .= '    <h2>¿Por qué confiar en Audiomania Eventos?</h2>' . "\n";
+        $about_html .= '    <h2>Nuestra Historia</h2>' . "\n";
+        $about_html .= '    <p>AudioManía Eventos nació de la pasión por la tecnología sonora y la iluminación profesional. Desde nuestros inicios, hemos trabajado con bodas, eventos corporativos, conciertos y fiestas privadas en toda España.</p>' . "\n";
+        $about_html .= '    <p>Contamos con los mejores equipos del mercado: sonido L-Acoustics, iluminación Grand MA2, pantallas LED de última generación y DJs profesionales. Nuestro equipo técnico se encarga de todo: diseño, montaje, operación y desmontaje.</p>' . "\n";
+        $about_html .= '    <p>¿Qué nos diferencia?</p>' . "\n";
         $about_html .= '  </div>' . "\n";
 
-        // Features — same card style as contact page
+        // Cards — same style as contact page
         $about_html .= '  <div class="am-about-cards">' . "\n";
 
-        // Card 1 — Experience (blue)
-        $about_html .= '    <div class="am-about-card am-about-card-experience">' . "\n";
+        // Card 1 — Equipos (blue)
+        $about_html .= '    <div class="am-about-card am-about-card-equipos">' . "\n";
         $about_html .= '      <div class="am-about-card-icon">🎵</div>' . "\n";
         $about_html .= '      <div class="am-about-card-content">' . "\n";
-        $about_html .= '        <h3>+15 Años de Experiencia</h3>' . "\n";
-        $about_html .= '        <p>Más de 1.500 eventos producidos en Tenerife y Canarias. Bodas, corporativos, fiestas privadas, conciertos y celebraciones.</p>' . "\n";
+        $about_html .= '        <h3>Equipos de gama alta</h3>' . "\n";
+        $about_html .= '        <p>Solo trabajamos con marcas profesionales: L-Acoustics, Pioneer, Linsn, Grand MA2.</p>' . "\n";
         $about_html .= '      </div>' . "\n";
         $about_html .= '    </div>' . "\n";
 
-        // Card 2 — Equipment (purple)
-        $about_html .= '    <div class="am-about-card am-about-card-equipment">' . "\n";
-        $about_html .= '      <div class="am-about-card-icon">💎</div>' . "\n";
-        $about_html .= '      <div class="am-about-card-content">' . "\n";
-        $about_html .= '        <h3>Equipamiento Profesional de Última Generación</h3>' . "\n";
-        $about_html .= '        <p>Line arrays, pantallas LED, controladores Pioneer, mezcladoras digitales. Solo trabajamos con marcas premium.</p>' . "\n";
-        $about_html .= '      </div>' . "\n";
-        $about_html .= '    </div>' . "\n";
-
-        // Card 3 — Team (green)
-        $about_html .= '    <div class="am-about-card am-about-card-team">' . "\n";
+        // Card 2 — Operarios (green)
+        $about_html .= '    <div class="am-about-card am-about-card-operarios">' . "\n";
         $about_html .= '      <div class="am-about-card-icon">👥</div>' . "\n";
         $about_html .= '      <div class="am-about-card-content">' . "\n";
-        $about_html .= '        <h3>Equipo Humano Profesional</h3>' . "\n";
-        $about_html .= '        <p>DJs con carrera internacional, técnicos de sonido certificados, montadores especializados y coordinadores de evento.</p>' . "\n";
+        $about_html .= '        <h3>Operarios profesionales</h3>' . "\n";
+        $about_html .= '        <p>Equipo técnico certificado con años de experiencia en directo.</p>' . "\n";
         $about_html .= '      </div>' . "\n";
         $about_html .= '    </div>' . "\n";
 
-        // Card 4 — Coverage (terracotta)
-        $about_html .= '    <div class="am-about-card am-about-card-coverage">' . "\n";
-        $about_html .= '      <div class="am-about-card-icon">📍</div>' . "\n";
+        // Card 3 — Servicio integral (purple)
+        $about_html .= '    <div class="am-about-card am-about-card-servicio">' . "\n";
+        $about_html .= '      <div class="am-about-card-icon">🔧</div>' . "\n";
         $about_html .= '      <div class="am-about-card-content">' . "\n";
-        $about_html .= '        <h3>Base en Tenerife, Cobertura Canaria</h3>' . "\n";
-        $about_html .= '        <p>Desde nuestra base en Tenerife, cubrimos toda la isla y las demás islas: Gran Canaria, Lanzarote, Fuerteventura, La Palma y El Hierro.</p>' . "\n";
+        $about_html .= '        <h3>Servicio integral</h3>' . "\n";
+        $about_html .= '        <p>Alquiler, montaje, operación y desmontaje. Nos encargamos de todo.</p>' . "\n";
         $about_html .= '      </div>' . "\n";
         $about_html .= '    </div>' . "\n";
 
         $about_html .= '  </div>' . "\n"; // end am-about-cards
-
-        // CTA
-        $about_html .= '  <div class="am-about-cta">' . "\n";
-        $about_html .= '    <h3>¿Quieres conocernos?</h3>' . "\n";
-        $about_html .= '    <p>Contacta con nosotros y te contaremos todo sobre Audiomania Eventos. Presupuesto sin compromiso.</p>' . "\n";
-        $about_html .= '    <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-primary">Contactar Ahora</a>' . "\n";
-        $about_html .= '  </div>' . "\n";
 
         $about_html .= '</div>' . "\n"; // end container
         $about_html .= '</section>' . "\n"; // end am-about-section
