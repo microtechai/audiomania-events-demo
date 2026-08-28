@@ -14,6 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * ------------------------------------------------------------------
+ * THEME: Audiomania Eventos Child
+ * Developed by: MicroTech AI (microtechai.es)
+ * Version: 6.0.4
  * 1. THEME SETUP
  * ------------------------------------------------------------------
  */
@@ -107,6 +110,217 @@ function audiomania_child_custom_css() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'audiomania_child_custom_css', 15 );
+
+
+/**
+ * ------------------------------------------------------------------
+ * 4. SEO — META TAGS, TITLE, OG, TWITTER, CANONICAL
+ * ------------------------------------------------------------------
+ */
+function audiomania_child_seo_head() {
+    ?>
+    <!-- Title & Description -->
+    <?php if ( is_front_page() || is_home() ) : ?>
+        <title>Audiomania Eventos – DJ, Sonido e Iluminación Profesional en Tenerife</title>
+        <meta name="description" content="Audiomania Eventos: servicios profesionales de DJ, sonido, iluminación LED y photocall para bodas, fiestas y eventos corporativos en Tenerife y toda Canarias. Presupuesto sin compromiso.">
+    <?php elseif ( is_page( 'servicios' ) || is_page( 12 ) ) : ?>
+        <title>Servicios – DJ, Sonido e Iluminación para Eventos en Tenerife | Audiomania</title>
+        <meta name="description" content="Descubre todos los servicios de Audiomania Eventos: DJ profesional, alquiler de sonido, iluminación LED, photocall y animación. Desde 200€ en Tenerife.">
+    <?php elseif ( is_page( 'reservar' ) || is_page( 13 ) ) : ?>
+        <title>Reservar Equipo – Presupuesto DJ e Iluminación en Tenerife | Audiomania</title>
+        <meta name="description" content="Solicita tu presupuesto para DJ, sonido e iluminación en Tenerife. Presupuesto personalizado en 24h. Bodas, fiestas y eventos corporativos.">
+    <?php elseif ( is_page( 'galeria' ) || is_page( 14 ) ) : ?>
+        <title>Galería – Eventos de DJ y Iluminación en Tenerife | Audiomania Eventos</title>
+        <meta name="description" content="Galería de eventos de Audiomania: bodas, fiestas, eventos corporativos con DJ, sonido e iluminación profesional en Tenerife y Canarias.">
+    <?php elseif ( is_page( 'sobre-nosotros' ) || is_page( 16 ) ) : ?>
+        <title>Sobre Nosotros – Audiomania Eventos, Tenerife | +15 años de experiencia</title>
+        <meta name="description" content="Más de 15 años y +500 eventos con sonido e iluminación profesional en Tenerife. Conoce a Audiomania Eventos.">
+    <?php elseif ( is_page( 'contacto' ) || is_page( 15 ) ) : ?>
+        <title>Contacto – Audiomania Eventos Tenerife | +34 669 621 139</title>
+        <meta name="description" content="Contacta con Audiomania Eventos. Teléfono: +34 669 621 139. Email: carlostoledodj@gmail.com. Tenerife, Canarias.">
+    <?php elseif ( is_woocommerce() ) : ?>
+        <title>Tienda – Audiomania Eventos</title>
+        <meta name="description" content="Equipamiento profesional de sonido, iluminación y DJ para eventos en Tenerife.">
+    <?php else : ?>
+        <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <meta name="description" content="Audiomania Eventos – Servicios profesionales de sonido, iluminación y animación para eventos en Tenerife y Canarias.">
+    <?php endif; ?>
+
+    <!-- Canonical -->
+    <?php if ( ! is_paged() ) : ?>
+        <link rel="canonical" href="<?php echo esc_url( get_permalink() ); ?>">
+    <?php else : ?>
+        <link rel="canonical" href="<?php echo esc_url( get_pagenum_link( 1 ) ); ?>">
+    <?php endif; ?>
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="<?php echo is_front_page() ? 'website' : 'article'; ?>">
+    <meta property="og:title" content="<?php echo is_front_page() ? 'Audiomania Eventos – DJ, Sonido e Iluminación en Tenerife' : wp_title( '', false ); ?>">
+    <meta property="og:description" content="Audiomania Eventos: servicios profesionales de DJ, sonido, iluminación LED y photocall para bodas, fiestas y eventos corporativos en Tenerife y toda Canarias.">
+    <meta property="og:url" content="<?php echo esc_url( is_front_page() ? home_url( '/' ) : get_permalink() ); ?>">
+    <meta property="og:site_name" content="Audiomania Eventos">
+    <meta property="og:image" content="<?php echo esc_url( home_url( '/wp-content/uploads/2026/08/Eventos-Tenerife.webp' ) ); ?>">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Audiomania Eventos - DJ y Sonido Profesional en Tenerife">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Audiomania Eventos – DJ, Sonido e Iluminación en Tenerife">
+    <meta name="twitter:description" content="Servicios profesionales de DJ, sonido, iluminación LED y photocall para eventos en Tenerife y Canarias.">
+    <meta name="twitter:image" content="<?php echo esc_url( home_url( '/wp-content/uploads/2026/08/Eventos-Tenerife.webp' ) ); ?>">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <?php
+}
+add_action( 'wp_head', 'audiomania_child_seo_head', 1 );
+
+/**
+ * ------------------------------------------------------------------
+ * 5. SEO — SCHEMA.ORG JSON-LD (invisible al usuario)
+ * ------------------------------------------------------------------
+ */
+function audiomania_child_schema_jsonld() {
+    // LocalBusiness: Audiomania Eventos
+    ?>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Audiomania Eventos",
+        "description": "Servicios profesionales de DJ, sonido, iluminación LED, photocall y animación para eventos en Tenerife y toda Canarias. Bodas, fiestas, eventos corporativos.",
+        "url": "<?php echo esc_url_raw( home_url( '/' ) ); ?>",
+        "telephone": "+34-669-621-139",
+        "email": "carlostoledodj@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tenerife",
+            "addressRegion": "Canarias",
+            "addressCountry": "ES"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "28.4636",
+            "longitude": "-16.2518"
+        },
+        "serviceType": ["DJ para Eventos", "Alquiler de Sonido", "Iluminación LED", "Photocall", "Animación de Eventos", "Sonido para Bodas"],
+        "areaServed": {
+            "@type": "Place",
+            "name": "Tenerife, Canarias, España"
+        },
+        "priceRange": "€€",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+                "opens": "00:00",
+                "closes": "23:59"
+            }
+        ],
+        "sameAs": []
+    }
+    </script>
+    <?php
+
+    // Organization: MicroTech AI (desarrollador)
+    ?>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MicroTech AI",
+        "url": "https://microtechai.es",
+        "description": "Desarrollo web y soluciones tecnológicas con inteligencia artificial.",
+        "founder": {
+            "@type": "Organization",
+            "name": "MicroTech AI"
+        }
+    }
+    </script>
+    <?php
+
+    // Breadcrumbs (solo en páginas internas)
+    if ( ! is_front_page() && ! is_home() && ! is_woocommerce() ) {
+        ?>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Inicio",
+                    "item": "<?php echo esc_url_raw( home_url( '/' ) ); ?>"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "<?php echo esc_html( get_the_title() ); ?>",
+                    "item": "<?php echo esc_url_raw( get_permalink() ); ?>"
+                }
+            ]
+        }
+        </script>
+        <?php
+    }
+
+    // Product schema para WooCommerce
+    if ( function_exists( 'is_product' ) && is_product() ) {
+        global $product;
+        if ( $product ) {
+            ?>
+            <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "name": "<?php echo esc_js( $product->get_name() ); ?>",
+                "description": "<?php echo esc_js( wp_strip_all_tags( $product->get_short_description() ?: $product->get_description() ) ); ?>",
+                "brand": {
+                    "@type": "Brand",
+                    "name": "Audiomania Eventos"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "url": "<?php echo esc_url_raw( $product->get_permalink() ); ?>",
+                    "priceCurrency": "<?php echo esc_attr( get_woocommerce_currency() ); ?>",
+                    "price": "<?php echo esc_attr( $product->get_price() ); ?>",
+                    "availability": "<?php echo $product->is_in_stock() ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock'; ?>",
+                    "seller": {
+                        "@type": "Organization",
+                        "name": "Audiomania Eventos"
+                    }
+                }
+            }
+            </script>
+            <?php
+        }
+    }
+
+    // Product listing schema
+    if ( is_shop() || is_product_category() || is_product_tag() ) {
+        ?>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "<?php echo esc_js( get_the_title() ?: 'Tienda' ); ?>",
+            "description": "Catálogo de productos de Audiomania Eventos – equipamiento de sonido, iluminación y DJ para eventos profesionales en Tenerife.",
+            "url": "<?php echo esc_url_raw( is_shop() ? get_permalink() : get_term_link( get_queried_object() ) ); ?>",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Audiomania Eventos",
+                "url": "<?php echo esc_url_raw( home_url( '/' ) ); ?>"
+            }
+        }
+        </script>
+        <?php
+    }
+}
+add_action( 'wp_head', 'audiomania_child_schema_jsonld', 1 );
 
 
 /**
@@ -1276,7 +1490,8 @@ function audiomania_child_footer() {
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; <?php echo date( 'Y' ); ?> Audiomania Eventos. <?php esc_html_e( 'Todos los derechos reservados.', 'audiomania-events-child' ); ?></p>
+            <p>&copy; <?php echo date( 'Y' ); ?> Audiomania Eventos.<\/p>
+            <p class="footer-developed-by"><?php esc_html_e( 'desarrollado por ', 'audiomania-events-child' ); ?><a href="https://microtechai.es" rel="noopener noreferrer" target="_blank">microtechai.es<\/a> <?php esc_html_e( 'Todos los derechos reservados.', 'audiomania-events-child' ); ?></p>
         </div>
     </footer>
     <?php
