@@ -121,37 +121,23 @@ function audiomania_child_seo_head() {
     ?>
     <!-- Title & Description -->
     <?php if ( is_front_page() || is_home() ) : ?>
-        <title>Audiomania Eventos – DJ, Sonido e Iluminación Profesional en Tenerife</title>
         <meta name="description" content="Audiomania Eventos: servicios profesionales de DJ, sonido, iluminación LED y photocall para bodas, fiestas y eventos corporativos en Tenerife y toda Canarias. Presupuesto sin compromiso.">
     <?php elseif ( is_page( 'servicios' ) || is_page( 12 ) ) : ?>
-        <title>Servicios – DJ, Sonido e Iluminación para Eventos en Tenerife | Audiomania</title>
         <meta name="description" content="Descubre todos los servicios de Audiomania Eventos: DJ profesional, alquiler de sonido, iluminación LED, photocall y animación. Desde 200€ en Tenerife.">
     <?php elseif ( is_page( 'reservar' ) || is_page( 13 ) ) : ?>
-        <title>Reservar Equipo – Presupuesto DJ e Iluminación en Tenerife | Audiomania</title>
         <meta name="description" content="Solicita tu presupuesto para DJ, sonido e iluminación en Tenerife. Presupuesto personalizado en 24h. Bodas, fiestas y eventos corporativos.">
     <?php elseif ( is_page( 'galeria' ) || is_page( 14 ) ) : ?>
-        <title>Galería – Eventos de DJ y Iluminación en Tenerife | Audiomania Eventos</title>
         <meta name="description" content="Galería de eventos de Audiomania: bodas, fiestas, eventos corporativos con DJ, sonido e iluminación profesional en Tenerife y Canarias.">
     <?php elseif ( is_page( 'sobre-nosotros' ) || is_page( 16 ) ) : ?>
-        <title>Sobre Nosotros – Audiomania Eventos, Tenerife | +15 años de experiencia</title>
         <meta name="description" content="Más de 15 años y +500 eventos con sonido e iluminación profesional en Tenerife. Conoce a Audiomania Eventos.">
     <?php elseif ( is_page( 'contacto' ) || is_page( 15 ) ) : ?>
-        <title>Contacto – Audiomania Eventos Tenerife | +34 669 621 139</title>
         <meta name="description" content="Contacta con Audiomania Eventos. Teléfono: +34 669 621 139. Email: carlostoledodj@gmail.com. Tenerife, Canarias.">
     <?php elseif ( is_woocommerce() ) : ?>
-        <title>Tienda – Audiomania Eventos</title>
         <meta name="description" content="Equipamiento profesional de sonido, iluminación y DJ para eventos en Tenerife.">
     <?php else : ?>
-        <title><?php wp_title( '|', true, 'right' ); ?></title>
         <meta name="description" content="Audiomania Eventos – Servicios profesionales de sonido, iluminación y animación para eventos en Tenerife y Canarias.">
     <?php endif; ?>
 
-    <!-- Canonical -->
-    <?php if ( ! is_paged() ) : ?>
-        <link rel="canonical" href="<?php echo esc_url( get_permalink() ); ?>">
-    <?php else : ?>
-        <link rel="canonical" href="<?php echo esc_url( get_pagenum_link( 1 ) ); ?>">
-    <?php endif; ?>
 
     <!-- Open Graph -->
     <meta property="og:locale" content="es_ES">
@@ -177,6 +163,28 @@ function audiomania_child_seo_head() {
     <?php
 }
 add_action( 'wp_head', 'audiomania_child_seo_head', 1 );
+
+add_filter( 'pre_get_document_title', function( $title ) {
+    if ( is_front_page() || is_home() ) {
+        return 'Audiomania Eventos – DJ, Sonido e Iluminación Profesional en Tenerife';
+    }
+    if ( is_page( 'servicios' ) || is_page( 12 ) ) {
+        return 'Servicios – DJ, Sonido e Iluminación para Eventos en Tenerife | Audiomania';
+    }
+    if ( is_page( 'reservar' ) || is_page( 13 ) ) {
+        return 'Reservar Equipo – Presupuesto DJ e Iluminación en Tenerife | Audiomania';
+    }
+    if ( is_page( 'galeria' ) || is_page( 14 ) ) {
+        return 'Galería – Eventos de DJ e Iluminación en Tenerife | Audiomania Eventos';
+    }
+    if ( is_page( 'sobre-nosotros' ) || is_page( 16 ) ) {
+        return 'Sobre Nosotros – Audiomania Eventos, Tenerife | +15 años de experiencia';
+    }
+    if ( is_page( 'contacto' ) || is_page( 15 ) ) {
+        return 'Contacto – Audiomania Eventos Tenerife | +34 669 621 139';
+    }
+    return $title;
+}, 9999 );
 
 /**
  * ------------------------------------------------------------------
@@ -1716,3 +1724,14 @@ function audiomania_svg_icons_css() {
     </style>
     <?php
 }
+
+/**
+ * SEO/layout cleanup for the Spanish front page.
+ */
+add_filter( 'language_attributes', function( $output ) {
+    return preg_replace( '/\blang=["\'][^"\']*["\']/', 'lang="es-ES"', $output, 1 );
+}, 9999 );
+
+add_filter( 'hello_elementor_page_title', function( $show ) {
+    return ( is_front_page() || is_home() ) ? false : $show;
+}, 99 );

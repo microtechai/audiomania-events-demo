@@ -2957,3 +2957,45 @@ html {
 .home .entry-title {
     display: none !important;
 }
+
+/* ======================================================
+   FULL-WIDTH SITE SHELL
+   Keep text readable; let the visual sections reach the viewport.
+   ====================================================== */
+.site-header,
+.site-main,
+.site-footer {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.site-main,
+.site-main .site-main {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.site-header .header-inner,
+.site-footer .footer-inner {
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.am-hero-section,
+.am-hero-single {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+}
+
+@media (max-width: 767px) {
+    .site-header .header-inner,
+    .site-footer .footer-inner {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
