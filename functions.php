@@ -121,15 +121,15 @@ function audiomania_child_seo_head() {
     ?>
     <!-- Title & Description -->
     <?php if ( is_front_page() || is_home() ) : ?>
-        <meta name="description" content="Audiomania Eventos: servicios profesionales de DJ, sonido, iluminación LED y photocall para bodas, fiestas y eventos corporativos en Tenerife y toda Canarias. Presupuesto sin compromiso.">
+        <meta name="description" content="DJ, sonido e iluminación profesional para bodas, fiestas privadas y eventos corporativos en Tenerife. Más de 15 años y muchos más de 500 eventos. Presupuesto en menos de 24 horas.">
     <?php elseif ( is_page( 'servicios' ) || is_page( 12 ) ) : ?>
-        <meta name="description" content="Descubre todos los servicios de Audiomania Eventos: DJ profesional, alquiler de sonido, iluminación LED, photocall y animación. Desde 200€ en Tenerife.">
+        <meta name="description" content="Servicios de DJ, sonido, iluminación, pantallas LED, photocall, mobiliario y efectos para bodas, fiestas y eventos corporativos en Tenerife.">
     <?php elseif ( is_page( 'reservar' ) || is_page( 13 ) ) : ?>
-        <meta name="description" content="Solicita tu presupuesto para DJ, sonido e iluminación en Tenerife. Presupuesto personalizado en 24h. Bodas, fiestas y eventos corporativos.">
+        <meta name="description" content="Pide presupuesto para DJ, sonido, iluminación y producción técnica en Tenerife. Te respondemos en menos de 24 horas.">
     <?php elseif ( is_page( 'galeria' ) || is_page( 14 ) ) : ?>
         <meta name="description" content="Galería de eventos de Audiomania: bodas, fiestas, eventos corporativos con DJ, sonido e iluminación profesional en Tenerife y Canarias.">
     <?php elseif ( is_page( 'sobre-nosotros' ) || is_page( 16 ) ) : ?>
-        <meta name="description" content="Más de 15 años y +500 eventos con sonido e iluminación profesional en Tenerife. Conoce a Audiomania Eventos.">
+        <meta name="description" content="Más de 15 años y más de 500 eventos con DJ, sonido, iluminación, pantallas LED, photocall y efectos en Tenerife.">
     <?php elseif ( is_page( 'contacto' ) || is_page( 15 ) ) : ?>
         <meta name="description" content="Contacta con Audiomania Eventos. Teléfono: +34 669 621 139. Email: carlostoledodj@gmail.com. Tenerife, Canarias.">
     <?php elseif ( is_woocommerce() ) : ?>
@@ -672,9 +672,9 @@ function audiomania_hero_content( $content ) {
         $hero_html .= '  <div class="am-hero-bg" style="background-image:url(\'' . $base . 'Eventos-Tenerife.webp\');"></div>' . "\n";
         $hero_html .= '  <div class="am-hero-overlay"></div>' . "\n";
         $hero_html .= '  <div class="am-hero-content">' . "\n";
-        $hero_html .= '    <div class="am-hero-badge"><svg style="width:20px;height:20px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg> Eventos Profesionales en Tenerife</div>' . "\n";
-        $hero_html .= '    <h1>Sonido, Iluminación y <span>Animación</span> para tu Evento</h1>' . "\n";
-        $hero_html .= '    <p class="hero-subtitle">DJ profesional, alquiler de sonido, iluminación LED, photocall y más. Todo lo que necesitas para una fiesta inolvidable en Tenerife y Canarias.</p>' . "\n";
+        $hero_html .= '    <div class="am-hero-badge"><svg style="width:20px;height:20px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg> DJ, sonido e iluminación para eventos en Tenerife</div>' . "\n";
+        $hero_html .= '    <h1>Tu evento empieza con el <span>ambiente adecuado</span></h1>' . "\n";
+        $hero_html .= '    <p class="hero-subtitle">Ponemos música, sonido e iluminación a bodas, fiestas privadas y eventos corporativos en Tenerife. Diseñamos cada montaje según el espacio, el número de invitados y el tipo de celebración. Más de 15 años y muchos más de 500 eventos.</p>' . "\n";
         $hero_html .= '    <div class="am-hero-cta-group">' . "\n";
         $hero_html .= '      <a href="/audiomaniaeventos/reservar/" class="am-hero-cta am-hero-cta-primary">Solicitar Presupuesto <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>' . "\n";
         $hero_html .= '      <a href="/audiomaniaeventos/servicios/" class="am-hero-cta am-hero-cta-secondary">Ver Servicios</a>' . "\n";
@@ -697,16 +697,16 @@ function audiomania_hero_content( $content ) {
         $hero_html .= '  <div class="am-hero-overlay"></div>' . "\n";
         $hero_html .= '  <div class="am-hero-content">' . "\n";
         $hero_html .= '    <div class="am-hero-badge"><svg style="width:20px;height:20px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.63 2.16c-.6-.41-1.39-.51-2.08-.27l-.76.24C13.05 1.83 12.54 1.5 12 1.5s-1.05.33-1.79.63l-.76-.24c-.69-.24-1.48-.14-2.08.27C6.61 2.64 6 3.58 6 5v8.21l-2.76.92A1.001 1.001 0 0 0 3 15.15v.85c0 .55.45 1 1 1h.38l.62 4.34c.07.47.48.81.96.81h.02c.48 0 .89-.34.96-.81L7.5 17h9l.54 4.34c.07.47.48.81.96.81h.02c.48 0 .89-.34.96-.81l.62-4.34H20c.55 0 1-.45 1-1v-.85c0-.42-.27-.79-.66-.92L18 13.21V5c0-1.42-.61-2.36-1.37-2.84zM12 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg> Llevamos tu evento por toda Canarias</div>' . "\n";
-        $hero_html .= '    <h2>Montaje Profesional en <span>Tenerife y Todas las Islas</span></h2>' . "\n";
-        $hero_html .= '    <p class="hero-subtitle">Bodas en Adeje, fiestas en La Laguna, corporativos en Santa Cruz, celebraciones en La Orotava. Llevamos equipamiento profesional a cualquier punto de la isla y las demás islas canarias.</p>' . "\n";
+        $hero_html .= '    <h2>Eventos en <span>todos los municipios de Tenerife</span></h2>' . "\n";
+        $hero_html .= '    <p class="hero-subtitle">Trabajamos en todos los municipios de Tenerife con sonido profesional, iluminación, pantallas LED, photocall, mobiliario y efectos. También estudiamos montajes en el resto de Canarias según la fecha y las necesidades técnicas.</p>' . "\n";
         $hero_html .= '    <div class="am-hero-cta-group">' . "\n";
         $hero_html .= '      <a href="/audiomaniaeventos/servicios/" class="am-hero-cta am-hero-cta-primary">Ver Servicios <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>' . "\n";
         $hero_html .= '      <a href="/audiomaniaeventos/galeria/" class="am-hero-cta am-hero-cta-secondary">Ver Galería</a>' . "\n";
         $hero_html .= '    </div>' . "\n";
         $hero_html .= '    <div class="am-hero-features">' . "\n";
-        $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Toda la isla</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Todos los municipios de Tenerife</div>' . "\n";
         $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg> Montaje incluido</div>' . "\n";
-        $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 13.66 11 16.5 11 21z"/></svg> Respuesta en 24h</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 13.66 11 16.5 11 21z"/></svg> Respuesta en menos de 24h</div>' . "\n";
         $hero_html .= '    </div>' . "\n";
         $hero_html .= '  </div>' . "\n";
         $hero_html .= '  <a href="#am-hero-3" class="am-scroll-indicator" aria-label="Ver servicios de DJ">' . "\n";
@@ -721,15 +721,15 @@ function audiomania_hero_content( $content ) {
         $hero_html .= '  <div class="am-hero-overlay"></div>' . "\n";
         $hero_html .= '  <div class="am-hero-content">' . "\n";
         $hero_html .= '    <div class="am-hero-badge"><svg style="width:20px;height:20px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg> DJ Profesional para tu Evento</div>' . "\n";
-        $hero_html .= '    <h2>El Mejor <span>DJ para tu Fiesta</span> en Tenerife</h2>' . "\n";
-        $hero_html .= '    <p class="hero-subtitle">Bodas, cumpleaños, fiestas privadas, eventos corporativos. DJs profesionales con equipamiento premium, playlists a medida y experiencia en más de 500 eventos en Canarias.</p>' . "\n";
+        $hero_html .= '    <h2><span>DJ para bodas y fiestas</span> en Tenerife</h2>' . "\n";
+        $hero_html .= '    <p class="hero-subtitle">Música adaptada a bodas, cumpleaños, fiestas privadas y eventos corporativos. Trabajamos con equipos profesionales y contamos con más de 15 años de experiencia y muchos más de 500 eventos.</p>' . "\n";
         $hero_html .= '    <div class="am-hero-cta-group">' . "\n";
         $hero_html .= '      <a href="https://wa.me/34669621139?text=Hola%2C%20quiero%20un%20DJ%20para%20mi%20evento%20en%20Tenerife" class="am-hero-cta am-hero-cta-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp Directo <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>' . "\n";
         $hero_html .= '      <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-secondary">Contactar</a>' . "\n";
         $hero_html .= '    </div>' . "\n";
         $hero_html .= '    <div class="am-hero-features">' . "\n";
         $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg> Música a medida</div>' . "\n";
-        $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg> +500 eventos</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65 0.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg> Más de 500 eventos</div>' . "\n";
         $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> Equipamiento premium</div>' . "\n";
         $hero_html .= '    </div>' . "\n";
         $hero_html .= '  </div>' . "\n";
@@ -741,8 +741,8 @@ function audiomania_hero_content( $content ) {
         $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'Eventos-Tenerife.webp\');">' . "\n";
         $hero_html .= '<div class="am-hero-content">' . "\n";
         $hero_html .= '  <div class="am-hero-badge">Servicios Profesionales</div>' . "\n";
-        $hero_html .= '  <h1>Tu Evento, <span>Nuestra Pasión</span></h1>' . "\n";
-        $hero_html .= '  <p class="hero-subtitle">Sonido, iluminación, DJ y animación profesional para bodas, eventos corporativos, fiestas y celebraciones en Tenerife y toda Canarias.</p>' . "\n";
+        $hero_html .= '  <h1>Servicios de <span>DJ, sonido e iluminación</span> en Tenerife</h1>' . "\n";
+        $hero_html .= '  <p class="hero-subtitle">Soluciones para bodas, fiestas privadas y eventos corporativos: DJ, sonido, iluminación, pantallas LED, photocall, mobiliario y efectos.</p>' . "\n";
         $hero_html .= '  <div class="am-hero-cta-group">' . "\n";
         $hero_html .= '    <a href="/audiomaniaeventos/reservar/" class="am-hero-cta am-hero-cta-primary">Solicitar Presupuesto</a>' . "\n";
         $hero_html .= '    <a href="https://wa.me/34669621139" class="am-hero-cta am-hero-cta-whatsapp" target="_blank" rel="noopener">WhatsApp Directo</a>' . "\n";
@@ -762,7 +762,7 @@ function audiomania_hero_content( $content ) {
         // SEO Intro
         $services_content .= '<div class="am-services-intro">' . "\n";
         $services_content .= '  <h2>Servicios de Sonido, Iluminación y Animación en Tenerife</h2>' . "\n";
-        $services_content .= '  <p class="am-services-intro-text">Audiomania Eventos ofrece servicios profesionales para todo tipo de celebraciones en Tenerife y Canarias. Desde bodas íntimas hasta eventos corporativos de gran formato, adaptamos cada paquete a tu presupuesto y necesidades. Todos los precios son orientativos — contacta con nosotros para un presupuesto personalizado sin compromiso.</p>' . "\n";
+        $services_content .= '  <p class="am-services-intro-text">Audiomania Eventos ofrece servicios profesionales para bodas, fiestas privadas y eventos corporativos en Tenerife. Puedes contratar un servicio concreto o pedir un montaje completo adaptado al espacio, al número de invitados y al tipo de celebración. Respondemos en menos de 24 horas.</p>' . "\n";
         $services_content .= '</div>' . "\n";
 
         // Services Grid
@@ -969,8 +969,8 @@ function audiomania_hero_content( $content ) {
         $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'Organizacion-Eventos-Tenerife.webp\');">' . "\n";
         $hero_html .= '<div class="am-hero-content">' . "\n";
         $hero_html .= '  <div class="am-hero-badge"><svg style="width:20px;height:20px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg> Reserva tu Fecha</div>' . "\n";
-        $hero_html .= '  <h1>Tu Evento Merece un <span>Equipo Profesional</span></h1>' . "\n";
-        $hero_html .= '  <p class="hero-subtitle">Las mejores fechas se reservan antes. Elige el equipo, la fecha y déjanos el resto: montaje, sonido, iluminación y coordinación integral para que tú solo disfrutes.</p>' . "\n";
+        $hero_html .= '  <h1>Pide presupuesto para tu <span>evento en Tenerife</span></h1>' . "\n";
+        $hero_html .= '  <p class="hero-subtitle">Dinos la fecha, el lugar, el tipo de evento y el número aproximado de invitados. Te responderemos con una propuesta clara de DJ, sonido, iluminación y servicios adicionales en menos de 24 horas.</p>' . "\n";
         $hero_html .= '  <div class="am-hero-cta-group">' . "\n";
         $hero_html .= '    <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-primary">Solicitar Presupuesto Gratis</a>' . "\n";
         $hero_html .= '    <a href="https://wa.me/34669621139?text=Hola%2C%20quiero%20reservar%20equipo%20para%20mi%20evento" class="am-hero-cta am-hero-cta-whatsapp" target="_blank" rel="noopener">WhatsApp Directo</a>' . "\n";
@@ -1175,8 +1175,8 @@ function audiomania_hero_content( $content ) {
         $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'Organizacion-Eventos-Tenerife.webp\');">' . "\n";
         $hero_html .= '<div class="am-hero-content">' . "\n";
         $hero_html .= '  <div class="am-hero-badge"><svg style="width:20px;height:20px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> Contacto Directo</div>' . "\n";
-        $hero_html .= '  <h1>Hablemos de tu <span>Próximo Evento</span></h1>' . "\n";
-        $hero_html .= '  <p class="hero-subtitle">¿Tienes un evento en mente? Cuéntanos tu idea y te preparamos un presupuesto personalizado sin compromiso en menos de 24 horas.</p>' . "\n";
+        $hero_html .= '  <h1>Contacta con <span>Audiomania Eventos</span></h1>' . "\n";
+        $hero_html .= '  <p class="hero-subtitle">Cuéntanos qué quieres organizar en Tenerife. Te responderemos con disponibilidad, opciones de montaje y un presupuesto personalizado en menos de 24 horas.</p>' . "\n";
         $hero_html .= '  <div class="am-hero-cta-group">' . "\n";
         $hero_html .= '    <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20un%20presupuesto%20para%20mi%20evento" class="am-hero-cta am-hero-cta-whatsapp" target="_blank" rel="noopener">WhatsApp Directo</a>' . "\n";
         $hero_html .= '    <a href="tel:+34669621139" class="am-hero-cta am-hero-cta-primary">Llamar Ahora</a>' . "\n";
@@ -1199,7 +1199,7 @@ function audiomania_hero_content( $content ) {
         // LEFT: Formulario
         $contact_html .= '  <div class="am-contact-form-wrapper">' . "\n";
         $contact_html .= '    <h2>Envíanos un Mensaje</h2>' . "\n";
-        $contact_html .= '    <p class="am-contact-form-desc">Rellena el formulario y te responderemos en menos de 24 horas con un presupuesto personalizado.</p>' . "\n";
+        $contact_html .= '    <p class="am-contact-form-desc">Cuéntanos la fecha, el lugar y el tipo de evento. Te responderemos en menos de 24 horas con disponibilidad y un presupuesto personalizado.</p>' . "\n";
         $contact_html .= '    <form class="am-contact-form" action="' . esc_url( home_url( '/audiomaniaeventos/contacto/' ) ) . '" method="POST" novalidate>' . "\n";
         $contact_html .= '      <div class="am-form-row">' . "\n";
         $contact_html .= '        <div class="am-form-group">' . "\n";
@@ -1333,7 +1333,7 @@ function audiomania_hero_content( $content ) {
         $about_html .= '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'Alquiler-nexus-tenerife.webp\');">' . "\n";
         $about_html .= '<div class="am-hero-content">' . "\n";
         $about_html .= '  <div class="am-hero-badge">Nuestra Historia</div>' . "\n";
-        $about_html .= '  <h1>Más de 10 años haciendo que cada evento sea <span>inolvidable</span></h1>' . "\n";
+        $about_html .= '  <h1>Más de 15 años creando eventos en <span>Tenerife</span></h1>' . "\n";
         $about_html .= '</div>' . "\n";
         $about_html .= '</section>' . "\n";
 
@@ -1343,9 +1343,9 @@ function audiomania_hero_content( $content ) {
 
         $about_html .= '  <div class="am-about-intro">' . "\n";
         $about_html .= '    <h2>Nuestra Historia</h2>' . "\n";
-        $about_html .= '    <p>AudioManía Eventos nació de la pasión por la tecnología sonora y la iluminación profesional. Desde nuestros inicios, hemos trabajado con bodas, eventos corporativos, conciertos y fiestas privadas en toda España.</p>' . "\n";
-        $about_html .= '    <p>Contamos con los mejores equipos del mercado: sonido L-Acoustics, iluminación Grand MA2, pantallas LED de última generación y DJs profesionales. Nuestro equipo técnico se encarga de todo: diseño, montaje, operación y desmontaje.</p>' . "\n";
-        $about_html .= '    <p>¿Qué nos diferencia?</p>' . "\n";
+        $about_html .= '    <p>Audiomania Eventos trabaja desde hace más de 15 años con bodas, fiestas privadas, eventos corporativos y celebraciones en todos los municipios de Tenerife.</p>' . "\n";
+        $about_html .= '    <p>Hemos participado en muchos más de 500 eventos y ofrecemos DJ, sonido, iluminación, pantallas LED, photocall, mobiliario y efectos. Nuestro equipo técnico se encarga del diseño, montaje, operación y desmontaje.</p>' . "\n";
+        $about_html .= '    <p>Te ayudamos a elegir la combinación adecuada para el espacio, el número de invitados y el tipo de celebración.</p>' . "\n";
         $about_html .= '  </div>' . "\n";
 
         // Cards — same style as contact page
@@ -1733,5 +1733,5 @@ add_filter( 'language_attributes', function( $output ) {
 }, 9999 );
 
 add_filter( 'hello_elementor_page_title', function( $show ) {
-    return ( is_front_page() || is_home() ) ? false : $show;
+    return ( is_front_page() || is_home() || is_page( array( 'servicios', 'reservar', 'galeria', 'sobre-nosotros', 'contacto', 12, 13, 14, 15, 16 ) ) ) ? false : $show;
 }, 99 );
