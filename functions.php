@@ -664,7 +664,7 @@ function audiomania_hero_content( $content ) {
         $hero_html .= '  <div class="am-hero-bg" style="background-image:url(\'' . $base . 'Eventos-Tenerife.webp\');"></div>' . "\n";
         $hero_html .= '  <div class="am-hero-overlay"></div>' . "\n";
         $hero_html .= '  <div class="am-hero-content">' . "\n";
-        $hero_html .= '    <div class="am-hero-badge">🎵 Eventos Profesionales en Tenerife</div>' . "\n";
+        $hero_html .= '    <div class="am-hero-badge"><svg style="width:20px;height:20px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg> Eventos Profesionales en Tenerife</div>' . "\n";
         $hero_html .= '    <h1>Sonido, Iluminación y <span>Animación</span> para tu Evento</h1>' . "\n";
         $hero_html .= '    <p class="hero-subtitle">DJ profesional, alquiler de sonido, iluminación LED, photocall y más. Todo lo que necesitas para una fiesta inolvidable en Tenerife y Canarias.</p>' . "\n";
         $hero_html .= '    <div class="am-hero-cta-group">' . "\n";
@@ -672,9 +672,9 @@ function audiomania_hero_content( $content ) {
         $hero_html .= '      <a href="/audiomaniaeventos/servicios/" class="am-hero-cta am-hero-cta-secondary">Ver Servicios</a>' . "\n";
         $hero_html .= '    </div>' . "\n";
         $hero_html .= '    <div class="am-hero-features">' . "\n";
-        $hero_html .= '      <div class="am-feature-item">🔊 Sonido Profesional</div>' . "\n";
-        $hero_html .= '      <div class="am-feature-item">💡 Iluminación LED</div>' . "\n";
-        $hero_html .= '      <div class="am-feature-item">🎧 DJ Expertos</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg> Sonido Profesional</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg> Iluminación LED</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg> DJ Expertos</div>' . "\n";
         $hero_html .= '    </div>' . "\n";
         $hero_html .= '  </div>' . "\n";
         $hero_html .= '  <a href="#am-hero-2" class="am-scroll-indicator" aria-label="Ver más servicios">' . "\n";
@@ -688,7 +688,7 @@ function audiomania_hero_content( $content ) {
         $hero_html .= '  <div class="am-hero-bg" style="background-image:url(\'' . $base . 'Eventos-Canarias.webp\');"></div>' . "\n";
         $hero_html .= '  <div class="am-hero-overlay"></div>' . "\n";
         $hero_html .= '  <div class="am-hero-content">' . "\n";
-        $hero_html .= '    <div class="am-hero-badge">🏝️ Llevamos tu evento por toda Canarias</div>' . "\n";
+        $hero_html .= '    <div class="am-hero-badge"><svg style="width:20px;height:20px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.63 2.16c-.6-.41-1.39-.51-2.08-.27l-.76.24C13.05 1.83 12.54 1.5 12 1.5s-1.05.33-1.79.63l-.76-.24c-.69-.24-1.48-.14-2.08.27C6.61 2.64 6 3.58 6 5v8.21l-2.76.92A1.001 1.001 0 0 0 3 15.15v.85c0 .55.45 1 1 1h.38l.62 4.34c.07.47.48.81.96.81h.02c.48 0 .89-.34.96-.81L7.5 17h9l.54 4.34c.07.47.48.81.96.81h.02c.48 0 .89-.34.96-.81l.62-4.34H20c.55 0 1-.45 1-1v-.85c0-.42-.27-.79-.66-.92L18 13.21V5c0-1.42-.61-2.36-1.37-2.84zM12 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg> Llevamos tu evento por toda Canarias</div>' . "\n";
         $hero_html .= '    <h2>Montaje Profesional en <span>Tenerife y Todas las Islas</span></h2>' . "\n";
         $hero_html .= '    <p class="hero-subtitle">Bodas en Adeje, fiestas en La Laguna, corporativos en Santa Cruz, celebraciones en La Orotava. Llevamos equipamiento profesional a cualquier punto de la isla y las demás islas canarias.</p>' . "\n";
         $hero_html .= '    <div class="am-hero-cta-group">' . "\n";
@@ -696,9 +696,9 @@ function audiomania_hero_content( $content ) {
         $hero_html .= '      <a href="/audiomaniaeventos/galeria/" class="am-hero-cta am-hero-cta-secondary">Ver Galería</a>' . "\n";
         $hero_html .= '    </div>' . "\n";
         $hero_html .= '    <div class="am-hero-features">' . "\n";
-        $hero_html .= '      <div class="am-feature-item">📍 Toda la isla</div>' . "\n";
-        $hero_html .= '      <div class="am-feature-item">🎪 Montaje incluido</div>' . "\n";
-        $hero_html .= '      <div class="am-feature-item">⚡ Respuesta en 24h</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Toda la isla</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg> Montaje incluido</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 13.66 11 16.5 11 21z"/></svg> Respuesta en 24h</div>' . "\n";
         $hero_html .= '    </div>' . "\n";
         $hero_html .= '  </div>' . "\n";
         $hero_html .= '  <a href="#am-hero-3" class="am-scroll-indicator" aria-label="Ver servicios de DJ">' . "\n";
@@ -712,7 +712,7 @@ function audiomania_hero_content( $content ) {
         $hero_html .= '  <div class="am-hero-bg" style="background-image:url(\'' . $base . 'Dj-tenerife.webp\');"></div>' . "\n";
         $hero_html .= '  <div class="am-hero-overlay"></div>' . "\n";
         $hero_html .= '  <div class="am-hero-content">' . "\n";
-        $hero_html .= '    <div class="am-hero-badge">🎧 DJ Profesional para tu Evento</div>' . "\n";
+        $hero_html .= '    <div class="am-hero-badge"><svg style="width:20px;height:20px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg> DJ Profesional para tu Evento</div>' . "\n";
         $hero_html .= '    <h2>El Mejor <span>DJ para tu Fiesta</span> en Tenerife</h2>' . "\n";
         $hero_html .= '    <p class="hero-subtitle">Bodas, cumpleaños, fiestas privadas, eventos corporativos. DJs profesionales con equipamiento premium, playlists a medida y experiencia en más de 500 eventos en Canarias.</p>' . "\n";
         $hero_html .= '    <div class="am-hero-cta-group">' . "\n";
@@ -720,9 +720,9 @@ function audiomania_hero_content( $content ) {
         $hero_html .= '      <a href="/audiomaniaeventos/contacto/" class="am-hero-cta am-hero-cta-secondary">Contactar</a>' . "\n";
         $hero_html .= '    </div>' . "\n";
         $hero_html .= '    <div class="am-hero-features">' . "\n";
-        $hero_html .= '      <div class="am-feature-item">🎵 Música a medida</div>' . "\n";
-        $hero_html .= '      <div class="am-feature-item">🔥 +500 eventos</div>' . "\n";
-        $hero_html .= '      <div class="am-feature-item">⭐ Equipamiento premium</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg> Música a medida</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg> +500 eventos</div>' . "\n";
+        $hero_html .= '      <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> Equipamiento premium</div>' . "\n";
         $hero_html .= '    </div>' . "\n";
         $hero_html .= '  </div>' . "\n";
         $hero_html .= '</section>' . "\n";
@@ -740,9 +740,9 @@ function audiomania_hero_content( $content ) {
         $hero_html .= '    <a href="https://wa.me/34669621139" class="am-hero-cta am-hero-cta-whatsapp" target="_blank" rel="noopener">WhatsApp Directo</a>' . "\n";
         $hero_html .= '  </div>' . "\n";
         $hero_html .= '  <div class="am-hero-features">' . "\n";
-        $hero_html .= '    <div class="am-feature-item">🔊 15+ Años Experiencia</div>' . "\n";
-        $hero_html .= '    <div class="am-feature-item">⚡ Presupuesto en 24h</div>' . "\n";
-        $hero_html .= '    <div class="am-feature-item">📍 Toda Canarias</div>' . "\n";
+        $hero_html .= '    <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg> 15+ Años Experiencia</div>' . "\n";
+        $hero_html .= '    <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 13.66 11 16.5 11 21z"/></svg> Presupuesto en 24h</div>' . "\n";
+        $hero_html .= '    <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Toda Canarias</div>' . "\n";
         $hero_html .= '  </div>' . "\n";
         $hero_html .= '</div>' . "\n";
         $hero_html .= '</section>' . "\n";
@@ -763,7 +763,7 @@ function audiomania_hero_content( $content ) {
         // Service 1: DJ para Eventos
         $services_content .= '  <div class="am-service-card" id="dj">' . "\n";
         $services_content .= '    <div class="am-service-card-inner">' . "\n";
-        $services_content .= '      <div class="am-service-icon-wrap">🎧</div>' . "\n";
+        $services_content .= '      <div class="am-service-icon-wrap"><svg style="width:48px;height:48px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg></div>' . "\n";
         $services_content .= '      <h3>DJ para Eventos</h3>' . "\n";
         $services_content .= '      <div class="am-service-price">' . "\n";
         $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
@@ -784,7 +784,7 @@ function audiomania_hero_content( $content ) {
         // Service 2: Alquiler de Sonido
         $services_content .= '  <div class="am-service-card" id="sonido">' . "\n";
         $services_content .= '    <div class="am-service-card-inner">' . "\n";
-        $services_content .= '      <div class="am-service-icon-wrap">🔊</div>' . "\n";
+        $services_content .= '      <div class="am-service-icon-wrap"><svg style="width:48px;height:48px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></div>' . "\n";
         $services_content .= '      <h3>Alquiler de Sonido</h3>' . "\n";
         $services_content .= '      <div class="am-service-price">' . "\n";
         $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
@@ -805,7 +805,7 @@ function audiomania_hero_content( $content ) {
         // Service 3: Iluminación LED
         $services_content .= '  <div class="am-service-card" id="iluminacion">' . "\n";
         $services_content .= '    <div class="am-service-card-inner">' . "\n";
-        $services_content .= '      <div class="am-service-icon-wrap">💡</div>' . "\n";
+        $services_content .= '      <div class="am-service-icon-wrap"><svg style="width:48px;height:48px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg></div>' . "\n";
         $services_content .= '      <h3>Iluminación LED</h3>' . "\n";
         $services_content .= '      <div class="am-service-price">' . "\n";
         $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
@@ -826,7 +826,7 @@ function audiomania_hero_content( $content ) {
         // Service 4: Pantallas LED / Nexus
         $services_content .= '  <div class="am-service-card" id="pantallas">' . "\n";
         $services_content .= '    <div class="am-service-card-inner">' . "\n";
-        $services_content .= '      <div class="am-service-icon-wrap">📺</div>' . "\n";
+        $services_content .= '      <div class="am-service-icon-wrap"><svg style="width:48px;height:48px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg></div>' . "\n";
         $services_content .= '      <h3>Pantallas LED / Nexus</h3>' . "\n";
         $services_content .= '      <div class="am-service-price">' . "\n";
         $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
@@ -847,7 +847,7 @@ function audiomania_hero_content( $content ) {
         // Service 5: Photocall
         $services_content .= '  <div class="am-service-card" id="photocall">' . "\n";
         $services_content .= '    <div class="am-service-card-inner">' . "\n";
-        $services_content .= '      <div class="am-service-icon-wrap">📸</div>' . "\n";
+        $services_content .= '      <div class="am-service-icon-wrap"><svg style="width:48px;height:48px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.4 4C7.5 4 5.95 5.07 5.12 6.6L4 6.6V18H20V6H18.88C18.05 5.07 16.5 4 14.6 4H9.4zM12 6C13.1 6 14 6.9 14 8S13.1 10 12 10 10 9.1 10 8s.9-2 2-2zM5 20H3V8h.17C2.07 9.59 1.5 11.24 1.5 13c0 3.31 2.69 6 6 6 .13 0 .26 0 .39-.01.37.09.75.01 1.11.01h7.19c.36 0 .74.08 1.11-.01.13.01.26.01.39.01 3.31 0 6-2.69 6-6 0-1.76-.57-3.41-1.67-4.89.07-.01.14-.01.17-.01H3v12z"/></svg></div>' . "\n";
         $services_content .= '      <h3>Photocall &amp; Backdrop</h3>' . "\n";
         $services_content .= '      <div class="am-service-price">' . "\n";
         $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
@@ -868,8 +868,8 @@ function audiomania_hero_content( $content ) {
         // Service 6: Paquetes Bodas
         $services_content .= '  <div class="am-service-card am-service-card-highlight" id="bodas">' . "\n";
         $services_content .= '    <div class="am-service-card-inner">' . "\n";
-        $services_content .= '      <div class="am-service-badge">⭐ Más Popular</div>' . "\n";
-        $services_content .= '      <div class="am-service-icon-wrap">💒</div>' . "\n";
+        $services_content .= '      <div class="am-service-badge"><svg style="width:16px;height:16px;display:inline-block;vertical-align:middle;margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> Más Popular</div>' . "\n";
+        $services_content .= '      <div class="am-service-icon-wrap"><svg style="width:48px;height:48px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 7c0-1.1-.9-2-2-2h-1c-1.1 0-2 .9-2 2h-2c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7zm-1 2H7V5h10v4z"/></svg></div>' . "\n";
         $services_content .= '      <h3>Paquete Boda Completo</h3>' . "\n";
         $services_content .= '      <div class="am-service-price">' . "\n";
         $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
@@ -897,15 +897,15 @@ function audiomania_hero_content( $content ) {
         $services_content .= '  <div class="am-services-extra-grid">' . "\n";
 
         $extras = array(
-            array('icon' => '🎪', 'title' => 'Escenarios y Tarimas', 'price' => '350€', 'desc' => 'Tarimas de abedul, estructuras metálicas, escenarios modulares. Montaje profesional incluido.'),
-            array('icon' => '🎤', 'title' => 'Karaoke', 'price' => '120€', 'desc' => 'Sistema completo con pantalla, micrófonos, base de canciones actualizada.'),
-            array('icon' => '🪩', 'title' => 'Machine Humo / Nieve', 'price' => '80€', 'desc' => 'Máquina de humo, nieve sintética, confeti. Efectos especiales para momentos clave.'),
-            array('icon' => '💺', 'title' => 'Mobiliario Premium', 'price' => '2€/pza', 'desc' => 'Sillas Tiffany, mesas redondas, mantelería, banquetes. Todo personalizable.'),
+            array('icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>', 'title' => 'Escenarios y Tarimas', 'price' => '350€', 'desc' => 'Tarimas de abedul, estructuras metálicas, escenarios modulares. Montaje profesional incluido.'),
+            array('icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.39 5.91 5.91v3.2h-3v2h10v-3c3.02-.52 5.42-2.91 5.91-5.91.1-.6-.39-1.14-1-1.14z"/></svg>', 'title' => 'Karaoke', 'price' => '120€', 'desc' => 'Sistema completo con pantalla, micrófonos, base de canciones actualizada.'),
+            array('icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>', 'title' => 'Machine Humo / Nieve', 'price' => '80€', 'desc' => 'Máquina de humo, nieve sintética, confeti. Efectos especiales para momentos clave.'),
+            array('icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 11h3v10h2V11h3l-4-4-4 4zM4 22h16v-2H4v2zm18-8H6l6-6 6 6z"/></svg>', 'title' => 'Mobiliario Premium', 'price' => '2€/pza', 'desc' => 'Sillas Tiffany, mesas redondas, mantelería, banquetes. Todo personalizable.'),
         );
 
         foreach ( $extras as $ex ) {
             $services_content .= '    <div class="am-extra-card">' . "\n";
-            $services_content .= '      <div class="am-extra-icon">' . esc_html( $ex['icon'] ) . '</div>' . "\n";
+            $services_content .= '      <div class="am-extra-icon">' . wp_kses( $ex['icon'], array( 'svg' => array( 'xmlns' => true, 'viewBox' => true ), 'path' => array( 'd' => true ) ) ) . '</div>' . "\n";
             $services_content .= '      <h4>' . esc_html( $ex['title'] ) . '</h4>' . "\n";
             $services_content .= '      <p>' . esc_html( $ex['desc'] ) . '</p>' . "\n";
             $services_content .= '      <span class="am-extra-price">' . esc_html( $ex['price'] ) . '</span>' . "\n";
@@ -960,7 +960,7 @@ function audiomania_hero_content( $content ) {
 
         $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'Organizacion-Eventos-Tenerife.webp\');">' . "\n";
         $hero_html .= '<div class="am-hero-content">' . "\n";
-        $hero_html .= '  <div class="am-hero-badge">🎯 Reserva tu Fecha</div>' . "\n";
+        $hero_html .= '  <div class="am-hero-badge"><svg style="width:20px;height:20px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg> Reserva tu Fecha</div>' . "\n";
         $hero_html .= '  <h1>Tu Evento Merece un <span>Equipo Profesional</span></h1>' . "\n";
         $hero_html .= '  <p class="hero-subtitle">Las mejores fechas se reservan antes. Elige el equipo, la fecha y déjanos el resto: montaje, sonido, iluminación y coordinación integral para que tú solo disfrutes.</p>' . "\n";
         $hero_html .= '  <div class="am-hero-cta-group">' . "\n";
@@ -968,9 +968,9 @@ function audiomania_hero_content( $content ) {
         $hero_html .= '    <a href="https://wa.me/34669621139?text=Hola%2C%20quiero%20reservar%20equipo%20para%20mi%20evento" class="am-hero-cta am-hero-cta-whatsapp" target="_blank" rel="noopener">WhatsApp Directo</a>' . "\n";
         $hero_html .= '  </div>' . "\n";
         $hero_html .= '  <div class="am-hero-features">' . "\n";
-        $hero_html .= '    <div class="am-feature-item">📅 Fechas Limitadas</div>' . "\n";
-        $hero_html .= '    <div class="am-feature-item">🔧 Montaje Incluido</div>' . "\n";
-        $hero_html .= '    <div class="am-feature-item">⚡ Reserva en 5 Min</div>' . "\n";
+        $hero_html .= '    <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm7 18H5V8h14v11zM7 10h5v5H7z"/></svg> Fechas Limitadas</div>' . "\n";
+        $hero_html .= '    <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> Montaje Incluido</div>' . "\n";
+        $hero_html .= '    <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 13.66 11 16.5 11 21z"/></svg> Reserva en 5 Min</div>' . "\n";
         $hero_html .= '  </div>' . "\n";
         $hero_html .= $seo_json;
         $hero_html .= '</div>' . "\n";
@@ -1064,7 +1064,7 @@ function audiomania_hero_content( $content ) {
         // Hero section
         $gallery_html .= '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'Organizacion-Eventos-Tenerife.webp\');">' . "\n";
         $gallery_html .= '<div class="am-hero-content">' . "\n";
-        $gallery_html .= '  <div class="am-hero-badge">📸 Nuestro Portfolio</div>' . "\n";
+        $gallery_html .= '  <div class="am-hero-badge"><svg style="width:20px;height:20px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.4 4C7.5 4 5.95 5.07 5.12 6.6L4 6.6V18H20V6H18.88C18.05 5.07 16.5 4 14.6 4H9.4zM12 6C13.1 6 14 6.9 14 8S13.1 10 12 10 10 9.1 10 8s.9-2 2-2zM5 20H3V8h.17C2.07 9.59 1.5 11.24 1.5 13c0 3.31 2.69 6 6 6 .13 0 .26 0 .39-.01.37.09.75.01 1.11.01h7.19c.36 0 .74.08 1.11-.01.13.01.26.01.39.01 3.31 0 6-2.69 6-6 0-1.76-.57-3.41-1.67-4.89.07-.01.14-.01.17-.01H3v12z"/></svg> Nuestro Portfolio</div>' . "\n";
         $gallery_html .= '  <h1>Galería de <span>Eventos</span></h1>' . "\n";
         $gallery_html .= '  <p class="hero-subtitle">Más de 15 años creando momentos inolvidables en Tenerife y Canarias. Descubre cómo transformamos cada evento con sonido, iluminación y animación profesional.</p>' . "\n";
         $gallery_html .= '  <div class="am-hero-cta-group">' . "\n";
@@ -1106,7 +1106,7 @@ function audiomania_hero_content( $content ) {
             $gallery_html .= '        <div class="am-gallery-img-wrap">' . "\n";
             $gallery_html .= '          <img src="' . esc_url( $url ) . '" alt="' . esc_attr( $img['title'] ) . '" title="' . esc_attr( $img['title'] ) . '" loading="lazy" class="am-gallery-img">' . "\n";
             $gallery_html .= '          <div class="am-gallery-overlay">' . "\n";
-            $gallery_html .= '            <span class="am-gallery-zoom-icon">⤢</span>' . "\n";
+            $gallery_html .= '            <span class="am-gallery-zoom-icon"><svg style="width:20px;height:20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg></span>' . "\n";
             $gallery_html .= '            <span class="am-gallery-cat-tag">' . esc_html( $img['label'] ) . '</span>' . "\n";
             $gallery_html .= '          </div>' . "\n";
             $gallery_html .= '        </div>' . "\n";
@@ -1129,22 +1129,22 @@ function audiomania_hero_content( $content ) {
         $gallery_html .= '    <h3>¿Por qué elegir Audiomania Eventos para tu evento en Tenerife?</h3>' . "\n";
         $gallery_html .= '    <div class="am-gallery-features">' . "\n";
         $gallery_html .= '      <div class="am-feature-card">' . "\n";
-        $gallery_html .= '        <span class="am-feature-icon">🎵</span>' . "\n";
+        $gallery_html .= '        <span class="am-feature-icon"><svg style="width:32px;height:32px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg></span>' . "\n";
         $gallery_html .= '        <h4>Sonido Profesional</h4>' . "\n";
         $gallery_html .= '        <p>Altavoces line array, mezcladoras digitales y controladores de última generación. Sonido cristalino para bodas, conciertos y eventos corporativos en toda Tenerife.</p>' . "\n";
         $gallery_html .= '      </div>' . "\n";
         $gallery_html .= '      <div class="am-feature-card">' . "\n";
-        $gallery_html .= '        <span class="am-feature-icon">💡</span>' . "\n";
+        $gallery_html .= '        <span class="am-feature-icon"><svg style="width:32px;height:32px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg></span>' . "\n";
         $gallery_html .= '        <h4>Iluminación LED</h4>' . "\n";
         $gallery_html .= '        <p>Pantallas LED, iluminación inteligente, luces robóticas, efectos de humo y láser. Creamos ambientes únicos para cada tipo de evento en Canarias.</p>' . "\n";
         $gallery_html .= '      </div>' . "\n";
         $gallery_html .= '      <div class="am-feature-card">' . "\n";
-        $gallery_html .= '        <span class="am-feature-icon">🎧</span>' . "\n";
+        $gallery_html .= '        <span class="am-feature-icon"><svg style="width:32px;height:32px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg></span>' . "\n";
         $gallery_html .= '        <h4>DJ Expertos</h4>' . "\n";
         $gallery_html .= '        <p>DJs profesionales con experiencia en bodas, fiestas privadas y eventos corporativos. Música a medida, animación y control total del evento.</p>' . "\n";
         $gallery_html .= '      </div>' . "\n";
         $gallery_html .= '      <div class="am-feature-card">' . "\n";
-        $gallery_html .= '        <span class="am-feature-icon">📋</span>' . "\n";
+        $gallery_html .= '        <span class="am-feature-icon"><svg style="width:32px;height:32px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2h-4.18C14.4.84 13.3 0 12 0c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm7 18H5V8h10v12z"/></svg></span>' . "\n";
         $gallery_html .= '        <h4>Organización Integral</h4>' . "\n";
         $gallery_html .= '        <p>Desde el montaje hasta el desmontaje, nos encargamos de todo: sonorización, iluminación, mobiliario, photocall y coordinación completa del evento.</p>' . "\n";
         $gallery_html .= '      </div>' . "\n";
@@ -1166,7 +1166,7 @@ function audiomania_hero_content( $content ) {
         // Hero
         $hero_html = '<section class="am-hero am-hero-single" style="background-image:url(\'' . $base . 'Organizacion-Eventos-Tenerife.webp\');">' . "\n";
         $hero_html .= '<div class="am-hero-content">' . "\n";
-        $hero_html .= '  <div class="am-hero-badge">📞 Contacto Directo</div>' . "\n";
+        $hero_html .= '  <div class="am-hero-badge"><svg style="width:20px;height:20px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> Contacto Directo</div>' . "\n";
         $hero_html .= '  <h1>Hablemos de tu <span>Próximo Evento</span></h1>' . "\n";
         $hero_html .= '  <p class="hero-subtitle">¿Tienes un evento en mente? Cuéntanos tu idea y te preparamos un presupuesto personalizado sin compromiso en menos de 24 horas.</p>' . "\n";
         $hero_html .= '  <div class="am-hero-cta-group">' . "\n";
@@ -1174,9 +1174,9 @@ function audiomania_hero_content( $content ) {
         $hero_html .= '    <a href="tel:+34669621139" class="am-hero-cta am-hero-cta-primary">Llamar Ahora</a>' . "\n";
         $hero_html .= '  </div>' . "\n";
         $hero_html .= '  <div class="am-hero-features">' . "\n";
-        $hero_html .= '    <div class="am-feature-item">⚡ Respuesta en 24h</div>' . "\n";
-        $hero_html .= '    <div class="am-feature-item">📋 Presupuesto Gratis</div>' . "\n";
-        $hero_html .= '    <div class="am-feature-item">📍 Toda Canarias</div>' . "\n";
+        $hero_html .= '    <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 13.66 11 16.5 11 21z"/></svg> Respuesta en 24h</div>' . "\n";
+        $hero_html .= '    <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2h-4.18C14.4.84 13.3 0 12 0c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm7 18H5V8h10v12z"/></svg> Presupuesto Gratis</div>' . "\n";
+        $hero_html .= '    <div class="am-feature-item"><svg style="width:16px;height:16px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Toda Canarias</div>' . "\n";
         $hero_html .= '  </div>' . "\n";
         $hero_html .= '</div>' . "\n";
         $hero_html .= '</section>' . "\n";
@@ -1211,15 +1211,15 @@ function audiomania_hero_content( $content ) {
         $contact_html .= '        <label for="am-event-type">Tipo de evento</label>' . "\n";
         $contact_html .= '        <select id="am-event-type" name="am_event_type">' . "\n";
         $contact_html .= '          <option value="">Selecciona una opción</option>' . "\n";
-        $contact_html .= '          <option value="boda">💒 Boda</option>' . "\n";
-        $contact_html .= '          <option value="corporativo">🏢 Evento Corporativo</option>' . "\n";
-        $contact_html .= '          <option value="fiesta">🎉 Fiesta Privada</option>' . "\n";
-        $contact_html .= '          <option value="dj">🎧 DJ para Evento</option>' . "\n";
-        $contact_html .= '          <option value="sonido">🔊 Alquiler de Sonido</option>' . "\n";
-        $contact_html .= '          <option value="iluminacion">💡 Iluminación LED</option>' . "\n";
-        $contact_html .= '          <option value="photocall">📸 Photocall</option>' . "\n";
-        $contact_html .= '          <option value="completo">⭐ Paquete Completo</option>' . "\n";
-        $contact_html .= '          <option value="otro">📋 Otro</option>' . "\n";
+        $contact_html .= '          <option value="boda">Boda</option>' . "\n";
+        $contact_html .= '          <option value="corporativo">Evento Corporativo</option>' . "\n";
+        $contact_html .= '          <option value="fiesta">Fiesta Privada</option>' . "\n";
+        $contact_html .= '          <option value="dj">DJ para Evento</option>' . "\n";
+        $contact_html .= '          <option value="sonido">Alquiler de Sonido</option>' . "\n";
+        $contact_html .= '          <option value="iluminacion">Iluminación LED</option>' . "\n";
+        $contact_html .= '          <option value="photocall">Photocall</option>' . "\n";
+        $contact_html .= '          <option value="completo">Paquete Completo</option>' . "\n";
+        $contact_html .= '          <option value="otro">Otro</option>' . "\n";
         $contact_html .= '        </select>' . "\n";
         $contact_html .= '      </div>' . "\n";
         $contact_html .= '      <div class="am-form-row">' . "\n";
@@ -1255,7 +1255,7 @@ function audiomania_hero_content( $content ) {
 
         // Teléfono Card
         $contact_html .= '      <div class="am-contact-card am-contact-card-phone">' . "\n";
-        $contact_html .= '        <div class="am-contact-card-icon">📞</div>' . "\n";
+        $contact_html .= '        <div class="am-contact-card-icon"><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>' . "\n";
         $contact_html .= '        <div class="am-contact-card-content">' . "\n";
         $contact_html .= '          <h3>Teléfono</h3>' . "\n";
         $contact_html .= '          <p><a href="tel:+34669621139">+34 669 621 139</a></p>' . "\n";
@@ -1265,7 +1265,7 @@ function audiomania_hero_content( $content ) {
 
         // Email Card
         $contact_html .= '      <div class="am-contact-card am-contact-card-email">' . "\n";
-        $contact_html .= '        <div class="am-contact-card-icon">📧</div>' . "\n";
+        $contact_html .= '        <div class="am-contact-card-icon"><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>' . "\n";
         $contact_html .= '        <div class="am-contact-card-content">' . "\n";
         $contact_html .= '          <h3>Email</h3>' . "\n";
         $contact_html .= '          <p><a href="mailto:carlostoledodj@gmail.com">carlostoledodj@gmail.com</a></p>' . "\n";
@@ -1275,7 +1275,7 @@ function audiomania_hero_content( $content ) {
 
         // WhatsApp Card
         $contact_html .= '      <div class="am-contact-card am-contact-card-whatsapp">' . "\n";
-        $contact_html .= '        <div class="am-contact-card-icon">💬</div>' . "\n";
+        $contact_html .= '        <div class="am-contact-card-icon"><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div>' . "\n";
         $contact_html .= '        <div class="am-contact-card-content">' . "\n";
         $contact_html .= '          <h3>WhatsApp</h3>' . "\n";
         $contact_html .= '          <p><a href="https://wa.me/34669621139" target="_blank" rel="noopener">+34 669 621 139</a></p>' . "\n";
@@ -1285,7 +1285,7 @@ function audiomania_hero_content( $content ) {
 
         // Ubicación Card
         $contact_html .= '      <div class="am-contact-card am-contact-card-location">' . "\n";
-        $contact_html .= '        <div class="am-contact-card-icon">📍</div>' . "\n";
+        $contact_html .= '        <div class="am-contact-card-icon"><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>' . "\n";
         $contact_html .= '        <div class="am-contact-card-content">' . "\n";
         $contact_html .= '          <h3>Ubicación</h3>' . "\n";
         $contact_html .= '          <p>Tenerife, Canarias, España</p>' . "\n";
@@ -1295,7 +1295,7 @@ function audiomania_hero_content( $content ) {
 
         // Horario Card
         $contact_html .= '      <div class="am-contact-card am-contact-card-hours">' . "\n";
-        $contact_html .= '        <div class="am-contact-card-icon">🕐</div>' . "\n";
+        $contact_html .= '        <div class="am-contact-card-icon"><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>' . "\n";
         $contact_html .= '        <div class="am-contact-card-content">' . "\n";
         $contact_html .= '          <h3>Horario</h3>' . "\n";
         $contact_html .= '          <p>Lun - Vie: 9:00 - 20:00</p>' . "\n";
@@ -1345,7 +1345,7 @@ function audiomania_hero_content( $content ) {
 
         // Card 1 — Equipos (blue)
         $about_html .= '    <div class="am-about-card am-about-card-equipos">' . "\n";
-        $about_html .= '      <div class="am-about-card-icon">🎵</div>' . "\n";
+        $about_html .= '      <div class="am-about-card-icon"><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg></div>' . "\n";
         $about_html .= '      <div class="am-about-card-content">' . "\n";
         $about_html .= '        <h3>Equipos de gama alta</h3>' . "\n";
         $about_html .= '        <p>Solo trabajamos con marcas profesionales: L-Acoustics, Pioneer, Linsn, Grand MA2.</p>' . "\n";
@@ -1354,7 +1354,7 @@ function audiomania_hero_content( $content ) {
 
         // Card 2 — Operarios (green)
         $about_html .= '    <div class="am-about-card am-about-card-operarios">' . "\n";
-        $about_html .= '      <div class="am-about-card-icon">👥</div>' . "\n";
+        $about_html .= '      <div class="am-about-card-icon"><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>' . "\n";
         $about_html .= '      <div class="am-about-card-content">' . "\n";
         $about_html .= '        <h3>Operarios profesionales</h3>' . "\n";
         $about_html .= '        <p>Equipo técnico certificado con años de experiencia en directo.</p>' . "\n";
@@ -1363,7 +1363,7 @@ function audiomania_hero_content( $content ) {
 
         // Card 3 — Servicio integral (purple)
         $about_html .= '    <div class="am-about-card am-about-card-servicio">' . "\n";
-        $about_html .= '      <div class="am-about-card-icon">🔧</div>' . "\n";
+        $about_html .= '      <div class="am-about-card-icon"><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg></div>' . "\n";
         $about_html .= '      <div class="am-about-card-content">' . "\n";
         $about_html .= '        <h3>Servicio integral</h3>' . "\n";
         $about_html .= '        <p>Alquiler, montaje, operación y desmontaje. Nos encargamos de todo.</p>' . "\n";
@@ -1483,15 +1483,15 @@ function audiomania_child_footer() {
             <div class="footer-col">
                 <h4><?php esc_html_e( 'Contacto', 'audiomania-events-child' ); ?></h4>
                 <ul class="footer-links">
-                    <li>📞 <a href="tel:+34669621139">+34 669 621 139</a></li>
-                    <li>📧 <a href="mailto:carlostoledodj@gmail.com">carlostoledodj@gmail.com</a></li>
-                    <li>📍 Tenerife, Canarias, España</li>
+                    <li><svg style="width:18px;height:18px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> <a href="tel:+34669621139">+34 669 621 139</a></li>
+                    <li><svg style="width:18px;height:18px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> <a href="mailto:carlostoledodj@gmail.com">carlostoledodj@gmail.com</a></li>
+                    <li><svg style="width:18px;height:18px;display:inline-flex;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Tenerife, Canarias, España</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; <?php echo date( 'Y' ); ?> Audiomania Eventos.<\/p>
-            <p class="footer-developed-by"><?php esc_html_e( 'desarrollado por ', 'audiomania-events-child' ); ?><a href="https://microtechai.es" rel="noopener noreferrer" target="_blank">microtechai.es<\/a> <?php esc_html_e( 'Todos los derechos reservados.', 'audiomania-events-child' ); ?></p>
+            <p>&copy; <?php echo date( 'Y' ); ?> Audiomania Eventos.</p>
+            <p class="footer-developed-by"><?php esc_html_e( 'desarrollado por ', 'audiomania-events-child' ); ?><a href="https://microtechai.es" rel="noopener noreferrer" target="_blank">microtechai.es</a> <?php esc_html_e( 'Todos los derechos reservados.', 'audiomania-events-child' ); ?></p>
         </div>
     </footer>
     <?php
@@ -1634,3 +1634,85 @@ add_filter( 'wp_lazy_loading_enabled', '__return_true' );
 add_filter( 'login_errors', function() { return null; } );
 remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
 remove_action( 'template_redirect', 'rest_output_link_header', 11 );
+
+/**
+ * ------------------------------------------------------------------
+ * Material Icons — SVG inline styles
+ * ------------------------------------------------------------------
+ */
+add_action( 'wp_head', 'audiomania_svg_icons_css', 100 );
+function audiomania_svg_icons_css() {
+    if ( is_admin() ) return;
+    ?>
+    <style>
+    /* Inline SVG contrast: solid icons inherit the surrounding color. */
+    svg:not([fill="none"]),
+    svg:not([fill="none"]) path {
+        fill: currentColor;
+    }
+    svg[fill="none"] path[fill]:not([fill="none"]) {
+        fill: currentColor;
+    }
+    .am-whatsapp-float svg,
+    .am-whatsapp-float svg path {
+        fill: #fff !important;
+    }
+    .am-hero-badge svg, .am-feature-item svg {
+        display: inline-flex;
+        vertical-align: middle;
+        margin-right: 6px;
+        color: rgba(255,255,255,0.9);
+    }
+    .am-hero-badge svg {
+        color: rgba(255,255,255,0.85);
+    }
+    .am-service-icon-wrap svg {
+        width: 48px !important;
+        height: 48px !important;
+        color: #4d7cff;
+        text-shadow: 0 0 20px rgba(77,124,255,0.3);
+    }
+    .am-contact-card-icon svg {
+        width: 28px !important;
+        height: 28px !important;
+    }
+    .am-contact-card-phone .am-contact-card-icon svg { color: #4d7cff; }
+    .am-contact-card-email .am-contact-card-icon svg { color: #a855f7; }
+    .am-contact-card-whatsapp .am-contact-card-icon svg { color: #25D366; }
+    .am-contact-card-location .am-contact-card-icon svg { color: #A75D42; }
+    .am-contact-card-hours .am-contact-card-icon svg { color: #6F7653; }
+    .am-about-card-icon svg {
+        width: 28px !important;
+        height: 28px !important;
+    }
+    .am-about-card-equipos .am-about-card-icon svg { color: #4d7cff; }
+    .am-about-card-operarios .am-about-card-icon svg { color: #25D366; }
+    .am-about-card-servicio .am-about-card-icon svg { color: #a855f7; }
+    .am-feature-icon svg {
+        width: 32px !important;
+        height: 32px !important;
+        color: #4d7cff;
+        text-shadow: 0 0 15px rgba(77,124,255,0.2);
+    }
+    .am-extra-icon svg {
+        width: 32px !important;
+        height: 32px !important;
+        color: #4d7cff;
+    }
+    .am-gallery-zoom-icon svg {
+        width: 20px !important;
+        height: 20px !important;
+        color: #fff;
+    }
+    select option svg {
+        width: 16px !important;
+        height: 16px !important;
+        margin-right: 4px;
+    }
+    .footer-links svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+    </style>
+    <?php
+}

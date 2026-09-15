@@ -2949,3 +2949,11 @@ html {
     color: #aaa;
     text-decoration: underline;
 }
+
+/* ======================================================
+   HOME TITLE CLEANUP
+   The generated WordPress title duplicates the hero heading.
+   ====================================================== */
+.home .entry-title {
+    display: none !important;
+}
