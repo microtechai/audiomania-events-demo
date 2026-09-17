@@ -4,7 +4,7 @@
 
 ### Identidad de Marca
 - **Nombre:** Audiomania Eventos
-- **Negocio:** Alquiler de servicios para eventos (DJ, sonido, iluminación, photocall, hinchables LED, espectáculos)
+- **Negocio:** Servicios de DJ, sonido, iluminación, photocall y producción técnica para eventos
 - **Ubicación:** Tenerife, España
 - **Sector:** Eventos y animación
 
@@ -26,7 +26,7 @@
 ### Imágenes Identificadas
 - Logos y branding (logo principal, iconos de servicios)
 - Fotos de eventos (DJ, sonido, iluminación, photocall)
-- Fotos de productos (hinchables LED, equipos de sonido)
+- Fotos de servicios y equipamiento profesional de sonido e iluminación
 - Galería de trabajos realizados
 - Logos de partners y certificaciones
 

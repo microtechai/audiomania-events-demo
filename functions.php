@@ -762,7 +762,7 @@ function audiomania_hero_content( $content ) {
         // SEO Intro
         $services_content .= '<div class="am-services-intro">' . "\n";
         $services_content .= '  <h2>Servicios de Sonido, Iluminación y Animación en Tenerife</h2>' . "\n";
-        $services_content .= '  <p class="am-services-intro-text">Audiomania Eventos ofrece servicios profesionales para bodas, fiestas privadas y eventos corporativos en Tenerife. Puedes contratar un servicio concreto o pedir un montaje completo adaptado al espacio, al número de invitados y al tipo de celebración. Respondemos en menos de 24 horas.</p>' . "\n";
+        $services_content .= '  <p class="am-services-intro-text">Audiomania Eventos diseña servicios de DJ, sonido e iluminación para bodas, fiestas privadas y eventos corporativos en Tenerife. Cada propuesta se adapta al espacio, al número de asistentes y al resultado que quieres conseguir, desde una ambientación cuidada hasta una producción técnica completa. Respondemos en menos de 24 horas.</p>' . "\n";
         $services_content .= '</div>' . "\n";
 
         // Services Grid
@@ -778,10 +778,10 @@ function audiomania_hero_content( $content ) {
         $services_content .= '        <span class="am-price-value">300€</span>' . "\n";
         $services_content .= '      </div>' . "\n";
         $services_content .= '      <ul class="am-service-features">' . "\n";
-        $services_content .= '        <li>Equipment Pioneer + USB controlador</li>' . "\n";
-        $services_content .= '        <li>2altavoces activos FBT 12&quot;</li>' . "\n";
-        $services_content .= '        <li>Mesa de mezclas profesional</li>' . "\n";
-        $services_content .= '        <li>Música a medida según estilo</li>' . "\n";
+        $services_content .= '        <li>Selección musical adaptada al estilo del evento</li>' . "\n";
+        $services_content .= '        <li>Equipamiento DJ profesional según formato y disponibilidad</li>' . "\n";
+        $services_content .= '        <li>Sonido y microfonía dimensionados para el espacio</li>' . "\n";
+        $services_content .= '        <li>Preparación musical y coordinación durante el servicio</li>' . "\n";
         $services_content .= '        <li>Duración: hasta 4h + preparación</li>' . "\n";
         $services_content .= '        <li>Micrófono inalámbrico para anuncios</li>' . "\n";
         $services_content .= '      </ul>' . "\n";
@@ -799,12 +799,12 @@ function audiomania_hero_content( $content ) {
         $services_content .= '        <span class="am-price-value">200€</span>' . "\n";
         $services_content .= '      </div>' . "\n";
         $services_content .= '      <ul class="am-service-features">' . "\n";
-        $services_content .= '        <li>Sistema FBT profesional completo</li>' . "\n";
-        $services_content .= '        <li>Altavoces + subgraves + monitores</li>' . "\n";
-        $services_content .= '        <li>Mescla digital Yamaha/Allen &amp; Heath</li>' . "\n";
-        $services_content .= '        <li>2micrófonos inalámbricos Shure</li>' . "\n";
-        $services_content .= '        <li>Montaje y montaje incluido</li>' . "\n";
-        $services_content .= '        <li>Técnico de sonido disponible (+50€)</li>' . "\n";
+        $services_content .= '        <li>Sonido profesional para bodas, fiestas y eventos corporativos</li>' . "\n";
+        $services_content .= '        <li>Configuración adaptada al espacio y al número de asistentes</li>' . "\n";
+        $services_content .= '        <li>Equipos profesionales Mackie y otras primeras marcas según disponibilidad</li>' . "\n";
+        $services_content .= '        <li>Montaje, desmontaje y prueba de sonido coordinados</li>' . "\n";
+        $services_content .= '        <li>Técnico de sonido disponible cuando el evento lo requiere</li>' . "\n";
+        $services_content .= '        <li>Si un modelo concreto no está disponible, ofrecemos una alternativa profesional adecuada</li>' . "\n";
         $services_content .= '      </ul>' . "\n";
         $services_content .= '      <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20el%20alquiler%20de%20sonido%20para%20mi%20evento" class="am-service-cta" target="_blank" rel="noopener">Solicitar Presupuesto</a>' . "\n";
         $services_content .= '    </div>' . "\n";
@@ -814,18 +814,17 @@ function audiomania_hero_content( $content ) {
         $services_content .= '  <div class="am-service-card" id="iluminacion">' . "\n";
         $services_content .= '    <div class="am-service-card-inner">' . "\n";
         $services_content .= '      <div class="am-service-icon-wrap"><svg style="width:48px;height:48px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg></div>' . "\n";
-        $services_content .= '      <h3>Iluminación LED</h3>' . "\n";
+        $services_content .= '      <h3>Iluminación para Eventos</h3>' . "\n";
         $services_content .= '      <div class="am-service-price">' . "\n";
         $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
         $services_content .= '        <span class="am-price-value">400€</span>' . "\n";
         $services_content .= '      </div>' . "\n";
         $services_content .= '      <ul class="am-service-features">' . "\n";
-        $services_content .= '        <li>Luces robóticas moving heads</li>' . "\n";
-        $services_content .= '        <li>Par LEDs RGBW + DMX controller</li>' . "\n";
-        $services_content .= '        <li>Máquina de humo/neblina</li>' . "\n";
-        $services_content .= '        <li>Iluminación stage wash</li>' . "\n";
-        $services_content .= '        <li>Control DMX programado</li>' . "\n";
-        $services_content .= '        <li>Efectos láser (+80€)</li>' . "\n";
+        $services_content .= '        <li>Cabezas móviles e iluminación dinámica para pista y escenario</li>' . "\n";
+        $services_content .= '        <li>Iluminación LED para destacar espacios y crear ambiente</li>' . "\n";
+        $services_content .= '        <li>Efectos de iluminación adaptados al ritmo y al tipo de celebración</li>' . "\n";
+        $services_content .= '        <li>Diseño de la ambientación según el espacio y la producción</li>' . "\n";
+        $services_content .= '        <li>Consulta disponibilidad de modelos y configuraciones</li>' . "\n";
         $services_content .= '      </ul>' . "\n";
         $services_content .= '      <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20la%20iluminaci%C3%B3n%20LED%20para%20mi%20evento" class="am-service-cta" target="_blank" rel="noopener">Solicitar Presupuesto</a>' . "\n";
         $services_content .= '    </div>' . "\n";
@@ -996,16 +995,9 @@ function audiomania_hero_content( $content ) {
                 'label'  => 'Sonido',
             ),
             array(
-                'file'   => 'hinchables-led.webp',
-                'title'  => 'Hinchables Led',
-                'desc'   => 'Hinchables LED y mobiliario inflable para eventos y fiestas en Tenerife.',
-                'cat'    => 'fiestas',
-                'label'  => 'Fiestas',
-            ),
-            array(
-                'file'   => 'iluminacion-led-y-efectos.webp',
-                'title'  => 'Iluminación LED y Efectos',
-                'desc'   => 'Iluminación LED profesional y efectos especiales para eventos en Tenerife.',
+                'file'   => 'Eventos-Canarias.webp',
+                'title'  => 'Iluminación para Eventos',
+                'desc'   => 'Cabezas móviles, iluminación LED y ambientación dinámica para crear una escena profesional.',
                 'cat'    => 'iluminacion',
                 'label'  => 'Iluminación',
             ),
@@ -1045,11 +1037,11 @@ function audiomania_hero_content( $content ) {
                 'label'  => 'DJ',
             ),
             array(
-                'file'   => 'Alquiler-nexus-tenerife.webp',
-                'title'  => 'Alquiler Nexus',
-                'desc'   => 'Alquiler de pantallas Nexus y sistemas LED para eventos en Tenerife.',
-                'cat'    => 'iluminacion',
-                'label'  => 'Iluminación',
+                'file'   => 'Eventos-Tenerife.webp',
+                'title'  => 'Montaje DJ e Iluminación',
+                'desc'   => 'Montaje coordinado de DJ, sonido e iluminación para acompañar el ritmo y la ambientación del evento.',
+                'cat'    => 'dj',
+                'label'  => 'DJ',
             ),
             array(
                 'file'   => 'Mobiliario-eventos-alquiler.webp',
@@ -1356,7 +1348,7 @@ function audiomania_hero_content( $content ) {
         $about_html .= '      <div class="am-about-card-icon"><svg style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg></div>' . "\n";
         $about_html .= '      <div class="am-about-card-content">' . "\n";
         $about_html .= '        <h3>Equipos de gama alta</h3>' . "\n";
-        $about_html .= '        <p>Solo trabajamos con marcas profesionales: L-Acoustics, Pioneer, Linsn, Grand MA2.</p>' . "\n";
+        $about_html .= '        <p>Trabajamos con equipamiento profesional de primeras marcas, seleccionando la configuración más adecuada según el evento y la disponibilidad. Consulta modelos y alternativas.</p>' . "\n";
         $about_html .= '      </div>' . "\n";
         $about_html .= '    </div>' . "\n";
 

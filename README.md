@@ -1,6 +1,6 @@
 # Audiomania Eventos - Demo Web
 
-Proyecto de demostración para Audiomania Eventos: web con WordPress + WooCommerce para reservas de eventos (DJ, sonido, iluminación, photocall, hinchables, etc.).
+Proyecto de demostración para Audiomania Eventos: web con WordPress + WooCommerce para reservas de eventos (DJ, sonido, iluminación, photocall y producción técnica).
 
 ## Estado del Proyecto
 
@@ -47,9 +47,9 @@ audiomania-events-demo/
 |----------|--------|
 | DJ para Eventos | Personalizado |
 | Alquiler de Sonido | Personalizado |
-| Iluminación LED y Efectos | Personalizado |
+| Iluminación para Eventos | Personalizado |
 | Photocall | Personalizado |
-| Hinchables LED | Personalizado |
+
 | Espectáculos | Personalizado |
 | Paquete Completo | Personalizado |
 

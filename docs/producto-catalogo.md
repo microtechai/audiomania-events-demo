@@ -25,13 +25,13 @@ Audiomania Eventos ofrece servicios de animación y equipamiento para eventos: b
 - **Precios:** Personalizado según evento
 - **Imagen:** `[URL待获取]`
 
-### 3. Iluminación LED y Efectos
-- **Descripción:** Sistemas de iluminación LED y efectos especiales
+### 3. Iluminación para Eventos
+- **Descripción:** Diseño de iluminación profesional para crear ambiente, dinamismo y presencia escénica
 - **Características:**
-  - Luces LED RGB controlables
-  - Máquinas de humo/neblina
-  - Bola de espejos
-  - Control DMX profesional
+  - Cabezas móviles e iluminación LED
+  - Efectos de luz adaptados al evento
+  - Ambientación de espacios y escenarios
+  - Configuración sujeta a disponibilidad
 - **Precios:** Personalizado según evento
 - **Imagen:** `[URL待获取]`
 
@@ -45,17 +45,7 @@ Audiomania Eventos ofrece servicios de animación y equipamiento para eventos: b
 - **Precios:** Personalizado según evento
 - **Imagen:** `[URL待获取]`
 
-### 5. Hinchables LED
-- **Descripción:** Hinchables con iluminación LED para eventos
-- **Características:**
-  - Variedad de diseños
-  - Iluminación LED integrada
-  - Seguro y certificado
-  - Montaje y supervisión incluidos
-- **Precios:** Personalizado según evento
-- **Imagen:** `[URL待获取]`
-
-### 6. Espectáculos
+### 5. Espectáculos
 - **Descripción:** Shows y espectáculos en vivo para eventos
 - **Características:**
   - Magia y close-up
@@ -65,11 +55,11 @@ Audiomania Eventos ofrece servicios de animación y equipamiento para eventos: b
 - **Precios:** Personalizado según evento
 - **Imagen:** `[URL待获取]`
 
-### 7. Paquete Completo
+### 6. Paquete Completo
 - **Descripción:** Pack integral de todos los servicios
 - **Incluye:**
   - DJ + Sonido + Iluminación
-  - Photocall + Hinchables
+  - Photocall y ambientación
   - Espectáculo incluido
   - Coordinador de evento
 - **Precios:** Pack con descuento

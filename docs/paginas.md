@@ -67,7 +67,7 @@ Inicio | Servicios ▾ | Reservar | Galería | Sobre Nosotros | Contacto
        ├─ Alquiler de Sonido
        ├─ Iluminación LED
        ├─ Photocall
-       ├─ Hinchables LED
+
        ├─ Espectáculos
        └─ Paquete Completo
 ```

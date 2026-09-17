@@ -19,7 +19,7 @@ Se usarán URLs remotas del sitio actual (audiomaniaeventos.com) en lugar de imp
 | Alquiler de Sonido | `[URL待获取]` | Card servicio, galería |
 | Iluminación LED | `[URL待获取]` | Card servicio, galería |
 | Photocall | `[URL待获取]` | Card servicio, galería |
-| Hinchables LED | `[URL待获取]` | Card servicio, galería |
+
 | Espectáculos | `[URL待获取]` | Card servicio, galería |
 | Paquete Completo | `[URL待获取]` | Card servicio |
 
@@ -46,7 +46,7 @@ Se usarán URLs remotas del sitio actual (audiomaniaeventos.com) en lugar de imp
 | Icono Sonido | `[URL待获取]` | Servicio card |
 | Icono Iluminación | `[URL待获取]` | Servicio card |
 | Icono Photocall | `[URL待获取]` | Servicio card |
-| Icono Hinchables | `[URL待获取]` | Servicio card |
+
 
 ## Progreso
 - [ ] Obtener todas las URLs del sitio actual
