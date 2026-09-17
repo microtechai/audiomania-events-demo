@@ -35,13 +35,12 @@ Audiomania Eventos ofrece servicios de animación y equipamiento para eventos: b
 - **Precios:** Personalizado según evento
 - **Imagen:** `[URL待获取]`
 
-### 4. Photocall
-- **Descripción:** Photocall profesional con impresión instantánea
+### 4. Photocall y Estructuras
+- **Descripción:** Estructuras Truss y montajes personalizados para photocall y ambientación
 - **Características:**
-  - Fondo personalizable con branding
-  - Impresión instantánea de fotos
-  - Accesorios y props incluidos
-  - Descarga digital de fotos
+  - Soportes para lonas y tótems
+  - Estructuras decorativas
+  - Montaje y desmontaje coordinados
 - **Precios:** Personalizado según evento
 - **Imagen:** `[URL待获取]`
 

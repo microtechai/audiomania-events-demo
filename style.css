@@ -2005,6 +2005,35 @@ html {
     margin: 0;
 }
 
+.am-pricing-notice {
+    margin: 28px auto 0;
+    padding: 22px 24px;
+    text-align: left;
+    background: linear-gradient(135deg, rgba(77, 124, 255, 0.08), rgba(168, 85, 247, 0.08));
+    border: 1px solid rgba(77, 124, 255, 0.25);
+    border-left: 3px solid #4d7cff;
+    border-radius: var(--radius-lg);
+}
+
+.am-pricing-notice h3 {
+    margin: 0 0 8px;
+    color: var(--am-text-heading);
+    font-family: 'Noto Serif', serif;
+    font-size: 1.2rem;
+}
+
+.am-pricing-notice p {
+    margin: 0 0 8px;
+    color: var(--am-text-muted);
+    font-size: 0.94rem;
+    line-height: 1.65;
+}
+
+.am-pricing-notice p:last-child {
+    margin-bottom: 0;
+    color: var(--am-text);
+}
+
 /* Services Grid */
 .am-services-grid {
     display: grid;
@@ -2236,6 +2265,15 @@ html {
     background-clip: text;
 }
 
+.am-pricing-disclaimer {
+    max-width: 960px;
+    margin: -36px auto 56px;
+    color: var(--am-text-muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
 /* Final CTA Section */
 .am-services-cta-section {
     text-align: center;
@@ -2301,6 +2339,13 @@ html {
     }
     .am-services-cta-section {
         padding: 40px 20px;
+    }
+    .am-pricing-notice {
+        padding: 18px;
+    }
+    .am-pricing-disclaimer {
+        margin: -34px auto 44px;
+        text-align: left;
     }
 }
 

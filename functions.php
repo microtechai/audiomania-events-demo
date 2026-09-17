@@ -763,6 +763,11 @@ function audiomania_hero_content( $content ) {
         $services_content .= '<div class="am-services-intro">' . "\n";
         $services_content .= '  <h2>Servicios de Sonido, Iluminación y Animación en Tenerife</h2>' . "\n";
         $services_content .= '  <p class="am-services-intro-text">Audiomania Eventos diseña servicios de DJ, sonido e iluminación para bodas, fiestas privadas y eventos corporativos en Tenerife. Cada propuesta se adapta al espacio, al número de asistentes y al resultado que quieres conseguir, desde una ambientación cuidada hasta una producción técnica completa. Respondemos en menos de 24 horas.</p>' . "\n";
+        $services_content .= '  <div class="am-pricing-notice" role="note">' . "\n";
+        $services_content .= '    <h3>Precios orientativos</h3>' . "\n";
+        $services_content .= '    <p>Los precios indicados son referencias iniciales y pueden variar según las características de cada evento. Factores como ubicación, desplazamiento, duración, logística, cantidad de equipos, personal técnico, montaje, fecha, disponibilidad y demanda pueden modificar el presupuesto final.</p>' . "\n";
+        $services_content .= '    <p><strong>Solicita una propuesta personalizada sin compromiso.</strong></p>' . "\n";
+        $services_content .= '  </div>' . "\n";
         $services_content .= '</div>' . "\n";
 
         // Services Grid
@@ -775,15 +780,15 @@ function audiomania_hero_content( $content ) {
         $services_content .= '      <h3>DJ para Eventos</h3>' . "\n";
         $services_content .= '      <div class="am-service-price">' . "\n";
         $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
-        $services_content .= '        <span class="am-price-value">300€</span>' . "\n";
+        $services_content .= '        <span class="am-price-value">300 €</span>' . "\n";
         $services_content .= '      </div>' . "\n";
         $services_content .= '      <ul class="am-service-features">' . "\n";
         $services_content .= '        <li>Selección musical adaptada al estilo del evento</li>' . "\n";
         $services_content .= '        <li>Equipamiento DJ profesional según formato y disponibilidad</li>' . "\n";
         $services_content .= '        <li>Sonido y microfonía dimensionados para el espacio</li>' . "\n";
         $services_content .= '        <li>Preparación musical y coordinación durante el servicio</li>' . "\n";
-        $services_content .= '        <li>Duración: hasta 4h + preparación</li>' . "\n";
-        $services_content .= '        <li>Micrófono inalámbrico para anuncios</li>' . "\n";
+        $services_content .= '        <li>DJ profesional para bodas, fiestas y eventos</li>' . "\n";
+        $services_content .= '        <li>Posibilidad de integrar sonido, iluminación y microfonía</li>' . "\n";
         $services_content .= '      </ul>' . "\n";
         $services_content .= '      <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20DJ%20para%20mi%20evento" class="am-service-cta" target="_blank" rel="noopener">Solicitar Presupuesto</a>' . "\n";
         $services_content .= '    </div>' . "\n";
@@ -796,7 +801,7 @@ function audiomania_hero_content( $content ) {
         $services_content .= '      <h3>Alquiler de Sonido</h3>' . "\n";
         $services_content .= '      <div class="am-service-price">' . "\n";
         $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
-        $services_content .= '        <span class="am-price-value">200€</span>' . "\n";
+        $services_content .= '        <span class="am-price-value">200 €</span>' . "\n";
         $services_content .= '      </div>' . "\n";
         $services_content .= '      <ul class="am-service-features">' . "\n";
         $services_content .= '        <li>Sonido profesional para bodas, fiestas y eventos corporativos</li>' . "\n";
@@ -804,7 +809,7 @@ function audiomania_hero_content( $content ) {
         $services_content .= '        <li>Equipos profesionales Mackie y otras primeras marcas según disponibilidad</li>' . "\n";
         $services_content .= '        <li>Montaje, desmontaje y prueba de sonido coordinados</li>' . "\n";
         $services_content .= '        <li>Técnico de sonido disponible cuando el evento lo requiere</li>' . "\n";
-        $services_content .= '        <li>Si un modelo concreto no está disponible, ofrecemos una alternativa profesional adecuada</li>' . "\n";
+        $services_content .= '        <li>Consulta disponibilidad de configuraciones y equipos concretos</li>' . "\n";
         $services_content .= '      </ul>' . "\n";
         $services_content .= '      <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20el%20alquiler%20de%20sonido%20para%20mi%20evento" class="am-service-cta" target="_blank" rel="noopener">Solicitar Presupuesto</a>' . "\n";
         $services_content .= '    </div>' . "\n";
@@ -817,7 +822,7 @@ function audiomania_hero_content( $content ) {
         $services_content .= '      <h3>Iluminación para Eventos</h3>' . "\n";
         $services_content .= '      <div class="am-service-price">' . "\n";
         $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
-        $services_content .= '        <span class="am-price-value">400€</span>' . "\n";
+        $services_content .= '        <span class="am-price-value">200 €</span>' . "\n";
         $services_content .= '      </div>' . "\n";
         $services_content .= '      <ul class="am-service-features">' . "\n";
         $services_content .= '        <li>Cabezas móviles e iluminación dinámica para pista y escenario</li>' . "\n";
@@ -830,22 +835,19 @@ function audiomania_hero_content( $content ) {
         $services_content .= '    </div>' . "\n";
         $services_content .= '  </div>' . "\n";
 
-        // Service 4: Pantallas LED / Nexus
+        // Service 4: Pantallas LED & Vídeo
         $services_content .= '  <div class="am-service-card" id="pantallas">' . "\n";
         $services_content .= '    <div class="am-service-card-inner">' . "\n";
         $services_content .= '      <div class="am-service-icon-wrap"><svg style="width:48px;height:48px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg></div>' . "\n";
-        $services_content .= '      <h3>Pantallas LED / Nexus</h3>' . "\n";
+        $services_content .= '      <h3>Pantallas LED &amp; Vídeo</h3>' . "\n";
         $services_content .= '      <div class="am-service-price">' . "\n";
-        $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
-        $services_content .= '        <span class="am-price-value">600€</span>' . "\n";
+        $services_content .= '        <span class="am-price-value">Presupuesto personalizado</span>' . "\n";
         $services_content .= '      </div>' . "\n";
         $services_content .= '      <ul class="am-service-features">' . "\n";
-        $services_content .= '        <li>Pantalla LED P3 interior / P4 exterior</li>' . "\n";
-        $services_content .= '        <li>Tamaño: hasta 4x3m (personalizable)</li>' . "\n";
-        $services_content .= '        <li>Video Wall con controlador Novastar</li>' . "\n";
-        $services_content .= '        <li>Reproducción de contenido en vivo</li>' . "\n";
-        $services_content .= '        <li>Estructura y montaje incluido</li>' . "\n";
-        $services_content .= '        <li>Backup de video (USB/HDMI)</li>' . "\n";
+        $services_content .= '        <li>Pantallas LED para eventos y producciones</li>' . "\n";
+        $services_content .= '        <li>Configuraciones adaptadas al espacio</li>' . "\n";
+        $services_content .= '        <li>Reproducción de contenido y apoyo técnico según necesidades</li>' . "\n";
+        $services_content .= '        <li>Estructuras y montaje coordinados según el proyecto</li>' . "\n";
         $services_content .= '      </ul>' . "\n";
         $services_content .= '      <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20la%20pantalla%20LED%20para%20mi%20evento" class="am-service-cta" target="_blank" rel="noopener">Solicitar Presupuesto</a>' . "\n";
         $services_content .= '    </div>' . "\n";
@@ -855,18 +857,16 @@ function audiomania_hero_content( $content ) {
         $services_content .= '  <div class="am-service-card" id="photocall">' . "\n";
         $services_content .= '    <div class="am-service-card-inner">' . "\n";
         $services_content .= '      <div class="am-service-icon-wrap"><svg style="width:48px;height:48px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.4 4C7.5 4 5.95 5.07 5.12 6.6L4 6.6V18H20V6H18.88C18.05 5.07 16.5 4 14.6 4H9.4zM12 6C13.1 6 14 6.9 14 8S13.1 10 12 10 10 9.1 10 8s.9-2 2-2zM5 20H3V8h.17C2.07 9.59 1.5 11.24 1.5 13c0 3.31 2.69 6 6 6 .13 0 .26 0 .39-.01.37.09.75.01 1.11.01h7.19c.36 0 .74.08 1.11-.01.13.01.26.01.39.01 3.31 0 6-2.69 6-6 0-1.76-.57-3.41-1.67-4.89.07-.01.14-.01.17-.01H3v12z"/></svg></div>' . "\n";
-        $services_content .= '      <h3>Photocall &amp; Backdrop</h3>' . "\n";
+        $services_content .= '      <h3>Photocall &amp; Estructuras</h3>' . "\n";
         $services_content .= '      <div class="am-service-price">' . "\n";
         $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
-        $services_content .= '        <span class="am-price-value">180€</span>' . "\n";
+        $services_content .= '        <span class="am-price-value">180 €</span>' . "\n";
         $services_content .= '      </div>' . "\n";
         $services_content .= '      <ul class="am-service-features">' . "\n";
-        $services_content .= '        <li>Photocall personalizado con tu logo/nombre</li>' . "\n";
-        $services_content .= '        <li>Backdrop letras individuales (3D)</li>' . "\n";
-        $services_content .= '        <li>Iluminación incluida</li>' . "\n";
-        $services_content .= '        <li>Impresión fotos al momento</li>' . "\n";
-        $services_content .= '        <li>Accesorios y props para fotos</li>' . "\n";
-        $services_content .= '        <li>Backdrop LED (+100€)</li>' . "\n";
+        $services_content .= '        <li>Estructuras Truss para photocall</li>' . "\n";
+        $services_content .= '        <li>Montajes personalizados y soportes para lonas</li>' . "\n";
+        $services_content .= '        <li>Tótems y estructuras decorativas</li>' . "\n";
+        $services_content .= '        <li>Montaje y desmontaje coordinados</li>' . "\n";
         $services_content .= '      </ul>' . "\n";
         $services_content .= '      <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20el%20photocall%20para%20mi%20evento" class="am-service-cta" target="_blank" rel="noopener">Solicitar Presupuesto</a>' . "\n";
         $services_content .= '    </div>' . "\n";
@@ -880,17 +880,16 @@ function audiomania_hero_content( $content ) {
         $services_content .= '      <h3>Paquete Boda Completo</h3>' . "\n";
         $services_content .= '      <div class="am-service-price">' . "\n";
         $services_content .= '        <span class="am-price-from">Desde</span>' . "\n";
-        $services_content .= '        <span class="am-price-value">1.200€</span>' . "\n";
+        $services_content .= '        <span class="am-price-value">1.200 €</span>' . "\n";
         $services_content .= '      </div>' . "\n";
         $services_content .= '      <ul class="am-service-features">' . "\n";
-        $services_content .= '        <li>DJ profesional + animación ceremonia</li>' . "\n";
-        $services_content .= '        <li>Sonido completo banquete + fiesta</li>' . "\n";
-        $services_content .= '        <li>Iluminación ambientación sala</li>' . "\n";
-        $services_content .= '        <li>Photocall personalizado</li>' . "\n";
-        $services_content .= '        <li>Micrófonos inalámbricos ceremonia</li>' . "\n";
-        $services_content .= '        <li>Hasta 6h de servicio completo</li>' . "\n";
-        $services_content .= '        <li>Playlist personalizada a medida</li>' . "\n";
-        $services_content .= '        <li>Coordiador de evento incluido</li>' . "\n";
+        $services_content .= '        <li>Sonorización de ceremonia</li>' . "\n";
+        $services_content .= '        <li>Música ambiental para cóctel y banquete</li>' . "\n";
+        $services_content .= '        <li>Sistema de sonido adaptado a distintas zonas</li>' . "\n";
+        $services_content .= '        <li>DJ profesional e iluminación para pista</li>' . "\n";
+        $services_content .= '        <li>Microfonía y técnico de sonido</li>' . "\n";
+        $services_content .= '        <li>Montaje y desmontaje coordinados</li>' . "\n";
+        $services_content .= '        <li>Cada boda se configura según el espacio, horarios y necesidades de los novios</li>' . "\n";
         $services_content .= '      </ul>' . "\n";
         $services_content .= '      <a href="https://wa.me/34669621139?text=Hola%2C%20me%20interesa%20el%20paquete%20boda%20completo" class="am-service-cta am-service-cta-highlight" target="_blank" rel="noopener">Solicitar Presupuesto</a>' . "\n";
         $services_content .= '    </div>' . "\n";
@@ -904,10 +903,13 @@ function audiomania_hero_content( $content ) {
         $services_content .= '  <div class="am-services-extra-grid">' . "\n";
 
         $extras = array(
-            array('icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>', 'title' => 'Escenarios y Tarimas', 'price' => '350€', 'desc' => 'Tarimas de abedul, estructuras metálicas, escenarios modulares. Montaje profesional incluido.'),
-            array('icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.39 5.91 5.91v3.2h-3v2h10v-3c3.02-.52 5.42-2.91 5.91-5.91.1-.6-.39-1.14-1-1.14z"/></svg>', 'title' => 'Karaoke', 'price' => '120€', 'desc' => 'Sistema completo con pantalla, micrófonos, base de canciones actualizada.'),
-            array('icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>', 'title' => 'Machine Humo / Nieve', 'price' => '80€', 'desc' => 'Máquina de humo, nieve sintética, confeti. Efectos especiales para momentos clave.'),
-            array('icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 11h3v10h2V11h3l-4-4-4 4zM4 22h16v-2H4v2zm18-8H6l6-6 6 6z"/></svg>', 'title' => 'Mobiliario Premium', 'price' => '2€/pza', 'desc' => 'Sillas Tiffany, mesas redondas, mantelería, banquetes. Todo personalizable.'),
+            array('icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>', 'title' => 'Escenarios y Tarimas', 'price' => 'Desde 350 €', 'desc' => 'Tarimas de abedul, estructuras metálicas, escenarios modulares. Montaje profesional incluido.'),
+            array('icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.39 5.91 5.91v3.2h-3v2h10v-3c3.02-.52 5.42-2.91 5.91-5.91.1-.6-.39-1.14-1-1.14z"/></svg>', 'title' => 'Karaoke', 'price' => 'Desde 120 €', 'desc' => 'Sistema completo con pantalla, micrófonos, base de canciones actualizada.'),
+            array('icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-1.12-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5 1.5 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>', 'title' => 'Máquina de Humo / Nieve / Confeti', 'price' => 'Desde 80 €', 'desc' => 'Efectos especiales sujetos a disponibilidad y a las características del evento.'),
+            array('icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 11h3v10h2V11h3l-4-4-4 4zM4 22h16v-2H4v2zm18-8H6l6-6 6 6z"/></svg>', 'title' => 'Mobiliario Premium', 'price' => 'Desde 20 €/pieza', 'desc' => 'Tipo de mobiliario, cantidad, transporte y montaje sujetos a las características del evento.'),
+            array('icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16v2H4V4zm0 7h16v2H4v-2zm0 7h16v2H4v-2z"/></svg>', 'title' => 'Técnico de Sonido', 'price' => 'Desde 300 €', 'desc' => 'Operación y apoyo técnico adaptados al montaje y a las necesidades del evento.'),
+            array('icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zm-7 8a7 7 0 0 0 14 0h-2a5 5 0 0 1-10 0H5zm6 7h2v3h-2v-3z"/></svg>', 'title' => 'Microfonía Profesional', 'price' => 'Desde 50 €', 'desc' => 'Microfonía para ceremonias, presentaciones y eventos según formato y disponibilidad.'),
+            array('icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>', 'title' => 'Estructuras Truss de mayor formato', 'price' => 'Presupuesto personalizado', 'desc' => 'Soluciones de estructura y montaje dimensionadas para cada producción.'),
         );
 
         foreach ( $extras as $ex ) {
@@ -921,6 +923,8 @@ function audiomania_hero_content( $content ) {
 
         $services_content .= '  </div>' . "\n";
         $services_content .= '</div>' . "\n";
+
+        $services_content .= '<p class="am-pricing-disclaimer">*Los precios mostrados son orientativos y corresponden a configuraciones iniciales. El importe final puede variar según desplazamiento, logística, duración, equipos, personal técnico, montaje, fecha, disponibilidad y demanda.</p>' . "\n";
 
         // CTA Final
         $services_content .= '<div class="am-services-cta-section">' . "\n";
